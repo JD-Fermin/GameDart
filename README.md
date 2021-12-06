@@ -15,7 +15,12 @@ GameDart is a service that recommends the user new games to play based on genre.
 - Production README
 ### Wireframes
 #### Game Show Page
-![alt text](https://i.imgur.com/t2DTQqh.png)
+![alt text](https://i.imgur.com/ekHVFuw.png)
+
+### User Profile Page
+![alt text](https://i.imgur.com/YYS1am4.png)
+
+
 
 ## Technologies and Technical Challenges
 ### MERN Stack
