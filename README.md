@@ -11,6 +11,7 @@ GameDart is a service that recommends the user new games to play based on genre.
 - Game Show Page
 - Playlists
 - User Profiles
+  - User profile image is only from selected images in database
 - Reviews
 - Production README
 ### Wireframes
