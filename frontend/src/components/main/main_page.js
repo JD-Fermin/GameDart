@@ -6,11 +6,7 @@ class MainPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="splash-nav">
-          <Link>Sign Up</Link>
-          <Link>Log In</Link>
-        </div>
+      <div className="splash-component">
         <div className="splash-title">
           <div className="splash-container">
             <h1>GameDart</h1>
