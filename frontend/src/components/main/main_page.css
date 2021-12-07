@@ -8,11 +8,32 @@
   background-image: url('https://www.howtogeek.com/wp-content/uploads/2021/03/person-holding-a-sony-playstation-5-dualsense-controller.jpeg?height=200p');
   background-size: 100%;
   background-repeat: no-repeat;
+  background-attachment: scroll;
   height: 100%;
   padding: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.splash-container h1{
+.splash-container h3{
   /* position: absolute; */
+  margin-left: 14px;
+  font-size: max(20px, 2vw);
+  text-shadow: 0 0 15px black;
+}
 
+.splash-container img{
+  /* height: 300px; */
+  height: max(300px, 2vw);
+}
+
+.splash-desc {
+  margin: 0 10vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.splash-desc > div {
+  padding: 20px;
 }

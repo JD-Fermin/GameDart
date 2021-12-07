@@ -14,7 +14,6 @@ import './app.css'
 const App = () => (
   <div>
     <NavBarContainer />
-    <div className="page-content">
       <Switch>
         <AuthRoute exact path="/" component={MainPage} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
@@ -22,7 +21,6 @@ const App = () => (
         <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       
       </Switch>
-    </div>
   </div>
 );
 
