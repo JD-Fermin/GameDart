@@ -21,7 +21,7 @@ class NavBar extends React.Component {
                 
                 <Link to={'/profile'}>Profile</Link>
                 
-                <button onClick={this.logoutUser}>Logout</button>
+                <a onClick={this.logoutUser}>Logout</a>
             </div>
         );
       } else {
@@ -35,12 +35,12 @@ class NavBar extends React.Component {
   }
 
   render() {
-      return (
-        <div>
-            <h1>GameDart</h1>
-            { this.getLinks() }
-        </div>
-      );
+    return this.getLinks();
+      // return (
+      //   <div>
+      //       { this.getLinks() }
+      //   </div>
+      // );
   }
 }
 

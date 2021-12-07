@@ -1,0 +1,38 @@
+.login-form-container{
+  background-image: url('https://i.imgur.com/JXxsooA.jpg');
+  background-size: cover;
+  background-position: bottom;
+  height: 100vh;
+}
+
+.login-box {
+  position: relative;
+  top: calc(100% - 80vh);
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin: 0 auto;
+  width: 400px;
+  background-color: rgb(61, 61, 61);
+  opacity: 95%;
+}
+
+.login-form input{
+  background-color: rgb(44, 44, 44);
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border-color: transparent;
+  color: white;
+}
+
+#submit-button {
+  margin-top: 30px !important;
+  background-color: rgb(230, 50, 50);
+  font-weight: 600;
+}
+
+#errors-section {
+  margin: 0 0 20px 0;
+  padding-left: 20px;
+}

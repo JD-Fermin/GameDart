@@ -1,0 +1,13 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-content{
+  /* padding-top: 35px; */
+}
+
+.root{
+  top: 0;
+}

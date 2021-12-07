@@ -1,22 +1,30 @@
 .NavBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: red;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgb(61, 61, 61);
+  height: 40px;
+  width: 100%;
+  box-shadow: 0 3px 3px #333;
+  padding-right: 20px;
 }
 
 .NavBar button {
-    height: 20px;
+  height: 20px;
 }
 
-.Links1 {
-    width: 100px;
-    display: flex;
-    justify-content: space-between;
+.NavBar a {
+  padding: 2px 20px;
+  margin: 0 max(0.4vw, 25px);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: black;
+  transition: 0.3s;
 }
 
-.Links2 {
-    width: 400px;
-    display: flex;
-    justify-content: space-between;
+.NavBar a:hover{
+  background-color: rgb(109, 109, 109);
 }
