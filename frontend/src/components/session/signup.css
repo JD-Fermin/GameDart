@@ -13,6 +13,7 @@
   margin: 0 auto;
   width: 400px;
   background-color: rgb(61, 61, 61);
+  box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
   opacity: 95%;
 }
 

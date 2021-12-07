@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './profile.css'
 
 class Profile extends React.Component {
     constructor(props) {
@@ -15,12 +15,14 @@ class Profile extends React.Component {
 
     render() {
       return (
-            <div>
-              <h2>{this.props.currentUser.name}</h2>
-              <p>Welcome!</p>
-              
-            </div>
-          );
+        <div className="profile-container">
+          <div className="profile-box">
+            <img src={this.props.currentUser.profileImgUrl} alt="" />
+            <div>{this.props.currentUser.name}</div>
+            <div>{this.props.currentUser.bio}</div>
+          </div>
+        </div>
+      );
     }
       
 }
