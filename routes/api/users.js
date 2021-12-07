@@ -43,7 +43,9 @@ router.post("/register", (req, res) => {
               const payload = {
                 id: user.id,
                 name: user.name,
-                email: user.email
+                email: user.email,
+                bio: user.bio,
+                profileImgUrl: user.profileImgUrl
               };
               jwt.sign(
                 payload,
@@ -86,7 +88,9 @@ router.post("/login", (req, res) => {
             const payload = {
               id: user.id,
               name: user.name,
-              email: user.email
+              email: user.email,
+              bio: user.bio,
+              profileImgUrl: user.profileImgUrl
             };
             jwt.sign(
               payload,
@@ -105,5 +109,12 @@ router.post("/login", (req, res) => {
         })
     })
 })
+
+router.patch('/users/:id', (res, req) => {
+  
+
+})
+
+
 
 module.exports = router;
