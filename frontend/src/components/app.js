@@ -10,6 +10,7 @@ import SignupFormContainer from './session/signup_form_container';
 import ProfileContainer from './profile/profile_container';
 import './reset.css'
 import './app.css'
+import UpdateProfileContainer from './profile/update_profile_form_container.js';
 
 const App = () => (
   <div>
@@ -19,6 +20,7 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />      
         <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+        <ProtectedRoute exact path="/profile/edit" component={UpdateProfileContainer}/>
       
       </Switch>
   </div>

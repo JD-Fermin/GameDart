@@ -1,10 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class UpdateProfileForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      id: this.props.currentUser.id,
       email: this.props.currentUser.email,
       name: this.props.currentUser.name,
       bio: this.props.currentUser.bio,
@@ -14,6 +16,7 @@ class UpdateProfileForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
     this.clearedErrors = false;
   }
 
@@ -26,17 +29,19 @@ class UpdateProfileForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let user = {
+      id: this.state.id,
       email: this.state.email,
       name: this.state.name,
       bio: this.state.bio,
       password: this.state.password,
       password2: this.state.password2
     };
-
-    this.props.signup(user, this.props.history); 
+    
+    this.props.updateBio(user, this.props.history); 
   }
 
   renderErrors() {
+    console.log(this.state.errors)
     return(
       <ul id="errors-section">
         {Object.keys(this.state.errors).map((error, i) => (
@@ -69,7 +74,7 @@ class UpdateProfileForm extends React.Component {
                   />
               <br/>
               <input type="text"
-                  value={this.state.name}
+                  value={this.state.bio}
                   onChange={this.update('bio')}
                   placeholder={this.state.bio}
                   />
@@ -94,3 +99,5 @@ class UpdateProfileForm extends React.Component {
     )
   }
 }
+
+export default withRouter(UpdateProfileForm);

@@ -12,7 +12,7 @@ export const updateCurrentUser = currentUser => ({
 export const userUpdate = user => dispatch => (
   UserAPIUtil.updateUser(user).then((res) => {
     dispatch(updateCurrentUser(res))
-  }, err => (
+  }, err => {
     dispatch(receiveErrors(err.response.data))
-  ))
+  })
 );

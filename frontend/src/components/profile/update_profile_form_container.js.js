@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { userUpdate } from '../../actions/user_actions';
+import UpdateProfileForm from './update_profile_form';
 
 const mapStateToProps = (state) => {
   return {
@@ -9,8 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateBio: (user) => userUpdate(user),
+    updateBio: (user) => dispatch(userUpdate(user)),
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)();
+export default connect(mapStateToProps, mapDispatchToProps)(UpdateProfileForm);
