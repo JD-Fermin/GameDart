@@ -7,6 +7,8 @@ const jwt = require('jsonwebtoken');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login')
 const passport = require('passport');
+const validateUserPatchInput = require('../../validation/update_user')
+
 
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
   res.json({msg: 'Success'});
@@ -43,7 +45,9 @@ router.post("/register", (req, res) => {
               const payload = {
                 id: user.id,
                 name: user.name,
-                email: user.email
+                email: user.email,
+                bio: user.bio,
+                profileImgUrl: user.profileImgUrl
               };
               jwt.sign(
                 payload,
@@ -81,12 +85,14 @@ router.post("/login", (req, res) => {
       }
 
       bcrypt.compare(password, user.password)
-        .then(isMatch => {
+        .then(isMatch => { 
           if(isMatch) {
             const payload = {
               id: user.id,
               name: user.name,
-              email: user.email
+              email: user.email,
+              bio: user.bio,
+              profileImgUrl: user.profileImgUrl
             };
             jwt.sign(
               payload,
@@ -105,5 +111,27 @@ router.post("/login", (req, res) => {
         })
     })
 })
+
+router.patch('/:id', 
+  passport.authenticate("jwt", { session: false }), 
+  async (req, res) => {
+    const { isValid, errors } = validateUserPatchInput(req.body);
+    // const userParams = res.body; 
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+
+  const user = await User.findById(req.params.id);
+  
+  user.name = req.body.name;
+  user.email = req.body.email;
+  user.bio = req.body.bio;
+  user.profileImgUrl = req.body.profileImgUrl;
+
+  await user.save()
+  res.send(user);
+})
+
+
 
 module.exports = router;
