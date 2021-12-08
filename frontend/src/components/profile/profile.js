@@ -7,6 +7,10 @@ class Profile extends React.Component {
         super(props);
 
     }
+
+    // componentDidMount() {
+      // fetchCurrentUser();
+    // }
     
     componentWillMount() {
         console.log(this.props.currentUser.id)
@@ -22,7 +26,8 @@ class Profile extends React.Component {
             <div>{this.props.currentUser.name}</div>
             <div>{this.props.currentUser.bio}</div>
             <div id="edit-profile-button">
-              <Link to="/profile/edit">Edit Info</Link>
+              {/* <Link to="/profile/edit">Edit Info</Link> */}
+              <div onClick={this.props.openModal}>Edit Info</div>
             </div>
           </div>
         </div>
