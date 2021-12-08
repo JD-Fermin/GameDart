@@ -35,9 +35,13 @@ class EditProfileModal extends React.Component{
         password: this.state.password,
         password2: this.state.password2
       };
-  
+      
       this.props.updateBio(user, this.props.history);
-      this.props.closeModal();
+      console.log(this.state.errors);
+
+      if (this.state.errors === {}) {
+        this.props.closeModal();
+      }
     }
   
     renderErrors() {
@@ -54,8 +58,7 @@ class EditProfileModal extends React.Component{
   
     render() {
       return ( 
-        <div className="update-container">
-          <div className="update-form">
+          <div className="login-box">
             Update Profile
             <form onSubmit={this.handleSubmit}>
               <div className="login-form">
@@ -94,7 +97,6 @@ class EditProfileModal extends React.Component{
               </div>
             </form>
           </div>
-        </div>
       )
     }
   }

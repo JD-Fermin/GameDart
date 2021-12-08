@@ -10,7 +10,6 @@ import SignupFormContainer from './session/signup_form_container';
 import ProfileContainer from './profile/profile_container';
 import './reset.css'
 import './app.css'
-import UpdateProfileContainer from './profile/update_profile_form_container.js';
 import Modal from './modal/modal';
 
 const App = () => (
