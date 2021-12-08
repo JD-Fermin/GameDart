@@ -25,7 +25,8 @@ router.get("/:id", (req, res) => {
           email: user.email,
           bio: user.bio,
           backLogGames: user.backLogGames,
-          playedGames: user.playedGames
+          playedGames: user.playedGames,
+          recommendedList: user.recommendedList
         }
         res.send(payload)
       }
@@ -147,6 +148,147 @@ router.patch('/:id',
   res.send(user);
 })
 
+router.patch("/:id/backLogGames/", 
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (user.backLogGames.indexOf(req.body.gameId) === -1) {
+      user.backLogGames.push(req.body.gameId)
+    } else {
+      return res.status(400).json( { msg: "Game is already on the list"});
+    } 
+    const payload = {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      bio: user.bio,
+      profileImgUrl: user.profileImgUrl,
+      backLogGames: user.backLogGames,
+      playedGames: user.playedGames,
+      recommendedList: user.recommendedList
+    }
+  
+    res.send(payload);
+  }
+)
 
+router.patch("/:id/playedGames/",
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (user.playedGames.indexOf(req.body.gameId) === -1) {
+      user.playedGames.push(req.body.gameId)
+    } else {
+      return res.status(400).json({ msg: "Game is already on the list" });
+    }
+
+    const payload = {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      bio: user.bio,
+      profileImgUrl: user.profileImgUrl,
+      playedGames: user.playedGames,
+      backLogGames: user.backLogGames,
+      recommendedList: user.recommendedList
+    }
+
+    res.send(payload);
+  }
+)
+
+router.delete("/:id/backLogGames/",
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
+    const user = await User.findById(req.params.id);
+    let gameIdx = user.backLogGames.indexOf(req.body.gameId)
+
+    const updatedBackLogGames = user.backLogGames.slice(0, gameIdx).concat(user.backLogGames.slice(gameIdx));
+      
+    const payload = {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      bio: user.bio,
+      profileImgUrl: user.profileImgUrl,
+      backLogGames: updatedBackLogGames,
+      playedGames: user.playedGames,
+      recommendedList: user.recommendedList
+    };
+
+    res.send(payload);
+  }
+)
+
+router.delete("/:id/playedGames/",
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
+    const user = await User.findById(req.params.id);
+    let gameIdx = user.playedGames.indexOf(req.body.gameId)
+
+    const updatedPlayedGames = user.playedGames.slice(0, gameIdx).concat(user.playedGames.slice(gameIdx));
+
+    const payload = {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      bio: user.bio,
+      profileImgUrl: user.profileImgUrl,
+      backLogGames: user.backLogGames,
+      playedGames: updatedPlayedGames,
+      recommendedList: user.recommendedList
+    };
+
+    res.send(payload);
+  }
+)
+
+router.patch("/:id/recommendedList/",
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (user.recommendedList.indexOf(req.body.gameId) === -1) {
+      user.recommendedList.push(req.body.gameId)
+    } else {
+      return res.status(400).json({ msg: "Game is already on the list" });
+    }
+
+    const payload = {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      bio: user.bio,
+      profileImgUrl: user.profileImgUrl,
+      playedGames: user.playedGames,
+      backLogGames: user.backLogGames,
+      recommendedList: user.recommendedList
+    }
+
+    res.send(payload);
+  }
+)
+
+router.delete("/:id/backLogGames/",
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
+    const user = await User.findById(req.params.id);
+    let gameIdx = user.backLogGames.indexOf(req.body.gameId)
+
+    const updatedBackLogGames = user.backLogGames.slice(0, gameIdx).concat(user.backLogGames.slice(gameIdx));
+
+    const payload = {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      bio: user.bio,
+      profileImgUrl: user.profileImgUrl,
+      backLogGames: updatedBackLogGames,
+      playedGames: user.playedGames,
+      recommendedList: user.recommendedList
+    };
+
+    res.send(payload);
+  }
+)
 
 module.exports = router;
