@@ -27,6 +27,7 @@ export default function(state = initialState, action) {
         isSignedIn: true
       }
     case UPDATE_CURRENT_USER:
+      console.log(action.currentUser);
       return {
         ...state,
         isAuthenticated: !!action.currentUser,

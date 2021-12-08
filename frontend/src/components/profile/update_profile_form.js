@@ -36,12 +36,11 @@ class UpdateProfileForm extends React.Component {
       password: this.state.password,
       password2: this.state.password2
     };
-    
+
     this.props.updateBio(user, this.props.history); 
   }
 
   renderErrors() {
-    console.log(this.state.errors)
     return(
       <ul id="errors-section">
         {Object.keys(this.state.errors).map((error, i) => (
