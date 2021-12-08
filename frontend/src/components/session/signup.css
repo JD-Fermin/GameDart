@@ -13,7 +13,7 @@
   margin: 0 auto;
   width: 400px;
   background-color: rgb(61, 61, 61);
-  opacity: 95%;
+  /* opacity: 95%; */
 }
 
 .login-form input{
