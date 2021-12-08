@@ -4,7 +4,7 @@ import { fetchGame } from '../../actions/game_actions';
 
 const mapStateToProps = (state) => {
   return {
-    fetchedGames: state.game.game
+    fetchedGames: state.game
   };
 };
 

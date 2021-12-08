@@ -29,9 +29,9 @@ class GenreIndex extends React.Component {
     }
 
 
-    const genreGames = this.state.selectedGenre === "" ? null : this.props.genres[this.state.selectedGenre].map((game, i) => {
-            return <div key={i}>{game}</div>
-          }) 
+    // const genreGames = this.state.selectedGenre === "" ? null : this.props.genres[this.state.selectedGenre].map((game, i) => {
+    //         return <div key={i}>{game}</div>
+    //       }) 
     
     return (
       <div className="game-dart-container">

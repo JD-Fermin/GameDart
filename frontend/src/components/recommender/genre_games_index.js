@@ -15,21 +15,25 @@ class GenreGameIndex extends React.Component {
 
   render() {
     console.log(this.props);
-    if (Object.keys(this.props.fetchedGames).length === 0) {
+    if (!this.props.fetchedGames) {
       return null
     } 
 
     let games = Object.values(this.props.fetchedGames);
-
-
+    console.log('GAAAAMMMEMEMEESSSS', games);
     return(
       <div className="genre-game-index">
         {
           games.map(game => {
-            return <div className="genre-game">
+            if (game.id) {              
+              let gameId = parseInt(game.id.split('-').join(''));
+
+            return <div key={gameId} className="genre-game">
               <img src={game.image} />
+              <h1>{gameId}</h1>
               <h2>{game.name}</h2>
             </div>
+            }
           })
         }
       </div>

@@ -14,7 +14,7 @@ export default function(state = initialState, action) {
       nextState.seeds = action.gameSeeds;
       return nextState;
     case RECEIVE_GAME:
-      nextState.game[action.game.id] = action.game;
+      nextState[action.game.id] = action.game;
       return nextState;
     default:
       return state;

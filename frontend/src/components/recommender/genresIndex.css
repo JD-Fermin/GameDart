@@ -4,3 +4,15 @@
   background-position: bottom;
   height: 100vh;
 }
+
+.game-dart-container{
+  margin-top: 50px;
+}
+
+.genres-container{
+  margin-top: 50px;
+}
+
+.genre-item{
+  cursor: pointer;
+}
