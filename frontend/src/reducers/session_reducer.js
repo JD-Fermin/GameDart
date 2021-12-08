@@ -30,7 +30,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         isAuthenticated: !!action.currentUser,
-        user: action.currentUser
+        user: action.currentUser.data
       }
     default:
       return state;

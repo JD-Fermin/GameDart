@@ -121,15 +121,46 @@ router.patch('/:id',
       return res.status(400).json(errors);
     }
 
-  const user = await User.findById(req.params.id);
+  const user = await User.findByIdAndUpdate(req.params.id);
   
   user.name = req.body.name;
   user.email = req.body.email;
   user.bio = req.body.bio;
   user.profileImgUrl = req.body.profileImgUrl;
 
-  await user.save()
-  res.send(user);
+
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(user.password, salt, (err, hash) => {
+      if (err) throw err;
+      user.password = hash;
+      user.save()
+        .then(user => {
+          const payload = {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            bio: user.bio,
+            profileImgUrl: user.profileImgUrl
+          };
+          jwt.sign(
+            payload,
+            keys.secretOrKey,
+            { expiresIn: 3600 },
+            (err, token) => {
+              // res.json({
+              //   success: true,
+              //   token: "Bearer " + token
+              // });
+               res.send(user);
+            }
+          );
+        })
+        .catch(err => console.log(err))
+    });
+  });
+
+
+  // await user.save()
 })
 
 
