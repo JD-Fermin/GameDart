@@ -20,7 +20,7 @@ class GenreGameIndex extends React.Component {
     } 
 
     let games = Object.values(this.props.fetchedGames);
-    console.log('GAAAAMMMEMEMEESSSS', games);
+    // console.log('GAAAAMMMEMEMEESSSS', games);
     return(
       <div className="genre-game-index">
         {
