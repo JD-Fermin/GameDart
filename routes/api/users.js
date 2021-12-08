@@ -14,8 +14,23 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
   res.json({msg: 'Success'});
 })
 
-router.get("/test", (req, res) => {
-  res.json({ msg: "this is the users route" })
+router.get("/:id", (req, res) => {
+  const user = User.findById(req.params.id)
+    .then(user => {
+      if (user) {
+        let payload = {
+          id: user.id,
+          profileImgUrl: user.profileImgUrl,
+          name: user.name,
+          email: user.email,
+          bio: user.bio,
+          backLogGames: user.backLogGames,
+          playedGames: user.playedGames
+        }
+        res.send(payload)
+      }
+    })
+    .catch(errs => res.status(400).json(errs))
 });
 
 router.post("/register", (req, res) => {
