@@ -217,144 +217,150 @@ router.patch('/:id',
 router.patch("/:id/backLogGames/", 
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    const user = await User.findById(req.params.id);
-    if (user.backLogGames.indexOf(req.body.gameId) === -1) {
-      user.backLogGames.push(req.body.gameId)
-    } else {
-      return res.status(400).json( { msg: "Game is already on the list"});
-    } 
-    const payload = {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      bio: user.bio,
-      profileImgUrl: user.profileImgUrl,
-      backLogGames: user.backLogGames,
-      playedGames: user.playedGames,
-      recommendedList: user.recommendedList
-    }
-  
-    res.send(payload);
+    User.findByIdAndUpdate(
+      req.params.id,
+      { $addToSet: {
+        "backLogGames": req.body.gameId,
+        "recommendedList": { $each: req.body.similar_games }
+        }
+      },
+        { new: true }
+    )
+    .then (user => {
+      const payload = {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        bio: user.bio,
+        profileImgUrl: user.profileImgUrl,
+        backLogGames: user.backLogGames,
+        playedGames: user.playedGames,
+        recommendedList: user.recommendedList
+      }
+      res.send(payload);
+    })
+      .catch(errs => res.status(400).json(errs))
+    /* 
+        res.body.gamer_id -- adds to the backlog or played 
+        res.body.similar_games -- iterate through this --- add if its not in all the lists 
+    */
   }
 )
 
 router.patch("/:id/playedGames/",
   passport.authenticate("jwt", { session: false }),
-  async (req, res) => {
-    const user = await User.findById(req.params.id);
-    if (user.playedGames.indexOf(req.body.gameId) === -1) {
-      user.playedGames.push(req.body.gameId)
-    } else {
-      return res.status(400).json({ msg: "Game is already on the list" });
-    }
-
-    const payload = {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      bio: user.bio,
-      profileImgUrl: user.profileImgUrl,
-      playedGames: user.playedGames,
-      backLogGames: user.backLogGames,
-      recommendedList: user.recommendedList
-    }
-
-    res.send(payload);
+  (req, res) => {
+    User.findByIdAndUpdate(
+      req.params.id,
+      {
+        $addToSet: {
+          "playedGames": req.body.gameId,
+          "recommendedList": { $each: req.body.similar_games }
+        }
+      },
+      { new: true }
+    )
+    .then(user => {
+      const payload = {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        bio: user.bio,
+        profileImgUrl: user.profileImgUrl,
+        backLogGames: user.backLogGames,
+        playedGames: user.playedGames,
+        recommendedList: user.recommendedList
+      }
+      res.send(payload);
+    })
+    .catch(errs => res.status(400).json(errs))
   }
 )
+
 
 router.delete("/:id/backLogGames/",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    const user = await User.findById(req.params.id);
-    let gameIdx = user.backLogGames.indexOf(req.body.gameId)
-
-    const updatedBackLogGames = user.backLogGames.slice(0, gameIdx).concat(user.backLogGames.slice(gameIdx));
-      
-    const payload = {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      bio: user.bio,
-      profileImgUrl: user.profileImgUrl,
-      backLogGames: updatedBackLogGames,
-      playedGames: user.playedGames,
-      recommendedList: user.recommendedList
-    };
-
-    res.send(payload);
+    User.findByIdAndUpdate(
+      req.params.id,
+      {
+        $pull: {
+          "backLogGames": req.body.gameId
+        }
+      },
+      { new: true }
+    )
+    .then(user => {
+      const payload = {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        bio: user.bio,
+        profileImgUrl: user.profileImgUrl,
+        backLogGames: user.backLogGames,
+        playedGames: user.playedGames,
+        recommendedList: user.recommendedList     
+      }
+      res.send(payload);
+    })
+    .catch(errs => res.status(400).json(errs))
   }
 )
 
 router.delete("/:id/playedGames/",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    const user = await User.findById(req.params.id);
-    let gameIdx = user.playedGames.indexOf(req.body.gameId)
-
-    const updatedPlayedGames = user.playedGames.slice(0, gameIdx).concat(user.playedGames.slice(gameIdx));
-
-    const payload = {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      bio: user.bio,
-      profileImgUrl: user.profileImgUrl,
-      backLogGames: user.backLogGames,
-      playedGames: updatedPlayedGames,
-      recommendedList: user.recommendedList
-    };
-
-    res.send(payload);
+    User.findByIdAndUpdate(
+      req.params.id,
+      {
+        $pull: {
+          "playedGames": req.body.gameId
+        }
+      },
+      { new: true }
+    )
+    .then(user => {
+      const payload = {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        bio: user.bio,
+        profileImgUrl: user.profileImgUrl,
+        backLogGames: user.backLogGames,
+        playedGames: user.playedGames,
+        recommendedList: user.recommendedList
+      }
+      res.send(payload);
+    })
+    .catch(errs => res.status(400).json(errs))
   }
 )
 
-router.patch("/:id/recommendedList/",
-  passport.authenticate("jwt", { session: false }),
-  async (req, res) => {
-    const user = await User.findById(req.params.id);
-    if (user.recommendedList.indexOf(req.body.gameId) === -1) {
-      user.recommendedList.push(req.body.gameId)
-    } else {
-      return res.status(400).json({ msg: "Game is already on the list" });
-    }
-
-    const payload = {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      bio: user.bio,
-      profileImgUrl: user.profileImgUrl,
-      playedGames: user.playedGames,
-      backLogGames: user.backLogGames,
-      recommendedList: user.recommendedList
-    }
-
-    res.send(payload);
-  }
-)
-
-router.delete("/:id/backLogGames/",
-  passport.authenticate("jwt", { session: false }),
-  async (req, res) => {
-    const user = await User.findById(req.params.id);
-    let gameIdx = user.backLogGames.indexOf(req.body.gameId)
-
-    const updatedBackLogGames = user.backLogGames.slice(0, gameIdx).concat(user.backLogGames.slice(gameIdx));
-
-    const payload = {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      bio: user.bio,
-      profileImgUrl: user.profileImgUrl,
-      backLogGames: updatedBackLogGames,
-      playedGames: user.playedGames,
-      recommendedList: user.recommendedList
-    };
-
-    res.send(payload);
-  }
-)
+// router.delete("/:id/recommendedGames/",
+//   passport.authenticate("jwt", { session: false }),
+//   async (req, res) => {
+//     User.findByIdAndUpdate(
+//       req.params.id,
+//       { $addToSet: {
+//         "recommendedList": { $each: req.body.similar_games }
+//         }
+//       }
+//     )
+//     .then(user => {
+//       const payload = {
+//         id: user.id,
+//         name: user.name,
+//         email: user.email,
+//         bio: user.bio,
+//         profileImgUrl: user.profileImgUrl,
+//         backLogGames: user.backLogGames,
+//         playedGames: user.playedGames,
+//         recommendedList: user.recommendedList
+//       }
+//       res.send(payload);
+//     })
+//     .catch(errs => res.status(400).json(errs))
+//   }
+// )
 
 module.exports = router;
