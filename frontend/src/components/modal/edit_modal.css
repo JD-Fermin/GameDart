@@ -1,0 +1,55 @@
+input[type=radio]{
+  display: none;
+}
+
+input[type=radio]:checked + label{
+  border-color: red;
+  border-style: solid;
+  display: inline-block;
+}
+
+#avi-box{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-radio + label{
+  width: 75px;
+  height: 75px;
+  margin: 7px;
+  background-size: contain;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+
+#avi-akali + label{
+  background-image: url('https://i.imgur.com/gzZ9eH7.jpg');
+}
+
+#avi-akuma + label{
+  background-image: url('https://i.imgur.com/beL8b4v.jpg');
+}
+
+#avi-dmc + label{
+  background-image: url('https://i.imgur.com/xkeGEJT.png');
+}
+
+#avi-karin + label{
+  background-image: url('https://i.imgur.com/tIO5OeK.jpg');
+}
+
+#avi-keanu + label{
+  background-image: url('https://i.imgur.com/DaAEwvQ.jpg');
+}
+
+#avi-lara + label{
+  background-image: url('https://i.imgur.com/ktarjMI.jpg');
+}
+
+#avi-miku + label{
+  background-image: url('https://i.imgur.com/TgO2Eqb.jpg');
+}
+
+#avi-rindou + label{
+  background-image: url('https://i.imgur.com/Ta37y5u.png');
+}

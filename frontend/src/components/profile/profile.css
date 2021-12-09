@@ -1,0 +1,25 @@
+.profile-container{
+  background-image: url('https://i.imgur.com/JXxsooA.jpg');
+  background-size: cover;
+  background-position: bottom;
+  height: 100vh;
+}
+
+.profile-box {
+  background-color: rgb(61, 61, 61);
+  padding: 30px;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
+  /* width: 100%; */
+  top: 75px;
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-box > img{
+  width: 200px;
+}

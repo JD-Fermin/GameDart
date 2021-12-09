@@ -5,8 +5,28 @@ import './navbar.css'
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showSettings: false,
+    }
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+    this.openDropdown = this.openDropdown.bind(this);
+    this.closeDropdown = this.closeDropdown.bind(this);
+  }
+
+  openDropdown(type) {
+    // console.log('open dropdown')
+    switch(type){
+      case 'showSettings':
+        this.setState({showSettings: true})
+        break;
+
+    }
+  }
+
+  closeDropdown() {
+    // console.log('close dropdown')
+    this.setState({showSettings: false})
   }
 
   logoutUser(e) {
@@ -17,19 +37,28 @@ class NavBar extends React.Component {
   getLinks() {
       if (this.props.loggedIn) {
         return (
-            <div className="NavBar">
-                
-                <Link to={'/profile'}>Profile</Link>
-                
-                <a onClick={this.logoutUser}>Logout</a>
+          <div className="NavBar">
+            <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>Menu
+            {
+              this.state.showSettings ? (
+                <div className='dropdown-menu'>
+                  <Link to='/profile'>Profile</Link>
+                  <Link to='/recommender'>Dart It!</Link>
+                  <a onClick={this.logoutUser}>Logout</a>
+                </div>
+              ) : ( null )
+            }
             </div>
+          </div>
         );
       } else {
         return (
-            <div className="NavBar">
-                <Link to={'/signup'}>Signup</Link>
-                <Link to={'/login'}>Login</Link>
+          <div className="NavBar">
+            <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>Open GameDart
+              <Link to={'/signup'}>Signup</Link>
+              <Link to={'/login'}>Login</Link>
             </div>
+          </div>
         );
       }
   }

@@ -41,6 +41,10 @@ const UserSchema = new Schema({
     playedGames: {
         type: Array,
         default: []
+    },
+    recommendedList: {
+        type: Array,
+        default: []
     }
 
 });
