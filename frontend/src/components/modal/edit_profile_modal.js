@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from 'react-router';
+import './edit_modal.css'
 
 class EditProfileModal extends React.Component{
     constructor(props) {
@@ -10,6 +11,7 @@ class EditProfileModal extends React.Component{
         email: this.props.user.email,
         name: this.props.user.name,
         bio: this.props.user.bio,
+        profileImgUrl: this.props.user.profileImgUrl,
         password: '',
         password2: '',
         errors: {}
@@ -40,6 +42,7 @@ class EditProfileModal extends React.Component{
         email: this.state.email,
         name: this.state.name,
         bio: this.state.bio,
+        profileImgUrl: this.state.profileImgUrl,
         password: this.state.password,
         password2: this.state.password2
       };
@@ -101,6 +104,16 @@ class EditProfileModal extends React.Component{
                     placeholder="Confirm Password"
                     />
                 <br/>
+                <div id="avi-box">
+                  <input type="radio" className='image-radio' name='avi' id="avi-akali" checked={this.state.profileImgUrl === "https://i.imgur.com/gzZ9eH7.jpg"} value="https://i.imgur.com/gzZ9eH7.jpg" onChange={this.update('profileImgUrl')}/><label for="avi-akali"></label> 
+                  <input type="radio" className='image-radio' name='avi' id="avi-akuma" checked={this.state.profileImgUrl === "https://i.imgur.com/beL8b4v.jpg"} value="https://i.imgur.com/beL8b4v.jpg" onChange={this.update('profileImgUrl')}/><label for="avi-akuma"></label> 
+                  <input type="radio" className='image-radio' name='avi' id="avi-dmc" checked={this.state.profileImgUrl === "https://i.imgur.com/xkeGEJT.png"} value="https://i.imgur.com/xkeGEJT.png" onChange={this.update('profileImgUrl')}/><label for="avi-dmc"></label> 
+                  <input type="radio" className='image-radio' name='avi' id="avi-karin" checked={this.state.profileImgUrl === "https://i.imgur.com/tIO5OeK.jpg"} value="https://i.imgur.com/tIO5OeK.jpg" onChange={this.update('profileImgUrl')}/><label for="avi-karin"></label> 
+                  <input type="radio" className='image-radio' name='avi' id="avi-keanu" checked={this.state.profileImgUrl === "https://i.imgur.com/DaAEwvQ.jpg"} value="https://i.imgur.com/DaAEwvQ.jpg" onChange={this.update('profileImgUrl')}/><label for="avi-keanu"></label> 
+                  <input type="radio" className='image-radio' name='avi' id="avi-lara" checked={this.state.profileImgUrl === "https://i.imgur.com/ktarjMI.jpg"} value="https://i.imgur.com/ktarjMI.jpg" onChange={this.update('profileImgUrl')}/><label for="avi-lara"></label> 
+                  <input type="radio" className='image-radio' name='avi'  id="avi-miku" checked={this.state.profileImgUrl === "https://i.imgur.com/TgO2Eqb.jpg"} value="https://i.imgur.com/TgO2Eqb.jpg" onChange={this.update('profileImgUrl')}/><label for="avi-miku"></label> 
+                  <input type="radio" className='image-radio' name='avi' id="avi-rindou" checked={this.state.profileImgUrl === "https://i.imgur.com/Ta37y5u.png"} value="https://i.imgur.com/Ta37y5u.png" onChange={this.update('profileImgUrl')}/><label for="avi-rindou"></label> 
+                </div>
                 <input type="submit" value="Submit" id="submit-button"/>
               </div>
             </form>

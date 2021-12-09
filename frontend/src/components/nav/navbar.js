@@ -10,22 +10,24 @@ class NavBar extends React.Component {
     }
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
-    // this.openDropdown = this.openDropdown.bind(this);
+    this.openDropdown = this.openDropdown.bind(this);
+    this.closeDropdown = this.closeDropdown.bind(this);
   }
 
-  // openDropdown(type) {
-  //   switch(type){
-  //     case 'showSettings':
-  //       this.setState({showSettings: true})
-  //       break;
+  openDropdown(type) {
+    // console.log('open dropdown')
+    switch(type){
+      case 'showSettings':
+        this.setState({showSettings: true})
+        break;
 
-  //   }
-  // }
+    }
+  }
 
-  // closeDropdown() {
-  //   console.log("hit")
-  //   this.setState({showSettings: false})
-  // }
+  closeDropdown() {
+    // console.log('close dropdown')
+    this.setState({showSettings: false})
+  }
 
   logoutUser(e) {
       e.preventDefault();
@@ -36,22 +38,26 @@ class NavBar extends React.Component {
       if (this.props.loggedIn) {
         return (
           <div className="NavBar">
-            {/* <div id='user-menu' onClick={()=> this.openDropdown('showSettings')} onBlur={this.closeDropdown}>Test</div>
+            <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>Menu
             {
               this.state.showSettings ? (
-                <div className='dropdown-menu'> */}
-                  <Link to={`/profile`}>Profile</Link>
+                <div className='dropdown-menu'>
+                  <Link to='/profile'>Profile</Link>
+                  <Link to='/recommender'>Dart It!</Link>
                   <a onClick={this.logoutUser}>Logout</a>
-                {/* </div>
+                </div>
               ) : ( null )
-            } */}
+            }
+            </div>
           </div>
         );
       } else {
         return (
           <div className="NavBar">
-            <Link to={'/signup'}>Signup</Link>
-            <Link to={'/login'}>Login</Link>
+            <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>Open GameDart
+              <Link to={'/signup'}>Signup</Link>
+              <Link to={'/login'}>Login</Link>
+            </div>
           </div>
         );
       }

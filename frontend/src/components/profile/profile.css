@@ -19,3 +19,7 @@
   flex-direction: column;
   align-items: center;
 }
+
+.profile-box > img{
+  width: 200px;
+}
