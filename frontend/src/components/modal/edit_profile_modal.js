@@ -1,14 +1,15 @@
 import React from "react";
+import { withRouter } from 'react-router';
 
 class EditProfileModal extends React.Component{
     constructor(props) {
       super(props);
   
       this.state = {
-        id: this.props.currentUser.id,
-        email: this.props.currentUser.email,
-        name: this.props.currentUser.name,
-        bio: this.props.currentUser.bio,
+        id: this.props.user.id,
+        email: this.props.user.email,
+        name: this.props.user.name,
+        bio: this.props.user.bio,
         password: '',
         password2: '',
         errors: {}
@@ -16,15 +17,22 @@ class EditProfileModal extends React.Component{
   
       this.handleSubmit = this.handleSubmit.bind(this);
       this.renderErrors = this.renderErrors.bind(this);
-      this.clearedErrors = false;
     }
-  
+
+    componentWillReceiveProps(nextProps) {  
+      this.setState({errors: nextProps.errors})
+    }
+    
+    componentDidMount(){
+      this.props.fetchUser(this.props.user.id);
+    }
+    
     update(field) {
       return e => this.setState({
         [field]: e.currentTarget.value
       });
     }
-  
+    
     handleSubmit(e) {
       e.preventDefault();
       let user = {
@@ -36,12 +44,12 @@ class EditProfileModal extends React.Component{
         password2: this.state.password2
       };
       
-      this.props.updateBio(user, this.props.history);
-      console.log(this.state.errors);
-
-      if (this.state.errors === {}) {
-        this.props.closeModal();
-      }
+      this.props.updateBio(user)
+      .then(() => {
+        if (Object.keys(this.state.errors).length === 0) {
+          this.props.closeModal();
+        }
+      })
     }
   
     renderErrors() {
@@ -101,4 +109,4 @@ class EditProfileModal extends React.Component{
     }
   }
 
-export default EditProfileModal;
+export default withRouter(EditProfileModal);

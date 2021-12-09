@@ -1,7 +1,7 @@
 import { RECEIVE_CURRENT_USER, 
          RECEIVE_USER_LOGOUT, 
          RECEIVE_USER_SIGN_IN } from '../actions/session_actions';
-import { UPDATE_CURRENT_USER } from "../actions/user_actions";
+import { RECEIVE_USER_INFO, UPDATE_CURRENT_USER } from "../actions/user_actions";
 
 const initialState = {
   isAuthenticated: false,
@@ -16,6 +16,14 @@ export default function(state = initialState, action) {
         isAuthenticated: !!action.currentUser,
         user: action.currentUser
       };
+    // case RECEIVE_USER_INFO:
+    //   if (Object.keys(state.user).length > 0 && action.user.id === state.user.id){
+    //     return {
+    //       ...state,
+    //       isAuthenticated: !!action.user,
+    //       user: action.user.data
+    //     }
+    //   }
     case RECEIVE_USER_LOGOUT:
       return {
         isAuthenticated: false,
@@ -27,7 +35,6 @@ export default function(state = initialState, action) {
         isSignedIn: true
       }
     case UPDATE_CURRENT_USER:
-      console.log(action.currentUser);
       return {
         ...state,
         isAuthenticated: !!action.currentUser,

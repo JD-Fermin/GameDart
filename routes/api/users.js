@@ -161,6 +161,7 @@ router.patch('/:id',
         });
       })
     })
+  })
     // bcrypt.genSalt(10, (err, salt) => {
     //   bcrypt.hash(req.body.password, salt, (err, hash) => {
     //     if (err) throw err;
@@ -208,7 +209,6 @@ router.patch('/:id',
   
   
   //   // await user.save()
-  })
 
       // await user.save()
       // res.send(user);
