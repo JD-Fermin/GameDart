@@ -34,18 +34,12 @@ const UserSchema = new Schema({
         type: String,
         default: 'https://ubisoft-avatars.akamaized.net/46564bd6-ef0b-4b05-97ec-68d8473167c6/default_256_256.png'
     },
-    backLogGames: {
-        type: Array,
-        default: []
-    },
-    playedGames: {
-        type: Array,
-        default: []
-    },
-    recommendedList: {
-        type: Array,
-        default: []
-    }
+    backLogGames: [String],
+
+    playedGames: [String],
+    
+    recommendedList: [String]
+
 
 });
 
