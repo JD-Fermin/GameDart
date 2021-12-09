@@ -1,0 +1,324 @@
+.game-dart-container{
+  background-image: url('https://i.imgur.com/tjz5Xcd.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom;
+  height: 100vh;
+  top: 0;
+}
+
+.game-dart-container h1 {
+  font-size: 2.5em;
+  position: relative;
+  top: 48px;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  animation: fadeIn 1.2s;
+  -webkit-animation: fadeIn 1.2s;
+  -moz-animation: fadeIn 1.2s;
+  -o-animation: fadeIn 1.2s;
+  -ms-animation: fadeIn 1.2s;
+}
+
+.genres-container{ 
+  font-size: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  top: 45px;
+  position: relative;
+  margin: auto;
+  width: 92%;
+  animation: fadeIn 1.2s;
+  -webkit-animation: fadeIn 1.2s;
+  -moz-animation: fadeIn 1.2s;
+  -o-animation: fadeIn 1.2s;
+  -ms-animation: fadeIn 1.2s;
+  /* display: grid; */
+  /* margin-top: 100px; */
+}  
+
+.genre-item{
+  cursor: pointer;
+  outline: 1.8px solid rgb(54, 54, 56);
+  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+  outline-offset: -3.5px;
+  position: relative;
+  /* width: calc(100%/5 - 17px); */
+  height: 25.5vh;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(rgba(17, 17, 19, 0.445), rgba(10, 10, 1, 0.801));
+  transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
+  /* text-align: center; */
+  font-family: 'Rajdhani', sans-serif;
+  color: rgb(255, 255, 255);
+} 
+
+.genre-item h2 {
+  font-size: 1.2em;
+  text-align: center;
+  line-height: 25.5vh;
+}
+
+.genre-item:hover {
+  transform: scale(1.08);
+  /* background: linear-gradient(rgb(58, 60, 74), rgb(36, 38, 50)); */
+  cursor: pointer;
+  overflow:hidden;
+  color: rgba(214, 214, 214, 0.308);
+  outline: 1.9px solid rgb(224, 224, 224);
+}
+
+#Racing:hover {
+  background: url('https://media1.giphy.com/media/pBrRTmxSZEuAxsxr5S/giphy.gif?cid=ecf05e47uwzyn5qm7jgt8wayiy64kcr4guet2pmi03katozy&rid=giphy.gif&ct=g');
+  /* background-size: cover; */
+  background-origin: content-box;
+  max-width: 100%;
+  background-size: initial;
+  background-position: center;
+  /* max-height: 100%; */
+}
+
+#Action-Adventure:hover {
+  background: url('https://media0.giphy.com/media/CcVJXCyy8RGt5fuvfW/giphy.gif?cid=790b7611d3b1ee12634c97076e0cfad4e6e7b1d0016ba262&rid=giphy.gif&ct=g');
+  background-size: cover;
+  background-origin: content-box;
+  max-width: 100%;
+  background-position: top;
+  max-height: 100%;
+}
+
+#Strategy:hover {
+  background: url('https://media4.giphy.com/media/3oz8xOuH805dxrWXeM/giphy.gif?cid=ecf05e47vgw705y8irsyaee14w2kcongpjm6oxebzu2t1r9q&rid=giphy.gif&ct=g');
+  background-size: cover;
+  background-origin: content-box;
+  max-width: 100%;
+  background-position: bottom;
+  max-height: 100%;
+}
+
+#Sports:hover {
+  background: url('https://media0.giphy.com/media/LoNmHl0T86odok7WrT/giphy.gif?cid=790b76111b42557a523c1e43f17a14f3ccf507ce56e9774d&rid=giphy.gif&ct=g');
+  background-size: cover;
+  background-origin: content-box;
+  max-width: 100%;
+  background-position: bottom;
+  max-height: 100%;
+}
+
+#Role-Playing:hover {
+  background: url('https://media1.giphy.com/media/UvQ2W4OYg3EKahV5Xe/giphy.gif?cid=ecf05e47pij0xkjkzlnn0vraqienq28a222t8yalsjdhm7n8&rid=giphy.gif&ct=g');
+  background-size: cover;
+  background-origin: content-box;
+  max-width: 100%;
+  background-position: bottom;
+  max-height: 100%;
+}
+
+#Fighting:hover {
+  background: url('https://media4.giphy.com/media/3o7TKWMhT3zFroHiG4/giphy.gif?cid=ecf05e472nqgdoe01vflj6ff40i4pkzy3rk9pcv4l2sjst1r&rid=giphy.gif&ct=g');
+  background-size: cover;
+  background-origin: content-box;
+  max-width: 100%;
+  background-position: bottom;
+  max-height: 100%;
+}
+
+#Arcade:hover {
+  background: url('https://media4.giphy.com/media/jxJjBMvqEvMSA/giphy.gif?cid=ecf05e47e1b4c4i1iu1cf0ldk639uxnmx2ll3vb03vswibre&rid=giphy.gif&ct=g');
+  background-size: cover;
+  background-origin: content-box;
+  max-width: 100%;
+  background-position: center;
+  max-height: 100%;
+}
+
+#Shooter:hover {
+  background: url('https://media1.giphy.com/media/wZxBN1eczhF3F3KAhN/giphy.gif?cid=790b7611e1c40195029ac0bd4252b5e87b06405c3d5fbaec&rid=giphy.gif&ct=g');
+  background-size: cover;
+  background-origin: content-box;
+  max-width: 100%;
+  background-position: bottom;
+  max-height: 100%;
+}
+
+#Music:hover {
+  background: url('https://media4.giphy.com/media/EZzEowR6atOVO/giphy.gif?cid=ecf05e47qawj6wxrwzcjinlvomfnrhlqypvxnu30qye9zvpk&rid=giphy.gif&ct=g');
+  background-size: cover;
+  background-origin: content-box;
+  max-width: 100%;
+  background-position: bottom;
+  max-height: 100%;
+}
+
+#Party:hover {
+  background: url('https://media3.giphy.com/media/FD5yuIfD3OnzMqzwR0/giphy.gif?cid=ecf05e470cewad6v74jtqgoa17a6fqj5hihxq51s3wawyxbd&rid=giphy.gif&ct=g');
+  background-size: cover;
+  background-origin: content-box;
+  max-width: 100%;
+  background-position: bottom;
+  max-height: 100%;
+}
+
+#Simulation:hover {
+  background: url('https://media0.giphy.com/media/y3OGyysu7zaeKh8e3X/giphy.gif?cid=790b76115c07e619b13441ce9ee28adb1a31e6b3e9e252a1&rid=giphy.gif&ct=g');
+  background-size: cover;
+  background-origin: content-box;
+  max-width: 100%;
+  background-position: center;
+  max-height: 100%;
+}
+
+#Puzzle:hover {
+  background: url('https://media2.giphy.com/media/HyvnMHUEOSY8M/giphy.gif?cid=790b7611867a6424046f9ff4dc69ea504330b2aff0bd54ae&rid=giphy.gif&ct=g');
+  background-size: cover;
+  background-origin: content-box;
+  max-width: 100%;
+  background-position: center;
+  max-height: 100%;
+}
+
+.games-per-genre {
+  font-size: 30px;
+  top: 23px;
+  position: relative;
+  margin: auto;
+  width: 98%;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.genre-game {
+  width: 18.7vw;
+  /* height: auto; */
+  transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
+}
+
+.genre-game {
+  opacity: 0.6;
+}
+
+.genre-game:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.chosen.genre-game {
+  opacity: 1;
+}
+
+.genre-game > .select-game-image {
+  transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
+  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+}
+
+.chosen.genre-game > .select-game-image {
+  transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
+  transform: translate(0px, -30px);
+  border: 8px ridge rgb(136, 59, 236);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+}
+
+.select-game-image:hover img {
+  cursor: pointer;
+}
+
+/* .genre-game-index {
+  margin-top: 10vh;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+    animation: fadeIn linear 1.5s;
+  -webkit-animation: fadeIn linear 1.5s;
+  -moz-animation: fadeIn linear 1.5s;
+  -o-animation: fadeIn linear 1.5s;
+  -ms-animation: fadeIn linear 1.5s;
+} */
+
+input[type="checkbox"] {
+  display: none;
+}
+
+/* input[type="checkbox"]:checked {
+  display: block;
+  opacity: 1;
+} */
+
+.game-checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+.select-games-form {
+  margin-top: 7vh;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+    animation: fadeIn linear 1.2s;
+  -webkit-animation: fadeIn linear 1.2s;
+  -moz-animation: fadeIn linear 1.2s;
+  -o-animation: fadeIn linear 1.2s;
+  -ms-animation: fadeIn linear 1.2s;
+}
+
+.submit-select-button {
+  color: white;
+  position: absolute;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, 50%);
+  font-weight: 600;
+  border-style: none;
+}
+
+.submit-select-button input {
+  padding: 8px 30px;
+  border-radius: 8px;
+  border-color: transparent;
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+#game-dart-button {
+  background-color: rgb(212, 32, 32);
+  margin-bottom: -10px;
+  transition: all 0.4s ease 0s;
+  transform: translate(-50%, 20%);
+  position: fixed;
+  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+}
+
+#game-dart-button:hover {
+  cursor: pointer;
+  background-color: rgb(255, 59, 59);
+  transition: all 0.4s ease 0s;
+}
