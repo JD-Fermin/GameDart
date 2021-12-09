@@ -51,7 +51,7 @@ class ResultShow extends React.Component {
       }
     }
 
-    for (let i = 3; i < 8; i++) {
+    for (let i = 0; i < this.props.game.gameplay.length; i++) {
       let gameImg = this.props.game.gameplay[i];
 
       if (gameImg === undefined) {
