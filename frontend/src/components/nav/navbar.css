@@ -17,14 +17,35 @@
 
 .NavBar a {
   padding: 2px 20px;
-  margin: 0 max(0.4vw, 25px);
+  /* margin: 0 max(0.4vw, 25px); */
   color: white;
   text-decoration: none;
-  border-radius: 5px;
-  background-color: black;
+  /* border-radius: 5px; */
+  width: 100%;
+  /* background-color: black; */
   transition: 0.3s;
+  font-size: 30px;
 }
 
 .NavBar a:hover{
   background-color: rgb(109, 109, 109);
+}
+
+
+.dropdown-menu {
+  top: 40px;
+  right: 20px;
+  background-color: rgb(61, 61, 61);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  transition: 0.9s;
+}
+
+#user-menu {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
 }
