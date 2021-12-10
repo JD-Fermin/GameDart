@@ -5,6 +5,7 @@ import './main_page.css'
 class MainPage extends React.Component {
 
   render() {
+    document.body.style.backgroundImage = '';
     return (
       <div className="splash-component">
         <div className="splash-title">

@@ -55,8 +55,14 @@ class NavBar extends React.Component {
         return (
           <div className="NavBar">
             <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>Open GameDart
-              <Link to={'/signup'}>Signup</Link>
-              <Link to={'/login'}>Login</Link>
+            {
+              this.state.showSettings ? (
+                <div className='dropdown-menu'>
+                  <Link to={'/signup'}>Signup</Link>
+                  <Link to={'/login'}>Login</Link>
+                </div>
+              ) : ( null )
+            }
             </div>
           </div>
         );
