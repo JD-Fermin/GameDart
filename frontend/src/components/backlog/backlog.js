@@ -7,6 +7,7 @@ class BackLog extends React.Component {
 
     this.handlePlayed = this.handlePlayed.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
+    this.handleBack = this.handleBack.bind(this);
   }
 
   componentDidMount() {
@@ -40,6 +41,22 @@ class BackLog extends React.Component {
     this.props.delete(payload)
   }
 
+  handleBack(game) {
+    const payload = {
+      gameId: game.id,
+      id: this.props.currentId,
+      name: game.name,
+      image: game.image
+    };
+
+    // if (this.props.game.similar_games) {
+    //   for (let i = 0; i < this.props.game.similar_games.length; i++) {
+    //     payload.similar_games.push(`3030-${this.props.game.similar_games[i].id}`)
+    //   }
+    // }   
+    this.props.setBackLog(payload);
+    this.props.deletePlayed(payload);
+  }
 
   render() {
     if (!this.props.user) {
@@ -48,10 +65,11 @@ class BackLog extends React.Component {
 
     return (
       <div className="selected-games-container">
-        <div className="backlog-container">
-          {this.props.user.backLogGames.length === 0 ? <div><h2>There are no games yet!</h2><img src="https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png" /></div> :
+        {this.props.user.backLogGames.length === 0 && this.props.user.playedGames.length === 0 ? <div><h2>There are no games yet!</h2><img src="https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png" /></div> : null}
 
-            this.props.user.backLogGames.map((game, i) => {
+        {this.props.user.backLogGames.length === 0 ? null :
+          <div className="backlog-container">
+            {this.props.user.backLogGames.map((game, i) => {
 
               return (
                 <div key={i} className="backlogGame-item">
@@ -63,26 +81,27 @@ class BackLog extends React.Component {
                   </div>
                 </div>
               )
-            })
-          }
-        </div>
-        <div className="played-games-container">
-          {this.props.user.playedGames.length === 0 ? <div><h2>There are no games yet!</h2><img src="https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png" /></div> :
+            })}
+          </div>
+        }
 
-            this.props.user.playedGames.map((game, i) => {
+
+        {this.props.user.playedGames.length === 0 ? null :
+          <div className="played-games-container">
+            {this.props.user.playedGames.map((game, i) => {
 
               return (
                 <div key={i} className="backlogGame-item">
                   <img src={game.image} />
                   {game.name}
                   <div>
-                    <button disabled={true}>Game Played</button>
+                    <button onClick={() => this.handleBack(game)}>Remove from Games Played</button>
                   </div>
                 </div>
               )
-            })
-          }
-        </div>
+            })}
+          </div>
+        }
       </div>
     )
   }

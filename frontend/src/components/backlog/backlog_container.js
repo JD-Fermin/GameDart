@@ -3,6 +3,8 @@ import {
   updatePlayedGames, 
   deleteBackLogGames,
   fetchUserInfo,
+  updateBackLogGames,
+  deletePlayedGames
 } from "../../actions/user_actions";
 import { connect } from "react-redux";
 
@@ -18,7 +20,9 @@ const mDTP = (dispatch) => {
   return {
     fetch: userId => dispatch(fetchUserInfo(userId)),
     delete: payload => dispatch(deleteBackLogGames(payload)),
-    setPlayed: payload => dispatch(updatePlayedGames(payload))
+    setPlayed: payload => dispatch(updatePlayedGames(payload)),
+    setBackLog: payload => dispatch(updateBackLogGames(payload)),
+    deletePlayed: payload => dispatch(deletePlayedGames(payload))
     // fetchGame: () => dispatch
   }
 }
