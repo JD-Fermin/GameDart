@@ -107,7 +107,6 @@ class BackLog extends React.Component {
         }
       <div id="thats-exactly-right">thats exactly right</div>
       </div>
-    </div>
     ) 
   }
 }
