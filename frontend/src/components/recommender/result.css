@@ -1,7 +1,24 @@
-.result-show-container {
-  background-image: url('https://i.imgur.com/eBPL6Bz.jpg');
+body {
   background-size: cover;
-  height: 100vh;
+  background-attachment: fixed;
+  transition: 0.6s;
+}
+
+.result-show-container {
+  padding-top: 40px;
+}
+
+.add-to-playlist {
+  position: absolute;
+  /* top: -10px; */
+  background-color: green;
+  border-color: transparent;
+  color: white;
+  transition: 0.2s;
+}
+
+.add-to-playlist:hover{
+  background-color: rgb(1, 75, 1);
 }
 
 .gameplay-images {
@@ -22,7 +39,7 @@
 }
 
 #highlight:hover{
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 #game-info-container {
@@ -35,11 +52,23 @@
 
 #game-cover{
   position: absolute;
-  width: 300px;
+  width: 16vw;
+  min-width: 150px;
   right: 5%;
-  top: 400px;
+  top: 40vh;
+  /* top: 400px; */
   box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
   z-index: 2;
+}
+
+#game-cover button {
+  margin: 10px 0 10px;
+  padding: 10px 0 10px;
+  width: 100%;
+}
+
+#game-cover img{
+  width: 100%;
 }
 
 .carousel-slider {

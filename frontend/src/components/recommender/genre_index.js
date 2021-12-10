@@ -30,6 +30,8 @@ class GenreIndex extends React.Component {
       return null;
     }
 
+    document.body.style.backgroundImage = "url('https://i.imgur.com/tjz5Xcd.jpeg')";
+
 
     const genreGames = this.state.selectedGenre === "" ? null : this.props.genres[this.state.selectedGenre].map((game, i) => {
             return <div key={i}>{game}</div>

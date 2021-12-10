@@ -1,9 +1,4 @@
 .game-dart-container{
-  background-image: url('https://i.imgur.com/tjz5Xcd.jpeg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: bottom;
   height: 100vh;
   top: 0;
 }

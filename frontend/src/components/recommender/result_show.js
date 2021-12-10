@@ -18,9 +18,8 @@ class ResultShow extends React.Component {
   }
 
   render() {
-    // console.log(this.props.game.image);
-    console.log(this.props);
-
+    document.body.style.backgroundImage = "url('https://i.imgur.com/eBPL6Bz.jpg')";
+    
     if (!this.props.game) {
       return null;
     }
@@ -63,6 +62,25 @@ class ResultShow extends React.Component {
       gameplay.push(gameImg.original);
     }
 
+
+    let gallery;
+    if (gameplay.length !== 0){
+      gallery = (
+        <div className="gameplay-images">
+          <div id='highlight' onClick={this.props.openModal}></div>
+          <Carousel autoPlay={true} centerMode={true} showThumbs={false} infiniteLoop={true}>
+            {
+              gameplay.map(gameImg => {
+                return <div>
+                  <img src={gameImg} />
+                </div>
+              })
+            }
+          </Carousel>
+        </div>
+      )
+    }
+
     // for (let i = 0; i < this.props.game.videos.length; i++) {
     //   let videos = this.props.game.videos;
 
@@ -77,25 +95,17 @@ class ResultShow extends React.Component {
 
 
     // console.log("images", video);
+    // console.log('resultshowpage')
+    // console.log(this.props)
 
     return (
       <div className="result-show-container">
-
-        <div className="gameplay-images">
-          <div id='highlight'></div>
-          <Carousel autoPlay={true} centerMode={true} showThumbs={false} infiniteLoop={true}>
-            {
-              gameplay.map(gameImg => {
-                return <div>
-                  <img src={gameImg} />
-                </div>
-              })
-            }
-          </Carousel>
-        </div>
-        <img id='game-cover' src={this.props.game.image} />
-        <button className="add-to-playlist">Add to Playlist</button>
+        {gallery}
         <div id='game-info-container'>
+          <div id="game-cover">
+            <img src={this.props.game.image} />
+            <button className="add-to-playlist">Add to Playlist</button>
+          </div>
           <h1 id='game-name'>{this.props.game.name}</h1>
           <h2 id='general-info'>{genres} | {publisher} | {platforms} | {originalRelease}</h2>
           <h3><a href={this.props.game.reviews}>Reviews</a> | <a href={this.props.game.linkToSite}>Visit on Giant Bomb</a></h3>
