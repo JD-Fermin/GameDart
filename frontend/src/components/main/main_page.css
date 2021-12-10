@@ -16,22 +16,34 @@
   align-items: center;
 }
 
-.splash-container h3{
-  /* position: absolute; */
+.splash-container h3 {
+  position: relative;
   margin-left: 14px;
   font-size: max(20px, 2vw);
-  text-shadow: 0 0 15px black;
+  bottom: 19px;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.582);
 }
 
 .splash-container img{
   /* height: 300px; */
-  height: max(300px, 2vw);
+  height: max(450px, 2vw);
 }
 
 .splash-desc {
+  position: relative;
+  top: 20px;
   margin: 0 10vw;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  font-size: 19px;
+  margin-bottom: 100px;
+}
+
+.splash-desc h3 {
+  padding: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 34px;
 }
 
 .splash-desc > div {

@@ -11,7 +11,7 @@
 .game-dart-container h1 {
   font-size: 2.5em;
   position: relative;
-  top: 48px;
+  top: 45px;
   text-align: center;
   font-family: 'Rajdhani', sans-serif;
   animation: fadeIn 1.2s;
@@ -26,7 +26,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
-  top: 45px;
+  top: 43px;
   position: relative;
   margin: auto;
   width: 92%;
@@ -224,7 +224,7 @@
 }
 
 .genre-game:hover {
-  transform: scale(1.08);
+  /* transform: scale(1.08); */
   opacity: 1;
 }
 
@@ -234,21 +234,32 @@
 
 .genre-game > .select-game-image {
   transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
-  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
 }
 
-.chosen.genre-game > .select-game-image {
+.chosen.genre-game > .select-game-image img {
   transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
   transform: translate(0px, -30px);
   border: 8px ridge rgb(136, 59, 236);
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+}
+
+/* .chose.genre-game > .select-game-image img { */
+  /* border: 8px ridge rgb(136, 59, 236);
+} */
+
+.select-game-image img {
   box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+  transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
 }
 
 .select-game-image:hover img {
+  transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
+  transform: translate(0px, -30px);
   cursor: pointer;
+  transform: scale(1.08);
+  opacity: 1;
 }
 
 /* .genre-game-index {
@@ -309,7 +320,7 @@ input[type="checkbox"] {
 }
 
 #game-dart-button {
-  background-color: rgb(212, 32, 32);
+  background-color: rgb(230, 50, 50);
   margin-bottom: -10px;
   transition: all 0.4s ease 0s;
   transform: translate(-50%, 20%);
@@ -319,6 +330,34 @@ input[type="checkbox"] {
 
 #game-dart-button:hover {
   cursor: pointer;
-  background-color: rgb(255, 59, 59);
+  background-color: rgb(248, 72, 72);
   transition: all 0.4s ease 0s;
+}
+
+#back-to-genres {
+  margin-left: 25px;
+  margin-bottom: -30px;
+  position: relative;
+  bottom: 21px;
+  display: flex;
+}
+
+#back-to-genres-button {
+  cursor: pointer;
+  font-size: 25px;
+  color:rgba(126, 124, 124, 0.432);
+  transition: all 0.4s ease 0s;
+}
+
+#back-to-genres-button:hover {
+  cursor: pointer;
+  transform: scale(1.4);
+  color:rgb(218, 218, 218);
+}
+
+#return-to-genres-text {
+  position: relative;
+  bottom: 7px;
+  font-size: 25px;
+  color:rgb(128, 128, 128)
 }

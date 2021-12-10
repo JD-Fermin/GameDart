@@ -7,8 +7,12 @@ class GenreIndex extends React.Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this);
+    this.returnToGenres = this.returnToGenres.bind(this);
+    this.revealReturnText = this.revealReturnText.bind(this);
+    this.hideReturnText = this.hideReturnText.bind(this);
 
     this.state = {
+      hideText: true,
       changeSection: false,
       selectedGenre: ""
     }
@@ -22,6 +26,25 @@ class GenreIndex extends React.Component {
     this.setState({
       changeSection: true,
       selectedGenre: e.target.innerText
+    })
+  }
+
+  returnToGenres(e) {
+    this.setState({
+      changeSection: false,
+      selectedGenre: ''
+    })
+  }
+
+  revealReturnText(e) {
+    this.setState({
+      hideText: false
+    })
+  }
+
+  hideReturnText(e) {
+    this.setState({
+      hideText: true
     })
   }
 
@@ -52,6 +75,8 @@ class GenreIndex extends React.Component {
 
         {this.state.changeSection === true ?   
         <div className="games-per-genre">
+          <div id="back-to-genres"><span id="back-to-genres-button" className="material-icons left-arrow" onClick={this.returnToGenres} onMouseEnter={(e) => this.revealReturnText} onMouseLeave={(e) => this.hideReturnText}>arrow_back_ios</span>
+            { this.state.hideText === false ? <p id="return-to-genres-text">return to genres</p> : '' } </div>
           {/* <h2>{this.state.selectedGenre}</h2> */}
             <GenreGameIndexContainer games={this.props.genres[this.state.selectedGenre]} />
         </div> : null}

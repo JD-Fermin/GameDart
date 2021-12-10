@@ -4,14 +4,14 @@ import './result.css';
 class ResultShow extends React.Component {
   constructor(props) {
     super(props)
-    this.handleButton = this.handleButton.bind(this);
+    this.addToBacklog = this.addToBacklog.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchGame();
   }
 
-  handleButton(e) {
+  addToBacklog(e) {
 
   }
 
@@ -33,32 +33,38 @@ class ResultShow extends React.Component {
     !this.props.game.original_release_date ? originalRelease = 'N/A' : originalRelease = this.props.game.original_release_date.split('-')[0];
     !this.props.game.publisher ? publisher = 'N/A' : publisher = this.props.game.publisher;
 
-    for (let i = 0; i < this.props.game.platforms.length; i++) {
-      let platform = this.props.game.platforms[i];
-      if (i + 1 === this.props.game.platforms.length) {
-        platforms += platform.name;
-      } else {
-        platforms += platform.name + ', ';
+    if (this.props.game.platforms) {
+      for (let i = 0; i < this.props.game.platforms.length; i++) {
+        let platform = this.props.game.platforms[i];
+        if (i + 1 === this.props.game.platforms.length) {
+          platforms += platform.name;
+        } else {
+          platforms += platform.name + ', ';
+        }
       }
     }
 
-    for (let i = 0; i < this.props.game.genres.length; i++) {
-      let genre = this.props.game.genres[i];
-      if (i + 1 === this.props.game.genres.length) {
-        genres += genre.name;
-      } else {
-        genres += genre.name + ', ';
+    if (this.props.game.genres) {
+      for (let i = 0; i < this.props.game.genres.length; i++) {
+        let genre = this.props.game.genres[i];
+        if (i + 1 === this.props.game.genres.length) {
+          genres += genre.name;
+        } else {
+          genres += genre.name + ', ';
+        }
       }
     }
+    
+    if (this.props.game,gameplay) {
+      for (let i = 0; i < this.props.game.gameplay.length; i++) {
+        let gameImg = this.props.game.gameplay[i];
 
-    for (let i = 0; i < this.props.game.gameplay.length; i++) {
-      let gameImg = this.props.game.gameplay[i];
-
-      if (gameImg === undefined) {
-        break;
-      }
+        if (gameImg === undefined) {
+          break;
+        }
       
-      gameplay.push(gameImg.original);
+        gameplay.push(gameImg.original);
+      }
     }
 
     // for (let i = 0; i < this.props.game.videos.length; i++) {
@@ -91,7 +97,7 @@ class ResultShow extends React.Component {
             })
           }
         </div>
-          <button className="add-to-playlist">Add to Playlist</button>
+          <button className="add-to-playlist" onClick={this.addToBacklog}>Add to Playlist</button>
       </div>
     )
   }

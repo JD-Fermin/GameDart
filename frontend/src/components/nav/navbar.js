@@ -20,7 +20,8 @@ class NavBar extends React.Component {
       case 'showSettings':
         this.setState({showSettings: true})
         break;
-
+      default:
+        return
     }
   }
 
@@ -43,7 +44,8 @@ class NavBar extends React.Component {
               this.state.showSettings ? (
                 <div className='dropdown-menu'>
                   <Link to='/profile'>Profile</Link>
-                  <Link to='/gamedartit'>Dart It!</Link>
+                  <Link to='/gamedartstart'>Dart It!</Link>
+                  <Link to='/developers'>Developers</Link>
                   <a onClick={this.logoutUser}>Logout</a>
                 </div>
               ) : ( null )
@@ -54,7 +56,7 @@ class NavBar extends React.Component {
       } else {
         return (
           <div className="NavBar">
-            <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>Open GameDart
+            <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>
               <Link to={'/signup'}>Signup</Link>
               <Link to={'/login'}>Login</Link>
             </div>
