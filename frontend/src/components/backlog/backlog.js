@@ -62,7 +62,7 @@ class BackLog extends React.Component {
     if (!this.props.user) {
       return null;
     }
-
+    document.body.style.backgroundImage = "url('https://i.imgur.com/JctqNaX.jpg')";
     return (
       <div className="selected-games-container">
         {this.props.user.backLogGames.length === 0 && this.props.user.playedGames.length === 0 ? <div><h2>There are no games yet!</h2><img src="https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png" /></div> : null}
@@ -75,13 +75,13 @@ class BackLog extends React.Component {
               return (
                 <div key={i} className="backlogGame-item">
                   <div className="backlogGame-options">
-                  <div className="backlogGame-title">{ game.name }</div>
-                   <div className="backlogGame-buttons">
-                    <button onClick={() => this.handlePlayed(game)}>Add to Games Played</button>
-                    <button onClick={() => this.handleRemove(game.id)}>Remove Game</button>
-                  </div>
-                 </div>             
-                 <img src={game.image} />
+                    <div className="backlogGame-title">{ game.name }</div>
+                    <div className="backlogGame-buttons">
+                      <button onClick={() => this.handlePlayed(game)}>Add to Games Played</button>
+                      <button onClick={() => this.handleRemove(game.id)}>Remove Game</button>
+                    </div>
+                  </div>             
+                  <img src={game.image} />
                 </div>
               )
             })}
@@ -95,11 +95,13 @@ class BackLog extends React.Component {
 
               return (
                 <div key={i} className="backlogGame-item">
-                  <img src={game.image} />
-                  {game.name}
-                  <div>
-                    <button onClick={() => this.handleBack(game)}>Remove from Games Played</button>
+                  <div className="backlogGame-options">
+                    <div className="backlogGame-title">{ game.name }</div>
+                    <div className="backlogGame-buttons">
+                      <button onClick={() => this.handleBack(game)}>Remove from Games Played</button>
+                    </div>
                   </div>
+                  <img src={game.image} />
                 </div>
               )
             })}

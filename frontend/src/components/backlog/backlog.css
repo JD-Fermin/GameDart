@@ -1,27 +1,24 @@
 .selected-games-container {
-  overflow-y: auto;
+  padding-top: 50px;
 }
 
-.backlog-container {
+.selected-games-container h1{
+  text-align: center;
+}
+
+.backlog-container, .played-games-container {
   display: flex;
   flex-direction: column;
-  grid-gap: 5%;
-  gap: 5%;
-  padding: 10px;
-  height: 100vh;
   margin: 0 auto;
   width: 658px;
-  /* padding: 10px; */
-  /* overflow: overlay; */
   padding-bottom: -26px;
 }
 
 .backlogGame-item {
   position: relative;
-  /* display: flex; */
   border-radius: 15px;
   padding: 117px;
-  /* font-size: 30px; */
+  margin: 10px;
   text-align: center;
   transition: 0.2s;
   border: 1px solid;
@@ -29,10 +26,7 @@
   flex-direction: row;
   justify-content: space-around;
   overflow: hidden;
-  /* height: 876px; */
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;
 }
 
 .backlogGame-item img {
@@ -44,13 +38,6 @@
   margin-left: -116px;
   opacity: 40%;
 }
-/* .backlogGame-item:hover{
-  cursor: pointer;
-  transition: 0.2s;
-  transform: translate(-5px, -5px);
-  box-shadow: 5px 5px gold;
-  
-}  */
 
 .backlogGame-title {
   width: 403px;
@@ -71,23 +58,14 @@
 }
 
 .backlogGame-options {
-  /* display: flex;
-  justify-content: center; */
   z-index: 2;
   position: relative;
   bottom: 24px;
   text-align: center;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* .backlogGame-buttons {
-  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.425) 0px 16px 10px -10px;
-} */
-
-
-.backlogGame-buttons button {
+.backlogGame-buttons button{
   border: none;
   background-color: rgb(230, 39, 39);
   color: white;
