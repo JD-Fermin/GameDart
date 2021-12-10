@@ -9,14 +9,20 @@
 .backlogGame-item{
   display:  flex;
   border-radius: 5%;
-  height: 215px;
-  width: 215px;
   padding: 10px;
   font-size: 30px;
   text-align: center;
   transition: 0.2s;
   background-color: fuchsia;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+.backlogGame-item > image {
+  width: 150px;
+  height: auto;
+}
+
 .backlogGame-item:hover{
   cursor: pointer;
   transition: 0.2s;

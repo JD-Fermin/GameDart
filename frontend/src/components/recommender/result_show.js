@@ -1,5 +1,6 @@
 import React from 'react';
 import './result.css';
+import { withRouter } from 'react-router-dom';
 
 class ResultShow extends React.Component {
   constructor(props) {
@@ -12,11 +13,27 @@ class ResultShow extends React.Component {
   }
 
   handleButton(e) {
-
+    const payload = {
+      gameId: this.props.game.id,
+      similar_games: [],
+      id: this.props.currentUserId,
+      name: this.props.game.name,
+      image: this.props.game.image
+    };
+  
+    if (this.props.game.similar_games) {
+      for (let i = 0; i < this.props.game.similar_games.length; i++) {
+        payload.similar_games.push(`3030-${this.props.game.similar_games[i].id}`)
+      }
+    }   
+    this.props.updateBackLogGames(payload)
+    this.props.history.push('/backlog')
+    
+  
   }
 
   render() {
-    // console.log(this.props.game.image);
+   
     console.log(this.props);
 
     if (!this.props.game) {
@@ -91,13 +108,13 @@ class ResultShow extends React.Component {
             })
           }
         </div>
-          <button className="add-to-playlist">Add to Playlist</button>
+          <button  onClick={this.handleButton} className="add-to-playlist">Add to Playlist</button>
       </div>
     )
   }
 }
 
-export default ResultShow;
+export default withRouter(ResultShow);
 
 
           // <video width="750" height="500" controls >

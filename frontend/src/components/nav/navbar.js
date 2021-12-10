@@ -44,6 +44,7 @@ class NavBar extends React.Component {
                 <div className='dropdown-menu'>
                   <Link to='/profile'>Profile</Link>
                   <Link to='/gamedartit'>Dart It!</Link>
+                  <Link to='/backlog'>Games You Will Never Play</Link>
                   <a onClick={this.logoutUser}>Logout</a>
                 </div>
               ) : ( null )
