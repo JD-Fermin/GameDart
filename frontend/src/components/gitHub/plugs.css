@@ -25,7 +25,7 @@
 }
 
 .the-gang img {
-  opacity: 0.75;
+  /* opacity: 0.75; */
   width: 20vw;
   margin: 5px;
   border-radius: 14px;

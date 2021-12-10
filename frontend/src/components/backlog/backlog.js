@@ -34,24 +34,31 @@ class BackLog extends React.Component {
     }
 
     return (
+      <div className="selected-games-container">
       <div className="backlog-container">
+        <h1>My Playlist</h1>
         {this.props.user.backLogGames.length === 0 ? <div><h2>There are no games yet!</h2><img src="https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png" /></div> :  
         
           this.props.user.backLogGames.map((game, i) => {
             
             return (
               <div key={i} className="backlogGame-item"> 
-                <img src={game.image} />
-                { game.name }
-                <div>
-                  <button onClick={this.handlePlayed}>Game Played</button>
-                  <button onClick={() => this.handleRemove(game.id)}>Remove Game</button>
+                <div className="backlogGame-options">
+                  <div className="backlogGame-title">{ game.name }</div>
+                  <div className="backlogGame-buttons">
+                    <button onClick={this.handlePlayed}>Game Played</button>
+                    <button onClick={() => this.handleRemove(game.id)}>Remove Game</button>
+                  </div>
                 </div>
-              </div> 
+                <img src={game.image} />
+              </div>
+               
             )
           })
         }
+      <div id="thats-exactly-right">thats exactly right</div>
       </div>
+    </div>
     ) 
   }
 }
