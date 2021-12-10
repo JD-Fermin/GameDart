@@ -1,0 +1,27 @@
+.backlog-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 5%;
+  padding: 10px;
+  height: 100vh;
+}
+
+.backlogGame-item{
+  display:  flex;
+  border-radius: 5%;
+  height: 215px;
+  width: 215px;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+  transition: 0.2s;
+  background-color: fuchsia;
+}
+.backlogGame-item:hover{
+  cursor: pointer;
+  transition: 0.2s;
+  transform: translate(-5px, -5px);
+  box-shadow: 5px 5px gold;
+  
+} 
+

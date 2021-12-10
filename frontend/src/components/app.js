@@ -12,6 +12,7 @@ import ResultShowContainer from './recommender/result_show_container';
 import './reset.css'
 import './app.css'
 import Modal from './modal/modal';
+import BacklogContainer from './backlog/backlog_container';
 
 const App = () => (
   <div>
@@ -25,6 +26,7 @@ const App = () => (
         <ProtectedRoute path="/gamedartit" component={GenreIndexContainer} />
         <ProtectedRoute path="/games/:gameId" component={ResultShowContainer} /> 
         <ProtectedRoute path="/profile/:id" component={ProfileContainer} />
+        <ProtectedRoute path="/backlog" component={BacklogContainer} />
       </Switch>
   </div>
 );
