@@ -12,6 +12,7 @@ class GameDartStart extends React.Component {
   }
 
   render() {
+    document.body.style.backgroundImage = "url('https://i.imgur.com/qSddrHK.jpeg')"
     return (
       <div className="game-dart-start-container">
         <div className="game-dart-info-container">
