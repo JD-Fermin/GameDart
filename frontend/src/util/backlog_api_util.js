@@ -6,7 +6,7 @@ export const updateBackLogGames = async (userData) => {
 }
 
 export const deleteBackLogGames = async (userData) => {
-  console.log(userData)
+  
   return axios.patch(`/api/users/${userData.id}/backLogGames/delete`, userData);
  
 }

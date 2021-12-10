@@ -42,12 +42,12 @@ const UserSchema = new Schema({
     playedGames: {
         type: Array,
         default: []
-    },
-
-    recommendedList: {
-        type: Array,
-        default: []
     }
+
+    // recommendedList: {
+    //     type: Array,
+    //     default: []
+    // }
 })
 
 const User = mongoose.model('users', UserSchema);
