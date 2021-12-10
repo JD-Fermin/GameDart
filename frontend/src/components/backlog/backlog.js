@@ -32,9 +32,11 @@ class BackLog extends React.Component {
     if (!this.props.user) {
       return null;
     }
+
     return (
       <div className="backlog-container">
-        {
+        {this.props.user.backLogGames.length === 0 ? <div><h2>There are no games yet!</h2><img src="https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png" /></div> :  
+        
           this.props.user.backLogGames.map((game, i) => {
             
             return (
