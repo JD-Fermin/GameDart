@@ -1,33 +1,109 @@
-.backlog-container{
-  display: grid;
-  grid-template-columns: auto auto auto;
+.selected-games-container {
+  overflow-y: auto;
+}
+
+.backlog-container {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 5%;
   gap: 5%;
   padding: 10px;
   height: 100vh;
+  margin: 0 auto;
+  width: 658px;
+  /* padding: 10px; */
+  /* overflow: overlay; */
+  padding-bottom: -26px;
 }
 
-.backlogGame-item{
-  display:  flex;
-  border-radius: 5%;
-  padding: 10px;
-  font-size: 30px;
+.backlogGame-item {
+  position: relative;
+  /* display: flex; */
+  border-radius: 15px;
+  padding: 117px;
+  /* font-size: 30px; */
   text-align: center;
   transition: 0.2s;
-  background-color: fuchsia;
-  flex-direction: column;
-  justify-content: space-between;
+  border: 1px solid;
+  background-color: black;
+  flex-direction: row;
+  justify-content: space-around;
+  overflow: hidden;
+  /* height: 876px; */
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.backlogGame-item > image {
-  width: 150px;
+.backlogGame-item img {
+  width: 638px;
   height: auto;
+  position: absolute;
+  z-index: 0;
+  margin-top: -388px;
+  margin-left: -116px;
+  opacity: 40%;
 }
-
-.backlogGame-item:hover{
+/* .backlogGame-item:hover{
   cursor: pointer;
   transition: 0.2s;
   transform: translate(-5px, -5px);
   box-shadow: 5px 5px gold;
   
-} 
+}  */
 
+.backlogGame-title {
+  width: 403px;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 24px;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.767);
+  position: relative;
+  bottom: 9px;
+  margin-bottom: -8px;
+}
+
+.backlog-container h1 {
+  text-align: center;
+  position: relative;
+  top: 40px;
+  margin-bottom: 15px;
+}
+
+.backlogGame-options {
+  /* display: flex;
+  justify-content: center; */
+  z-index: 2;
+  position: relative;
+  bottom: 24px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .backlogGame-buttons {
+  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.425) 0px 16px 10px -10px;
+} */
+
+
+.backlogGame-buttons button {
+  border: none;
+  background-color: rgb(230, 39, 39);
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0px 3px;
+}
+
+.backlogGame-buttons:hover button {
+  border: none;
+  /* background-color: rgb(233, 59, 59); */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#thats-exactly-right {
+  color: rgba(0, 0, 0, 0);
+}
