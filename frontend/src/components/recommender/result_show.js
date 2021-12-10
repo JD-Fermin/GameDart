@@ -1,5 +1,7 @@
 import React from 'react';
 import './result.css';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 class ResultShow extends React.Component {
   constructor(props) {
@@ -78,20 +80,27 @@ class ResultShow extends React.Component {
 
     return (
       <div className="result-show-container">
-        <img src={this.props.game.image} />
-        <h1>{this.props.game.name}</h1>
-        <h2>{genres} | {publisher} | {platforms} | {originalRelease}</h2>
-        <h3><a href={this.props.game.reviews}>Reviews</a> | <a href={this.props.game.linkToSite}>Visit on Giant Bomb</a></h3>
-        <span>{this.props.game.deck}</span>
 
         <div className="gameplay-images">
-          {
-            gameplay.map(gameImg => {
-              return <img src={gameImg} />
-            })
-          }
+          <div id='highlight'></div>
+          <Carousel autoPlay={true} centerMode={true} showThumbs={false} infiniteLoop={true}>
+            {
+              gameplay.map(gameImg => {
+                return <div>
+                  <img src={gameImg} />
+                </div>
+              })
+            }
+          </Carousel>
         </div>
-          <button className="add-to-playlist">Add to Playlist</button>
+        <img id='game-cover' src={this.props.game.image} />
+        <button className="add-to-playlist">Add to Playlist</button>
+        <div id='game-info-container'>
+          <h1 id='game-name'>{this.props.game.name}</h1>
+          <h2 id='general-info'>{genres} | {publisher} | {platforms} | {originalRelease}</h2>
+          <h3><a href={this.props.game.reviews}>Reviews</a> | <a href={this.props.game.linkToSite}>Visit on Giant Bomb</a></h3>
+          <span>{this.props.game.deck}</span>
+        </div>
       </div>
     )
   }

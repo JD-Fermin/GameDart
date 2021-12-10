@@ -23,3 +23,7 @@
 .profile-box > img{
   width: 200px;
 }
+
+#profile-username{
+  font-size: 32px;
+}
