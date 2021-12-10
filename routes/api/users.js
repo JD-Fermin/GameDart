@@ -163,56 +163,7 @@ router.patch('/:id',
       })
     })
   })
-    // bcrypt.genSalt(10, (err, salt) => {
-    //   bcrypt.hash(req.body.password, salt, (err, hash) => {
-    //     if (err) throw err;
-    //     const updatedUser = User.findByIdAndUpdate(req.params.id)
-    //     updatedUser.name = req.body.name;
-    //     updatedUser.email = req.body.email;
-    //     updatedUser.bio = req.body.bio;
-    //     updatedUser.profileImgUrl = req.body.profileImgUrl;
-    //     updatedUser.password = hash;
-    //     let payload =  {
-    //       name: updatedUser.name,
-    //       email: updatedUser.email,
-    //       bio: updatedUser.bio,
-    //       profileImgUrl: updatedUser.profileImgUrl
-    //     }
-    //     res.send(payload)
-    //   })
-    // })
-  //   const user = await User.findById(req.params.id);
   
-  //   user.name = req.body.name;
-  //   user.email = req.body.email;
-  //   user.bio = req.body.bio;
-  //   user.profileImgUrl = req.body.profileImgUrl;
-  
-  
-  //   bcrypt.genSalt(10, (err, salt) => {
-  //     bcrypt.hash(user.password, salt, (err, hash) => {
-  //       if (err) throw err;
-  //       user.password = hash;
-  //       user.save()
-  //         .then(user => {
-  //           const payload = {
-  //             id: user.id,
-  //             name: user.name,
-  //             email: user.email,
-  //             bio: user.bio,
-  //             profileImgUrl: user.profileImgUrl
-  //           };
-  //           res.send(user);
-  //         })
-  //         .catch(err => console.log(err))
-  //       })
-  //     });
-  
-  
-  //   // await user.save()
-
-      // await user.save()
-      // res.send(user);
 
 router.patch("/:id/backLogGames/", 
   passport.authenticate("jwt", { session: false }),
@@ -224,8 +175,8 @@ router.patch("/:id/backLogGames/",
           id: req.body.gameId,
           image: req.body.image,
           name: req.body.name
-        },
-        "recommendedList": { $each: req.body.similar_games }
+        }
+        // "recommendedList": { $each: req.body.similar_games }
         }
       },
         { new: true }
@@ -238,8 +189,8 @@ router.patch("/:id/backLogGames/",
         bio: user.bio,
         profileImgUrl: user.profileImgUrl,
         backLogGames: user.backLogGames,
-        playedGames: user.playedGames,
-        recommendedList: user.recommendedList
+        playedGames: user.playedGames
+        // recommendedList: user.recommendedList
       }
       res.send(payload);
     })
@@ -254,17 +205,23 @@ router.patch("/:id/backLogGames/",
 router.patch("/:id/playedGames/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    console.log("before", req.body)
     User.findByIdAndUpdate(
       req.params.id,
       {
         $addToSet: {
-          "playedGames": req.body.gameId,
-          "recommendedList": { $each: req.body.similar_games }
+          "playedGames": {
+            id: req.body.gameId,
+            image: req.body.image,
+            name: req.body.name
+          }
+          // "recommendedList": { $each: req.body.similar_games }
         }
       },
       { new: true }
     )
     .then(user => {
+      console.log("after", user)
       const payload = {
         id: user.id,
         name: user.name,
@@ -272,8 +229,8 @@ router.patch("/:id/playedGames/",
         bio: user.bio,
         profileImgUrl: user.profileImgUrl,
         backLogGames: user.backLogGames,
-        playedGames: user.playedGames,
-        recommendedList: user.recommendedList
+        playedGames: user.playedGames
+        // recommendedList: user.recommendedList
       }
       res.send(payload);
     })
@@ -282,10 +239,10 @@ router.patch("/:id/playedGames/",
 )
 
 
-router.patch("/:id/backLogGames/delete", 
+router.patch("/:id/backLogGames/delete", // delete route
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    console.log("before Update", req.body)
+    // console.log("before Update", req.body)
     User.findByIdAndUpdate(
       req.params.id,
       {
@@ -305,7 +262,7 @@ router.patch("/:id/backLogGames/delete",
         profileImgUrl: user.profileImgUrl,
         backLogGames: user.backLogGames,
         playedGames: user.playedGames,
-        recommendedList: user.recommendedList     
+        // recommendedList: user.recommendedList     
       }
       res.send(payload);
     })
@@ -313,14 +270,14 @@ router.patch("/:id/backLogGames/delete",
   }
 )
 
-router.delete("/:id/playedGames/",
+router.patch("/:id/playedGames/delete", // delete route
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     User.findByIdAndUpdate(
       req.params.id,
       {
         $pull: {
-          "playedGames": req.body.gameId
+          "playedGames": { id: req.body.gameId }
         }
       },
       { new: true }
@@ -334,7 +291,7 @@ router.delete("/:id/playedGames/",
         profileImgUrl: user.profileImgUrl,
         backLogGames: user.backLogGames,
         playedGames: user.playedGames,
-        recommendedList: user.recommendedList
+        // recommendedList: user.recommendedList
       }
       res.send(payload);
     })

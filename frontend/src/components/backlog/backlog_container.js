@@ -1,8 +1,8 @@
 import Backlog from "./backlog";
 import { 
-  updateBackLogGames, 
+  updatePlayedGames, 
   deleteBackLogGames,
-  fetchUserInfo 
+  fetchUserInfo,
 } from "../../actions/user_actions";
 import { connect } from "react-redux";
 
@@ -17,7 +17,8 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
   return {
     fetch: userId => dispatch(fetchUserInfo(userId)),
-    delete: user => dispatch(deleteBackLogGames(user)),
+    delete: payload => dispatch(deleteBackLogGames(payload)),
+    setPlayed: payload => dispatch(updatePlayedGames(payload))
     // fetchGame: () => dispatch
   }
 }
