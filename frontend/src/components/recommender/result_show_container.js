@@ -16,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    updateBackLogGames: (data) => dispatch(updateBackLogGames(data))
+    fetchGames: () => dispatch(fetchGame(ownProps.match.params.gameId)),
+    updateBackLogGames: (data) => dispatch(updateBackLogGames(data)),
     openModal: () => dispatch(openModal('gameCarousel'))
   };
 };

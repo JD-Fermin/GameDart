@@ -12,7 +12,7 @@ class ResultShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchGame();
+    this.props.fetchGames();
   }
 
   handleButton(e) {
@@ -123,16 +123,13 @@ class ResultShow extends React.Component {
         <div id='game-info-container'>
           <div id="game-cover">
             <img src={this.props.game.image} />
-            <button className="add-to-playlist">Add to Playlist</button>
+            <button onClick={this.handleButton} className="add-to-playlist">Add to Playlist</button>
           </div>
           <h1 id='game-name'>{this.props.game.name}</h1>
           <h2 id='general-info'>{genres} | {publisher} | {platforms} | {originalRelease}</h2>
           <h3><a href={this.props.game.reviews}>Reviews</a> | <a href={this.props.game.linkToSite}>Visit on Giant Bomb</a></h3>
           <span>{this.props.game.deck}</span>
         </div>
-
-          <button  onClick={this.handleButton} className="add-to-playlist">Add to Playlist</button>
-
       </div>
     )
   }
