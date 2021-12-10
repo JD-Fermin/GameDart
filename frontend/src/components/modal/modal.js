@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import EditProfileModalContainer from './edit_profile_modal_container';
 import './modal.css'
+import CarouselModal from './carousel_modal';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -12,6 +13,9 @@ function Modal({modal, closeModal}) {
   switch (modal) {
     case 'editProfile':
       component = <EditProfileModalContainer/>;
+      break;
+    case 'gameCarousel':
+      component = <CarouselModal/>;
       break;
     default:
       return null;
@@ -27,7 +31,8 @@ function Modal({modal, closeModal}) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.modal
+    modal: state.modal,
+    props: state.props
   };
 };
 

@@ -76,7 +76,7 @@ class GenreGameIndex extends React.Component {
     } 
     
     let games = [];  //Object.values(this.props.fetchedGames);  // need to refresh slice of state
-    console.log('fetched', this.props.fetchedGames)
+    // console.log('fetched', this.props.fetchedGames)
     
     for (let i = 0; i < this.props.games.length; i++) {
       if (this.props.fetchedGames[this.props.games[i]]) {
@@ -84,8 +84,8 @@ class GenreGameIndex extends React.Component {
       }
     }
     
-    console.log('this.props.games', this.props.games);
-    console.log('GAAAAMMMEMEMEESSSS', games);
+    // console.log('this.props.games', this.props.games);
+    // console.log('GAAAAMMMEMEMEESSSS', games);
     return(
       <div className="genre-game-index">
         <div className="select-games-form">

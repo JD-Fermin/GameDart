@@ -1,10 +1,12 @@
 import * as UserAPIUtil from '../util/user_api_util';
 import * as APIUtil from '../util/session_api_util';
+import * as BackLogGamesAPIUtil from '../util/backlog_api_util';
 
 
 export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
 export const UPDATE_CURRENT_USER = "UPDATE_CURRENT_USER";
 export const RECEIVE_USER_INFO = "RECEIVE_USER_INFO";
+export const RECEIVE_BACKLOG_GAMES = "RECEIVE_BACKLOG_GAMES"
 
 export const updateCurrentUser = currentUser => ({
   type: UPDATE_CURRENT_USER,
@@ -36,3 +38,21 @@ export const fetchUserInfo = userId => dispatch => (
     dispatch(receiveErrors(err.response.data))
   })
 )
+
+export const updateBackLogGames = user => dispatch => {
+  BackLogGamesAPIUtil.updateBackLogGames(user)
+    .then((res) => {
+      dispatch(updateCurrentUser(res))
+    }, err => {
+      dispatch(receiveErrors(err.response.data))
+    })
+}
+
+export const deleteBackLogGames = user => dispatch => {
+  BackLogGamesAPIUtil.deleteBackLogGames(user)
+    .then((res) => {
+      dispatch(updateCurrentUser(res))
+    }, err => {
+      dispatch(receiveErrors(err.response.data))
+    })
+}

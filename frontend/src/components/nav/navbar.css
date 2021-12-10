@@ -10,6 +10,7 @@
   box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
   padding-right: 20px;
   font-family: 'Rajdhani', sans-serif;
+  z-index: 3;
 }
 
 .NavBar button {

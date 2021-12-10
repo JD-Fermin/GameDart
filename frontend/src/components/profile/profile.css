@@ -1,7 +1,4 @@
 .profile-container{
-  background-image: url('https://i.imgur.com/JXxsooA.jpg');
-  background-size: cover;
-  background-position: bottom;
   height: 100vh;
 }
 
@@ -59,4 +56,9 @@
   cursor: pointer;
   background-color: rgb(255, 59, 59);
   transition: all 0.4s ease 0s;
+  width: 200px;
+}
+
+#profile-username{
+  font-size: 32px;
 }
