@@ -47,6 +47,8 @@ class Profile extends React.Component {
     // }
 
     render() {
+      document.body.style.backgroundImage = "url('https://i.imgur.com/JXxsooA.jpg')";
+
       if (!this.props.user) {
         return null;
       }
@@ -62,7 +64,7 @@ class Profile extends React.Component {
         <div className="profile-container">
           <div className="profile-box">
             <img src={this.props.user.profileImgUrl} alt="" />
-            <div>{this.props.user.name}</div>
+            <div id="profile-username">{this.props.user.name}</div>
             <div>{this.props.user.bio}</div>
             {editButton}
           </div>

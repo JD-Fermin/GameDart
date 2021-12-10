@@ -56,6 +56,8 @@ class SignupForm extends React.Component {
   }
 
   render() {
+
+    document.body.style.backgroundImage = "url('https://i.imgur.com/JXxsooA.jpg')";
     return (
       <div className="login-form-container">
         <div className="login-box">

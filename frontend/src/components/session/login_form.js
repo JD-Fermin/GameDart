@@ -41,6 +41,8 @@ class LoginForm extends React.Component {
   }
 
   renderErrors() {
+    document.body.style.backgroundImage = "url('https://i.imgur.com/JXxsooA.jpg')";
+
     return(
       <ul id="errors-section">
         {Object.keys(this.state.errors).map((error, i) => (

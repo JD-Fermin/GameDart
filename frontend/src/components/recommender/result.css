@@ -1,3 +1,82 @@
+body {
+  background-size: cover;
+  background-attachment: fixed;
+  transition: 0.6s;
+}
+
 .result-show-container {
-  background-image: url('https://i.imgur.com/eBPL6Bz.jpg');
+  padding-top: 40px;
+}
+
+.add-to-playlist {
+  position: absolute;
+  /* top: -10px; */
+  background-color: green;
+  border-color: transparent;
+  color: white;
+  transition: 0.2s;
+}
+
+.add-to-playlist:hover{
+  background-color: rgb(1, 75, 1);
+}
+
+.gameplay-images {
+  /* width: 100vw; */
+  /* height: 200px; */
+  box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
+  transition: 0.2s;
+}
+
+#highlight{
+  background-color: white;
+  height: 500px;
+  width: 100%;
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+  transition: 0.4s;
+}
+
+#highlight:hover{
+  opacity: 0.4;
+}
+
+#game-info-container {
+  background-color: rgb(61, 61, 61);
+  margin: 20px 5vw;
+  border-radius: 10px;
+  padding: 40px;
+  width: 70vw;
+}
+
+#game-cover{
+  position: absolute;
+  width: 16vw;
+  min-width: 150px;
+  right: 5%;
+  top: 40vh;
+  /* top: 400px; */
+  box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
+  z-index: 2;
+}
+
+#game-cover button {
+  margin: 10px 0 10px;
+  padding: 10px 0 10px;
+  width: 100%;
+}
+
+#game-cover img{
+  width: 100%;
+}
+
+.carousel-slider {
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.carousel .slide img{
+  width: auto !important;
+  height: 500px;
 }
