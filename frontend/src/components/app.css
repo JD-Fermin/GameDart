@@ -2,12 +2,13 @@ body {
   background-color: rgb(12, 12, 12);
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+  background-position: bottom;
 }
 
 .page-content{
   /* padding-top: 35px; */
 }
 
-.root{
+#root{
   top: 0;
 }
