@@ -1,8 +1,7 @@
 import { RECEIVE_GAME_SEEDS, RECEIVE_GAME } from "../actions/game_actions";
 
 const initialState = {
-  seeds: {},
-  game: {}
+  seeds: {}
 }
 
 export default function(state = initialState, action) {

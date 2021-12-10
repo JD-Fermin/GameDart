@@ -220,7 +220,11 @@ router.patch("/:id/backLogGames/",
     User.findByIdAndUpdate(
       req.params.id,
       { $addToSet: {
-        "backLogGames": req.body.gameId,
+        "backLogGames": { 
+          id: req.body.gameId,
+          image: req.body.image,
+          name: req.body.name
+        },
         "recommendedList": { $each: req.body.similar_games }
         }
       },
@@ -278,19 +282,21 @@ router.patch("/:id/playedGames/",
 )
 
 
-router.delete("/:id/backLogGames/",
+router.patch("/:id/backLogGames/delete", 
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
+    console.log("before Update", req.body)
     User.findByIdAndUpdate(
       req.params.id,
       {
         $pull: {
-          "backLogGames": req.body.gameId
+          "backLogGames": {id: req.body.gameId}
         }
       },
       { new: true }
     )
     .then(user => {
+      console.log("after update", user)
       const payload = {
         id: user.id,
         name: user.name,
