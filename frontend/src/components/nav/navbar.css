@@ -14,7 +14,7 @@
 }
 
 .NavBar button {
-  height: 20px;
+  /* height: 20px; */
 }
 
 .NavBar a {
@@ -25,7 +25,7 @@
   /* border-radius: 5px; */
   width: 100%;
   /* background-color: black; */
-  transition: 0.3s;
+  /* transition: 0.3s; */
   font-size: 24px;
 }
 
@@ -37,6 +37,7 @@
 .dropdown-menu {
   top: 40px;
   right: 20px;
+  width: 250px;
   background-color: rgb(61, 61, 61);
   position: absolute;
   display: flex;
