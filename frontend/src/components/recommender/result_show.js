@@ -8,7 +8,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 class ResultShow extends React.Component {
   constructor(props) {
     super(props)
-    this.addToBacklog = this.addToBacklog.bind(this);
+    this.handleButton = this.handleButton.bind(this);
   }
 
   componentDidMount() {
