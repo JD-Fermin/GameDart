@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import './main_page.css'
 
 class MainPage extends React.Component {
@@ -10,35 +9,35 @@ class MainPage extends React.Component {
       <div className="splash-component">
         <div className="splash-title">
           <div className="splash-container">
-            <img src="https://i.imgur.com/kucktM9.png"/>
-            <h3>Find the next game you may never play.</h3>
+            <img src="https://i.imgur.com/kucktM9.png" alt=""/>
+            <h3>Discover the next game you may never play.</h3>
           </div>
         </div>
 
         <div className="splash-desc">
           <div>
-            <h3>Discover new games to potentially never play.</h3>
+            <h3>Find a brand new video game to experience</h3>
             <div>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eros in cursus turpis massa tincidunt dui ut ornare. Erat velit scelerisque in dictum non consectetur. Dui ut ornare lectus sit amet est. Purus in massa tempor nec. Vitae suscipit tellus mauris a. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Mattis nunc sed blandit libero. Et malesuada fames ac turpis egestas integer. Cursus turpis massa tincidunt dui ut ornare lectus. Vitae et leo duis ut diam quam nulla. Eget dolor morbi non arcu risus quis varius quam quisque. Platea dictumst quisque sagittis purus sit amet. Rutrum quisque non tellus orci ac auctor. A scelerisque purus semper eget duis.
+              <p>There are countless video games out there, and figuring out what to play next can be very difficult.</p>
+              Take out the guess work by using our algorithm to find the next game for you!
             </div>
           </div>
           <div>
-            <h3>Get your backlog organized!</h3>
+            <h3>Create and organize your backlog</h3>
             <div>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eros in cursus turpis massa tincidunt dui ut ornare. Erat velit scelerisque in dictum non consectetur. Dui ut ornare lectus sit amet est. Purus in massa tempor nec. Vitae suscipit tellus mauris a. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Mattis nunc sed blandit libero. Et malesuada fames ac turpis egestas integer. Cursus turpis massa tincidunt dui ut ornare lectus. Vitae et leo duis ut diam quam nulla. Eget dolor morbi non arcu risus quis varius quam quisque. Platea dictumst quisque sagittis purus sit amet. Rutrum quisque non tellus orci ac auctor. A scelerisque purus semper eget duis.
+              With our convenient platform, you can keep track of all the games you've played and plan to play.
             </div>
           </div>
           <div>
-            <h3>Connect with other gamers.</h3>
+            <h3>Connect with other gamers</h3>
             <div>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eros in cursus turpis massa tincidunt dui ut ornare. Erat velit scelerisque in dictum non consectetur. Dui ut ornare lectus sit amet est. Purus in massa tempor nec. Vitae suscipit tellus mauris a. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Mattis nunc sed blandit libero. Et malesuada fames ac turpis egestas integer. Cursus turpis massa tincidunt dui ut ornare lectus. Vitae et leo duis ut diam quam nulla. Eget dolor morbi non arcu risus quis varius quam quisque. Platea dictumst quisque sagittis purus sit amet. Rutrum quisque non tellus orci ac auctor. A scelerisque purus semper eget duis.
+              Get a look at other gamer's playlists. See their games and get some suggestions based on their interests.
             </div>
           </div>
         </div>
-
-        <footer>
-          Made by Team Culture
-        </footer>
+        {/* <footer >
+          Made by Team Culture. Powered by Giant Bomb.
+        </footer> */}
       </div>
     );
   }

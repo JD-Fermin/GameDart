@@ -21,6 +21,11 @@ class GenreGameIndex extends React.Component {
   }
 
   handleClick() {
+    if (this.selected.length === 0) {
+      this.props.history.push(`/games/3030-5960`)
+      return
+    }
+
     let mostSimilar = [];
     let similarGames = [];
 
@@ -94,7 +99,7 @@ class GenreGameIndex extends React.Component {
           })
         }
         </div>
-        <div className="submit-select-button" onClick={this.handleClick}><input type="submit" value="Gamedart it!" id="game-dart-button"/></div>
+        <div className="submit-select-button" onClick={this.handleClick}><input type="submit" value="GameDart it!" id="game-dart-button"/></div>
       </div>
     )
   }

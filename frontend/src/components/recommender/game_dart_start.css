@@ -1,0 +1,92 @@
+.game-dart-start-container {
+  background-image: url('https://i.imgur.com/qSddrHK.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom;
+  height: 100vh;
+  top: 0;
+}
+
+.game-dart-info-container img {
+  height: max(300px, 2vw);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  margin-bottom: -30px;
+  animation: fadeIn 1.2s;
+  -webkit-animation: fadeIn 1.2s;
+  -moz-animation: fadeIn 1.2s;
+  -o-animation: fadeIn 1.2s;
+  -ms-animation: fadeIn 1.2s;
+}
+
+.game-dart-instructions {
+  background: rgb(61, 61, 61);
+  border-radius: 15px;
+  padding: 30px;
+  width: 70%;
+  text-align: center;
+  position: relative;
+  left: 15.2%;
+  animation: fadeIn 1.2s;
+  -webkit-animation: fadeIn 1.2s;
+  -moz-animation: fadeIn 1.2s;
+  -o-animation: fadeIn 1.2s;
+  -ms-animation: fadeIn 1.2s;
+  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+
+.game-dart-instructions h2 {
+  padding: 5px;
+  font-size: 20px;
+}
+
+.game-dart-instructions h3 {
+  padding: 10px;
+  font-size: 13px;
+}
+
+.game-dart-instructions input{
+  background-color: rgb(44, 44, 44);
+  width: 30%;
+  margin: 5px 0;
+  padding: 10px 10px;
+  font-size: larger;
+  border-radius: 8px;
+  border-color: transparent;
+  color: white;
+}
+
+.game-dart-instructions:hover input{
+  cursor: pointer;
+  background-color: rgb(255, 59, 59);
+  transition: all 0.4s ease 0s;
+}

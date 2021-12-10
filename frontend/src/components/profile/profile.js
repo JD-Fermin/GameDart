@@ -64,8 +64,8 @@ class Profile extends React.Component {
         <div className="profile-container">
           <div className="profile-box">
             <img src={this.props.user.profileImgUrl} alt="" />
-            <div id="profile-username">{this.props.user.name}</div>
-            <div>{this.props.user.bio}</div>
+            <h1>{this.props.user.name}</h1>
+            <h2>{this.props.user.bio}</h2>
             {editButton}
           </div>
         </div>

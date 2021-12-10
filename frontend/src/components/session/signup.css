@@ -27,10 +27,12 @@
   margin-top: 30px !important;
   background-color: rgb(230, 50, 50);
   font-weight: 600;
+  transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
 }
 
 #submit-button:hover {
   cursor: pointer;
+  background-color: rgb(248, 72, 72);
 }
 
 #errors-section {
