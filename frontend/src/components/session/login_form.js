@@ -13,6 +13,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -40,6 +41,13 @@ class LoginForm extends React.Component {
     this.props.login(user); 
   }
 
+  demoLogin() {
+    let user = {
+      email: "demo@user.com",
+      password: "password"
+    };
+    this.props.login(user); 
+  }
   renderErrors() {
     document.body.style.backgroundImage = "url('https://i.imgur.com/JXxsooA.jpg')";
 
@@ -77,6 +85,7 @@ class LoginForm extends React.Component {
               <input type="submit" value="Submit" id="submit-button"/>
             </div>
           </form>
+          <button id="demo-login-button" onClick={this.demoLogin}>Demo User</button>
         </div>
       </div>
     );
