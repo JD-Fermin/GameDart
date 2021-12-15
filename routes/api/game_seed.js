@@ -1,6 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
+const Review = require('../../models/Review');
+const User = require('../../models/User');
+const keys = require('../../config/keys');
+const jwt = require('jsonwebtoken');
+const validateReviewInput = require('../../validation/body');
+const passport = require('passport');
+
+
+
+
 
 router.get('/', (req, res) => {
   res.json({ 
@@ -39,5 +49,16 @@ router.get('/:id', (req, resp) => {
       resp.json(game)
     })
 });
+
+router.get("/:id/reviews", (req, res) => {
+  const reviews = Review.find(req.params.id)
+  .then(reviews => {
+    if (reviews) {
+      res.send(reviews)
+    }
+  })
+  .catch(errs => res.status(400).json(errs))
+})
+
 
 module.exports = router;
