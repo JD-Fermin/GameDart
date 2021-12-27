@@ -1,14 +1,48 @@
 .selected-games-container {
   padding-top: 50px;
+  animation: fadeIn 1.2s;
+  -webkit-animation: fadeIn 1.2s;
+  -moz-animation: fadeIn 1.2s;
+  -o-animation: fadeIn 1.2s;
+  -ms-animation: fadeIn 1.2s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 .selected-games-container h1{
   text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 40px;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.767);
 }
 
 .backlog-container, .played-games-container {
   display: flex;
   flex-direction: column;
+  top: 100px;
   margin: 0 auto;
   width: 658px;
   padding-bottom: -26px;
@@ -21,7 +55,7 @@
   margin: 10px;
   text-align: center;
   transition: 0.2s;
-  border: 1px solid;
+  border: 1.5px solid;
   background-color: black;
   flex-direction: row;
   justify-content: space-around;
@@ -36,14 +70,14 @@
   z-index: 0;
   margin-top: -388px;
   margin-left: -116px;
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .backlogGame-title {
   width: 403px;
   text-align: center;
   font-family: 'Rajdhani', sans-serif;
-  font-size: 24px;
+  font-size: 30px;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.767);
   position: relative;
   bottom: 9px;
@@ -53,14 +87,12 @@
 .backlog-container h1 {
   text-align: center;
   position: relative;
-  top: 40px;
-  margin-bottom: 15px;
 }
 
 .backlogGame-options {
   z-index: 2;
   position: relative;
-  bottom: 24px;
+  bottom: -9px;
   text-align: center;
   display: block;
 }
@@ -72,16 +104,29 @@
   border-radius: 5px;
   padding: 10px;
   margin: 0px 3px;
+  transition: all 0.4s ease 0s;
 }
 
-.backlogGame-buttons:hover button {
+.add-to-played:hover {
   border: none;
-  /* background-color: rgb(233, 59, 59); */
+  background-color: rgb(233, 59, 59);
   color: white;
   border-radius: 5px;
   cursor: pointer;
 }
 
-#thats-exactly-right {
-  color: rgba(0, 0, 0, 0);
+.remove-game:hover {
+  border: none;
+  background-color: rgb(233, 59, 59);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-from-played:hover {
+  border: none;
+  background-color: rgb(233, 59, 59);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }

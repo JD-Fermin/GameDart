@@ -19,6 +19,24 @@ body {
 
 .add-to-playlist:hover{
   background-color: rgb(1, 75, 1);
+  cursor: pointer;
+}
+
+.visit-on-giant-bomb {
+  position: absolute;
+  text-align: center;
+  padding: 13px;
+  width:219px;
+  margin-top: 67px;
+  background-color: rgb(221, 133, 0);
+  border-color: transparent;
+  color: white;
+  transition: 0.2s;
+}
+
+.visit-on-giant-bomb:hover{
+  background-color: rgb(116, 79, 0);
+  cursor: pointer;
 }
 
 .gameplay-images {

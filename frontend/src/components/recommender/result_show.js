@@ -9,6 +9,7 @@ class ResultShow extends React.Component {
   constructor(props) {
     super(props)
     this.handleButton = this.handleButton.bind(this);
+    this.visitSite = this.visitSite.bind(this);
   }
 
   componentDidMount() {
@@ -31,7 +32,13 @@ class ResultShow extends React.Component {
       }
     }   
     this.props.updateBackLogGames(payload)
-    this.props.history.push('/backlog')
+    this.props.history.push('/playlist')
+  }
+
+  visitSite(e) {
+    window.open(
+      this.props.game.linkToSite, '_blank'
+    );
   }
 
   render() {
@@ -129,10 +136,12 @@ class ResultShow extends React.Component {
           <div id="game-cover">
             <img src={this.props.game.image} />
             <button onClick={this.handleButton} className="add-to-playlist">Add to Playlist</button>
+            <div onClick={this.visitSite} className="visit-on-giant-bomb">Giant Bomb</div>
           </div>
+
           <h1 id='game-name'>{this.props.game.name}</h1>
           <h2 id='general-info'>{genres} | {publisher} | {platforms} | {originalRelease}</h2>
-          <h3><a href={this.props.game.reviews}>Reviews</a> | <a href={this.props.game.linkToSite}>Visit on Giant Bomb</a></h3>
+          {/* <h3><a href={this.props.game.reviews}>Reviews</a> | <a href={this.props.game.linkToSite}>Visit on Giant Bomb</a></h3> */}
           <span>{this.props.game.deck}</span>
         </div>
       </div>
