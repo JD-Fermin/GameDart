@@ -50,8 +50,8 @@ router.get('/:id', (req, resp) => {
     })
 });
 
-router.get("/:id/reviews", (req, res) => {
-  const reviews = Review.find(req.params.id)
+router.get("/:id/reviews", async (req, res) => {
+  const reviews = await Review.find({ gameId: req.params.id})
   .then(reviews => {
     if (reviews) {
       res.send(reviews)
