@@ -86,7 +86,7 @@
   text-align: center;
   font-family: 'Rajdhani', sans-serif;
   font-size: 28px;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.767);
+  text-shadow: 0 0 15px rgb(0, 0, 0);
   position: relative;
   bottom: 9px;
   margin-bottom: -8px;
@@ -115,15 +115,16 @@
   border-radius: 5px;
   padding: 10px;
   margin: 0px 3px;
+  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(48, 48, 48, 0.185) 0px 16px 10px -10px;
   transition: all 0.4s ease 0s;
 }
 
 .add-to-played {
-  background-color: rgb(230, 39, 39);
+  background-color: rgb(218, 9, 9);
 }
 
 .remove-game {
-  background-color: rgb(230, 39, 39);
+  background-color: rgb(218, 9, 9);
 }
 
 .add-to-played:hover {
@@ -143,7 +144,7 @@
 }
 
 .remove-from-played {
-  background-color: rgb(230, 39, 39);
+  background-color: rgb(218, 9, 9);
 }
 
 .remove-from-played:hover {
