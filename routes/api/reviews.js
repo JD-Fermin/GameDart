@@ -32,11 +32,11 @@ router.post('/',
               .then ((cur) => {
                res.send(cur)
               })
+              .catch(err => res.status(400).json({ uniqueError: "User already made review of this game" }))
             // }) 
-              .catch(errs => res.status(400).json(errs)) 
         }
       })
-    // .catch(errs => res.status(400).json(errs))
+    .catch(errs => res.status(400).json(errs))
 }); 
 
 module.exports = router;
