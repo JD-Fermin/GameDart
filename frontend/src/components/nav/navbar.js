@@ -60,6 +60,9 @@ class NavBar extends React.Component {
       } else {
         return (
           <div className="NavBar">
+            <div id="nav-logo" >
+              <img src="https://i.imgur.com/kucktM9.png"/>
+            </div>
             <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>Open GameDart
             {
               this.state.showSettings ? (
