@@ -138,6 +138,7 @@ a:active {
 
 .extra-links span {
   text-decoration: underline;
+  color:rgb(250, 94, 107);
 }
 
 .extra-links span:hover {

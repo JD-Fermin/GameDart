@@ -344,14 +344,14 @@ input[type="checkbox"] {
 #back-to-genres-button {
   cursor: pointer;
   font-size: 25px;
-  color:rgba(126, 124, 124, 0.432);
+  color:rgba(218, 218, 218, 0.432);
   transition: all 0.4s ease 0s;
 }
 
 #back-to-genres-button:hover {
   cursor: pointer;
   transform: scale(1.4);
-  color:rgb(218, 218, 218);
+  color:rgb(255, 255, 255);
 }
 
 #return-to-genres-text {
