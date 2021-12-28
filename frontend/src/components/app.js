@@ -30,7 +30,7 @@ const App = () => (
         <ProtectedRoute path="/games/:gameId" component={ResultShowContainer} /> 
         <ProtectedRoute path="/profile/:id" component={ProfileContainer} />
         <ProtectedRoute path="/developers" component={GitHubLinks} />
-        <ProtectedRoute path="/backlog" component={BacklogContainer} />
+        <ProtectedRoute path="/playlist" component={BacklogContainer} />
       </Switch>
   </div>
 );

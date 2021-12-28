@@ -57,8 +57,8 @@ class GenreIndex extends React.Component {
 
 
     const genreGames = this.state.selectedGenre === "" ? null : this.props.genres[this.state.selectedGenre].map((game, i) => {
-            return <div key={i}>{game}</div>
-          }) 
+      return <div key={i}>{game}</div>
+    }) 
     
     return (
       <div className="game-dart-container">
@@ -77,8 +77,10 @@ class GenreIndex extends React.Component {
 
         {this.state.changeSection === true ?   
         <div className="games-per-genre">
-          <div id="back-to-genres"><span id="back-to-genres-button" className="material-icons left-arrow" onClick={this.returnToGenres} onMouseEnter={(e) => this.revealReturnText} onMouseLeave={(e) => this.hideReturnText}>arrow_back_ios</span>
-            { this.state.hideText === false ? <p id="return-to-genres-text">return to genres</p> : '' } </div>
+          <div id="back-to-genres">
+            <span id="back-to-genres-button" className="material-icons left-arrow" onClick={this.returnToGenres} onMouseEnter={(e) => this.revealReturnText} onMouseLeave={(e) => this.hideReturnText}>arrow_back_ios</span>
+            { this.state.hideText === false ? <p id="return-to-genres-text">return to genres</p> : '' } 
+          </div>
           {/* <h2>{this.state.selectedGenre}</h2> */}
             <GenreGameIndexContainer games={this.props.genres[this.state.selectedGenre]} />
         </div> : null}

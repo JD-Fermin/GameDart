@@ -8,10 +8,24 @@ class BackLog extends React.Component {
     this.handlePlayed = this.handlePlayed.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
     this.handleBack = this.handleBack.bind(this);
+    this.viewGame = this.viewGame.bind(this);
+    // this.handleSwitch = this.handleSwitch.bind(this);
+
+    // this.state = {
+    //   showPlayed: false
+    // }
   }
 
   componentDidMount() {
     this.props.fetch(this.props.currentId);
+  }
+
+  // handleSwitch() {
+
+  // }
+
+  viewGame(gameId) {
+    this.props.history.push(`/games/${gameId}`)
   }
 
   handlePlayed(game) {
@@ -62,13 +76,20 @@ class BackLog extends React.Component {
     if (!this.props.user) {
       return null;
     }
+
     document.body.style.backgroundImage = "url('https://i.imgur.com/JctqNaX.jpg')";
+
     return (
       <div className="selected-games-container">
-        {this.props.user.backLogGames.length === 0 && this.props.user.playedGames.length === 0 ? <div><h2>There are no games yet!</h2><img src="https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png" /></div> : null}
-        <h1>My Playlist</h1>          
+        {!this.props.user.backLogGames.length && !this.props.user.playedGames.length ? 
+          <div className="played-games-container">
+            <h1>GameDart some games!</h1>
+            <img id="no-games" src="https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png" />
+          </div> : null}
+          
         {this.props.user.backLogGames.length === 0 ? null :
           <div className="backlog-container">
+            <h1>My Playlist</h1>     
          
             {this.props.user.backLogGames.map((game, i) => {
 
@@ -77,8 +98,12 @@ class BackLog extends React.Component {
                   <div className="backlogGame-options">
                     <div className="backlogGame-title">{ game.name }</div>
                     <div className="backlogGame-buttons">
-                      <button onClick={() => this.handlePlayed(game)}>Add to Games Played</button>
-                      <button onClick={() => this.handleRemove(game.id)}>Remove Game</button>
+                      <button className="add-to-played" onClick={() => this.handlePlayed(game)}>Add to Games Played</button>
+                      <button className="remove-game" onClick={() => this.handleRemove(game.id)}>Remove Game</button>
+                    </div>
+                    
+                    <div className="backlogGame-buttons">
+                      <button className="view-game-button" onClick={() => this.viewGame(game.id)}>View Game Page</button>
                     </div>
                   </div>             
                   <img src={game.image} />
@@ -88,9 +113,10 @@ class BackLog extends React.Component {
           </div>
         }
 
-
         {this.props.user.playedGames.length === 0 ? null :
           <div className="played-games-container">
+            <h1>Games Played</h1>          
+
             {this.props.user.playedGames.map((game, i) => {
 
               return (
@@ -98,7 +124,8 @@ class BackLog extends React.Component {
                   <div className="backlogGame-options">
                     <div className="backlogGame-title">{ game.name }</div>
                     <div className="backlogGame-buttons">
-                      <button onClick={() => this.handleBack(game)}>Remove from Games Played</button>
+                      <button className="remove-from-played" onClick={() => this.handleBack(game)}>Remove from Games Played</button>
+                      <button className="view-game-button" onClick={() => this.viewGame(game.id)}>View Game Page</button>
                     </div>
                   </div>
                   <img src={game.image} />
@@ -107,7 +134,6 @@ class BackLog extends React.Component {
             })}
           </div>
         }
-      <div id="thats-exactly-right">thats exactly right</div>
       </div>
     ) 
   }

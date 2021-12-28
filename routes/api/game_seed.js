@@ -39,6 +39,7 @@ router.get('/:id', (req, resp) => {
           deck: res.data.results.deck,
           name: res.data.results.name,
           image: res.data.results.image.original_url,
+          developers: res.data.results.developers,
           gameplay: res.data.results.images,
           genres: res.data.results.genres,
           similar_games: res.data.results.similar_games,

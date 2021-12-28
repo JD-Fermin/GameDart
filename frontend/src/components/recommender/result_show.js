@@ -9,29 +9,55 @@ class ResultShow extends React.Component {
   constructor(props) {
     super(props)
     this.handleButton = this.handleButton.bind(this);
+    this.visitSite = this.visitSite.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchGames();
+    this.props.fetchUser(this.props.currentUserId);
   }
 
+  checkInclusion(arr1, arr2, target) {
+    for (let i = 0; i < arr1.length; i++) {
+      let gameObj = arr1[i];
+      if (gameObj.id === target) return true;
+    }
+    
+    for (let i = 0; i < arr2.length; i++) {
+      let gameObj = arr2[i];
+      if (gameObj.id === target) return true;
+    }
+
+    return false; 
+  }
 
   handleButton(e) {
-    const payload = {
-      gameId: this.props.game.id,
-      similar_games: [],
-      id: this.props.currentUserId,
-      name: this.props.game.name,
-      image: this.props.game.image
-    };
+    if (!this.checkInclusion(this.props.user.backLogGames, this.props.user.playedGames, this.props.game.id)) {
+    
+      const payload = {
+        gameId: this.props.game.id,
+        similar_games: [],
+        id: this.props.currentUserId,
+        name: this.props.game.name,
+        image: this.props.game.image
+      };
   
-    if (this.props.game.similar_games) {
-      for (let i = 0; i < this.props.game.similar_games.length; i++) {
-        payload.similar_games.push(`3030-${this.props.game.similar_games[i].id}`)
-      }
-    }   
-    this.props.updateBackLogGames(payload)
-    this.props.history.push('/backlog')
+    // if (this.props.game.similar_games) {
+    //   for (let i = 0; i < this.props.game.similar_games.length; i++) {
+    //     payload.similar_games.push(`3030-${this.props.game.similar_games[i].id}`)
+    //   }
+    // }   
+
+      this.props.updateBackLogGames(payload)
+    }
+
+    this.props.history.push('/playlist')
+  }
+
+  visitSite(e) {
+    window.open(
+      this.props.game.linkToSite, '_blank'
+    );
   }
 
   render() {
@@ -42,15 +68,19 @@ class ResultShow extends React.Component {
       return null;
     }
 
+    if (!this.props.user) {
+      return null;
+    }
+
     let originalRelease; 
-    let publisher;
+    let developers;
     let video = '';
     let platforms = '';
     let genres = '';
     let gameplay = [];
 
     !this.props.game.original_release_date ? originalRelease = 'N/A' : originalRelease = this.props.game.original_release_date.split('-')[0];
-    !this.props.game.publisher ? publisher = 'N/A' : publisher = this.props.game.publisher;
+    !this.props.game.developers ? developers = 'N/A' : developers = this.props.game.developers[0].name;
 
     if (this.props.game.platforms) {
       for (let i = 0; i < this.props.game.platforms.length; i++) {
@@ -74,7 +104,7 @@ class ResultShow extends React.Component {
       }
     }
     
-    if (this.props.game,gameplay) {
+    if (this.props.game.gameplay) {
       for (let i = 0; i < this.props.game.gameplay.length; i++) {
         let gameImg = this.props.game.gameplay[i];
 
@@ -122,17 +152,20 @@ class ResultShow extends React.Component {
     // console.log('resultshowpage')
     // console.log(this.props)
 
+    console.log('YOUZER', this.props.user)
     return (
       <div className="result-show-container">
         {gallery}
         <div id='game-info-container'>
           <div id="game-cover">
             <img src={this.props.game.image} />
-            <button onClick={this.handleButton} className="add-to-playlist">Add to Playlist</button>
+            <button onClick={this.handleButton} className="add-to-playlist">{ this.checkInclusion(this.props.user.backLogGames, this.props.user.playedGames, this.props.game.id) ? "Return to Playlist" : "Add to Playlist"}</button>
+            <div onClick={this.visitSite} className="visit-on-giant-bomb">Giant Bomb</div>
           </div>
+
           <h1 id='game-name'>{this.props.game.name}</h1>
-          <h2 id='general-info'>{genres} | {publisher} | {platforms} | {originalRelease}</h2>
-          <h3><a href={this.props.game.reviews}>Reviews</a> | <a href={this.props.game.linkToSite}>Visit on Giant Bomb</a></h3>
+          <h2 id='general-info'>{genres} | {developers} | {platforms} | {originalRelease}</h2>
+          {/* <h3><a href={this.props.game.reviews}>Reviews</a> | <a href={this.props.game.linkToSite}>Visit on Giant Bomb</a></h3> */}
           <span>{this.props.game.deck}</span>
         </div>
       </div>
