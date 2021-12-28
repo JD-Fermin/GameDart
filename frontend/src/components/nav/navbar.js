@@ -31,14 +31,17 @@ class NavBar extends React.Component {
   }
 
   logoutUser(e) {
-      e.preventDefault();
-      this.props.logout();
+    e.preventDefault();
+    this.props.logout();
   }
 
   getLinks() {
       if (this.props.loggedIn) {
         return (
           <div className="NavBar">
+            <div id="nav-logo" >
+              <img src="https://i.imgur.com/kucktM9.png"/>
+            </div>
             <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>Menu
             {
               this.state.showSettings ? (
