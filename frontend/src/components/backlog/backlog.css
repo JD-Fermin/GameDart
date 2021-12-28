@@ -154,12 +154,12 @@
 
 .view-game-button {
   border: none;
-  background-color: rgb(228, 148, 0);
+  background-color: rgb(83, 0, 216);
   color: white;
   border-radius: 5px;
 }
 
 .view-game-button:hover {
-  background-color: rgb(255, 182, 45);
+  background-color: rgb(111, 0, 255);
   cursor: pointer;
 }
