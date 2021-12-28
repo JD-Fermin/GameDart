@@ -14,24 +14,43 @@ class ResultShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchGames();
+    this.props.fetchUser(this.props.currentUserId);
   }
 
+  checkInclusion(arr1, arr2, target) {
+    for (let i = 0; i < arr1.length; i++) {
+      let gameObj = arr1[i];
+      if (gameObj.id === target) return true;
+    }
+    
+    for (let i = 0; i < arr2.length; i++) {
+      let gameObj = arr2[i];
+      if (gameObj.id === target) return true;
+    }
+
+    return false; 
+  }
 
   handleButton(e) {
-    const payload = {
-      gameId: this.props.game.id,
-      similar_games: [],
-      id: this.props.currentUserId,
-      name: this.props.game.name,
-      image: this.props.game.image
-    };
+    if (!this.checkInclusion(this.props.user.backLogGames, this.props.user.playedGames, this.props.game.id)) {
+    
+      const payload = {
+        gameId: this.props.game.id,
+        similar_games: [],
+        id: this.props.currentUserId,
+        name: this.props.game.name,
+        image: this.props.game.image
+      };
   
-    if (this.props.game.similar_games) {
-      for (let i = 0; i < this.props.game.similar_games.length; i++) {
-        payload.similar_games.push(`3030-${this.props.game.similar_games[i].id}`)
-      }
-    }   
-    this.props.updateBackLogGames(payload)
+    // if (this.props.game.similar_games) {
+    //   for (let i = 0; i < this.props.game.similar_games.length; i++) {
+    //     payload.similar_games.push(`3030-${this.props.game.similar_games[i].id}`)
+    //   }
+    // }   
+
+      this.props.updateBackLogGames(payload)
+    }
+
     this.props.history.push('/playlist')
   }
 
@@ -46,6 +65,10 @@ class ResultShow extends React.Component {
     document.body.style.backgroundImage = "url('https://i.imgur.com/eBPL6Bz.jpg')";
    
     if (!this.props.game) {
+      return null;
+    }
+
+    if (!this.props.user) {
       return null;
     }
 
@@ -129,13 +152,14 @@ class ResultShow extends React.Component {
     // console.log('resultshowpage')
     // console.log(this.props)
 
+    console.log('YOUZER', this.props.user)
     return (
       <div className="result-show-container">
         {gallery}
         <div id='game-info-container'>
           <div id="game-cover">
             <img src={this.props.game.image} />
-            <button onClick={this.handleButton} className="add-to-playlist">Add to Playlist</button>
+            <button onClick={this.handleButton} className="add-to-playlist">{ this.checkInclusion(this.props.user.backLogGames, this.props.user.playedGames, this.props.game.id) ? "Return to Playlist" : "Add to Playlist"}</button>
             <div onClick={this.visitSite} className="visit-on-giant-bomb">Giant Bomb</div>
           </div>
 

@@ -73,11 +73,17 @@
   opacity: 0.6;
 }
 
+#no-games {
+  filter: invert(1);
+  opacity: 0.85;
+  border-radius: 10px;
+}
+
 .backlogGame-title {
   width: 403px;
   text-align: center;
   font-family: 'Rajdhani', sans-serif;
-  font-size: 30px;
+  font-size: 28px;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.767);
   position: relative;
   bottom: 9px;
@@ -97,14 +103,25 @@
   display: block;
 }
 
+.backlogGame-buttons {
+  padding-bottom: 7px;
+}
+
 .backlogGame-buttons button{
   border: none;
-  background-color: rgb(230, 39, 39);
   color: white;
   border-radius: 5px;
   padding: 10px;
   margin: 0px 3px;
   transition: all 0.4s ease 0s;
+}
+
+.add-to-played {
+  background-color: rgb(230, 39, 39);
+}
+
+.remove-game {
+  background-color: rgb(230, 39, 39);
 }
 
 .add-to-played:hover {
@@ -123,10 +140,26 @@
   cursor: pointer;
 }
 
+.remove-from-played {
+  background-color: rgb(230, 39, 39);
+}
+
 .remove-from-played:hover {
   border: none;
   background-color: rgb(233, 59, 59);
   color: white;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-game-button {
+  border: none;
+  background-color: rgb(228, 148, 0);
+  color: white;
+  border-radius: 5px;
+}
+
+.view-game-button:hover {
+  background-color: rgb(255, 182, 45);
   cursor: pointer;
 }

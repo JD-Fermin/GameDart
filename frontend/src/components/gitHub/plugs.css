@@ -74,6 +74,7 @@
 }
 
 .developers:hover img {
+  cursor: pointer;
   opacity: 1;
 }
 
@@ -137,4 +138,8 @@ a:active {
 
 .extra-links span {
   text-decoration: underline;
+}
+
+.extra-links span:hover {
+  cursor: pointer;
 }

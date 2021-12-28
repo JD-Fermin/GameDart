@@ -18,7 +18,7 @@ body {
 }
 
 .add-to-playlist:hover{
-  background-color: rgb(1, 75, 1);
+  background-color: rgb(0, 97, 0);
   cursor: pointer;
 }
 
@@ -28,14 +28,14 @@ body {
   padding: 13px;
   width:219px;
   margin-top: 67px;
-  background-color: rgb(221, 133, 0);
+  background-color: rgb(250, 162, 0);
   border-color: transparent;
   color: white;
   transition: 0.2s;
 }
 
 .visit-on-giant-bomb:hover{
-  background-color: rgb(116, 79, 0);
+  background-color: rgb(190, 114, 0);
   cursor: pointer;
 }
 
