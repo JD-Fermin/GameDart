@@ -9,8 +9,8 @@ class MainPage extends React.Component {
       <div className="splash-component">
         <div className="splash-title">
           <div className="splash-container">
-            <img src="https://i.imgur.com/kucktM9.png" alt=""/>
-            <h3>Discover the next game you may never play.</h3>
+            <img id="main-logo"src="https://i.imgur.com/kucktM9.png" alt=""/>
+            <h3>Unlimited Games, Unlimited Fun</h3>
           </div>
         </div>
 
@@ -23,7 +23,7 @@ class MainPage extends React.Component {
             </div>
           </div>
           <div>
-            <h3>Create and organize your backlog</h3>
+            <h3>Create and organize your playlist</h3>
             <div>
               With our convenient platform, you can keep track of all the games you've played and plan to play.
             </div>
