@@ -75,5 +75,20 @@ router.patch('/:id',
   }
 )
 
+router.delete("/:id", 
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const payload = Review.findOneAndDelete({ _id: req.params.id })
+      .then(result => {
+        if (result) {
+          res.send(result)
+        } else {
+          res.status(400).json({review: "Review does not exist"})
+        }
+      })
+      .catch(err => res.status(400).json({review: "Review does not exist"}))
+      
+  }
+)
 
 module.exports = router;
