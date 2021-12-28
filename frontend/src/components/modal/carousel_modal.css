@@ -1,9 +1,9 @@
 #carousel-modal {
   background-color: rgb(61, 61, 61);
-  height: 600px;
-  width: auto;
+  height: 90vh;
+  width: 65.8vw;
 }
 
 #carousel-modal img, #carousel-modal .carousel-slider{
-  height: 630px;
+  height: 90vh;
 }
