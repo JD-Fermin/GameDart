@@ -22,6 +22,14 @@ input[type=radio]:checked + label{
   background-repeat: no-repeat;
 }
 
+.login-box p {
+  text-align: center;
+  position: relative;
+  top: 10px;
+  font-family: 'Radjhani', sans-serif;
+  font-size: 18px;
+}
+
 #avi-akali + label{
   background-image: url('https://i.imgur.com/gzZ9eH7.jpg');
 }
