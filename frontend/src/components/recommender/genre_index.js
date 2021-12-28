@@ -78,7 +78,7 @@ class GenreIndex extends React.Component {
         {this.state.changeSection === true ?   
         <div className="games-per-genre">
           <div id="back-to-genres">
-            <span id="back-to-genres-button" className="material-icons left-arrow" onClick={this.returnToGenres} onMouseEnter={(e) => this.revealReturnText} onMouseLeave={(e) => this.hideReturnText}>arrow_back_ios</span>
+            <span id="back-to-genres-button" className="material-icons-outlined" onClick={this.returnToGenres} onMouseEnter={(e) => this.revealReturnText} onMouseLeave={(e) => this.hideReturnText}>reply_all</span>
             { this.state.hideText === false ? <p id="return-to-genres-text">return to genres</p> : '' } 
           </div>
           {/* <h2>{this.state.selectedGenre}</h2> */}

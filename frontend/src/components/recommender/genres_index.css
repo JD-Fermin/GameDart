@@ -233,6 +233,8 @@
 
 .genre-game > .select-game-image {
   transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
+  padding-right: 6px;
+  padding-left: 6px;
 }
 
 .chosen.genre-game > .select-game-image img {
@@ -288,10 +290,11 @@ input[type="checkbox"] {
 }
 
 .select-games-form {
-  margin-top: 7vh;
-  display:flex;
+  margin-top: 0.5vh;
+  overflow: hidden;
+  /* display:flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
     animation: fadeIn linear 1.2s;
   -webkit-animation: fadeIn linear 1.2s;
   -moz-animation: fadeIn linear 1.2s;
@@ -343,14 +346,17 @@ input[type="checkbox"] {
 
 #back-to-genres-button {
   cursor: pointer;
-  font-size: 25px;
-  color:rgba(218, 218, 218, 0.432);
+  font-size: 1.5em;
+  color: rgba(112, 112, 112, 0.247);
+  position: relative;
+  top: -5px;
+  left: -10px;
   transition: all 0.4s ease 0s;
 }
 
 #back-to-genres-button:hover {
   cursor: pointer;
-  transform: scale(1.4);
+  /* transform: scale(1.7); */
   color:rgb(255, 255, 255);
 }
 
@@ -360,3 +366,43 @@ input[type="checkbox"] {
   font-size: 25px;
   color:rgb(128, 128, 128)
 }
+
+.genre-row {
+  display: flex;
+  width: max-content;
+  transition: all 1.4s;
+  /* overflow:scroll;
+  margin-left: auto;
+  margin-right: auto; */
+}
+
+.left-arrow {
+  margin-top: 25vh;
+  margin-left: 0.2vw;
+  font-size: 4vw;
+  color: rgba(128, 127, 127, 0.151);
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.right-arrow {
+  margin-top: 25vh;
+  margin-left: 94.8vw;
+  font-size: 4vw;
+  color: rgba(128, 127, 127, 0.151);
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.left-arrow:hover {
+  color: white;
+}
+
+.right-arrow:hover {
+  color: white;
+}
+
