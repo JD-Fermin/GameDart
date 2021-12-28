@@ -18,7 +18,7 @@ class GitHubLinks extends React.Component {
   render() {
     return (
       <div className="plugs">
-        <h1>Presented to you by Team Culture</h1>
+        <h1>Presented to you by</h1>
 
         <div className="the-gang">
           <div className="developers">
