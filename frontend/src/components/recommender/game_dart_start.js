@@ -20,7 +20,7 @@ class GameDartStart extends React.Component {
           <div className="game-dart-instructions">
             <h2>Don't know what game to play next? GameDart it!</h2>
             <h2>Complete the following prompts, and we'll give you a new game to dive into!</h2>
-            <h3>Or reveal some obscure game that you may never play!</h3>
+            <h3>( Or reveal some obscure game that you may never play! )</h3>
             <input type="submit" value="Start" onClick={this.handleStart} id="submit-button"/>
           </div>
         </div>
