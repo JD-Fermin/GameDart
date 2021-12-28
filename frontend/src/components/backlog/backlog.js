@@ -1,5 +1,6 @@
 import React from "react";
-import "./backlog.css"
+import "./backlog.css";
+import ScrollToTop from "react-scroll-up";
 
 class BackLog extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class BackLog extends React.Component {
     this.handleRemove = this.handleRemove.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.viewGame = this.viewGame.bind(this);
+    this.scrollToTop = this.scrollToTop.bind(this);
     // this.handleSwitch = this.handleSwitch.bind(this);
 
     // this.state = {
@@ -18,6 +20,14 @@ class BackLog extends React.Component {
 
   componentDidMount() {
     this.props.fetch(this.props.currentId);
+  }
+
+  scrollToTop(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'
+    });
   }
 
   // handleSwitch() {
@@ -81,6 +91,10 @@ class BackLog extends React.Component {
 
     return (
       <div className="selected-games-container">
+        <ScrollToTop className="playlist-scroll-up" showUnder={500} >
+          <span class="material-icons-outlined">keyboard_double_arrow_up</span>
+        </ScrollToTop>
+
         {!this.props.user.backLogGames.length && !this.props.user.playedGames.length ? 
           <div className="played-games-container">
             <h1>GameDart some games!</h1>

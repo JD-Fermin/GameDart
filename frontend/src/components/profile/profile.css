@@ -36,7 +36,7 @@
   background-color: rgb(61, 61, 61);
   padding: 30px;
   position: relative;
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
   /* width: 100%; */
   top: 75px;
@@ -52,7 +52,7 @@
   bottom: 10px;
   width: 250px;
   height: auto;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .profile-box h1 {

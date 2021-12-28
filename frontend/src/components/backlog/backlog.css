@@ -166,3 +166,16 @@
   background-color: rgb(111, 0, 255);
   cursor: pointer;
 }
+
+.selected-games-container span {
+  position: relative;
+  top: 40px;
+  left: 10px;
+  font-size: 3.3em;
+  color:rgba(255, 255, 255, 0.575);
+  transition: all 0.5s ease 0s;
+}
+
+.selected-games-container span:hover {
+  color:rgba(255, 255, 255, 0.932);
+}
