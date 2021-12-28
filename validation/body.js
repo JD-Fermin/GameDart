@@ -6,9 +6,11 @@ module.exports = function validateReviewInput(data) {
 
   data.body === validText(data.body) ? data.body : "";
   // data.rating === Number.isInteger(data.rating) ? data.rating : ;
-
+  if(!data.body) {
+    data.body = ""
+  }
   if (!Validator.isLength(data.body, {min:10, max: 250})) {
-    errors.body = " Review must be between 10 and 250 chars"
+    errors.body = "Review must be between 10 and 250 chars"
   }
   if (Validator.isEmpty(data.body)) {
     errors.body = "Review field is required"
@@ -22,6 +24,9 @@ module.exports = function validateReviewInput(data) {
     errors.rating = "Rating is invalid"
   }
 
+  if (!data.gameId) {
+    errors.gameId = "Game is required"
+  }
   return {
     errors, 
     isValid: Object.keys(errors).length === 0
