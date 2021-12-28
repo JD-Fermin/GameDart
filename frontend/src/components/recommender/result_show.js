@@ -73,14 +73,14 @@ class ResultShow extends React.Component {
     }
 
     let originalRelease; 
-    let publisher;
+    let developers;
     let video = '';
     let platforms = '';
     let genres = '';
     let gameplay = [];
 
     !this.props.game.original_release_date ? originalRelease = 'N/A' : originalRelease = this.props.game.original_release_date.split('-')[0];
-    !this.props.game.publisher ? publisher = 'N/A' : publisher = this.props.game.publisher;
+    !this.props.game.developers ? developers = 'N/A' : developers = this.props.game.developers[0].name;
 
     if (this.props.game.platforms) {
       for (let i = 0; i < this.props.game.platforms.length; i++) {
@@ -104,7 +104,7 @@ class ResultShow extends React.Component {
       }
     }
     
-    if (this.props.game,gameplay) {
+    if (this.props.game.gameplay) {
       for (let i = 0; i < this.props.game.gameplay.length; i++) {
         let gameImg = this.props.game.gameplay[i];
 
@@ -164,7 +164,7 @@ class ResultShow extends React.Component {
           </div>
 
           <h1 id='game-name'>{this.props.game.name}</h1>
-          <h2 id='general-info'>{genres} | {publisher} | {platforms} | {originalRelease}</h2>
+          <h2 id='general-info'>{genres} | {developers} | {platforms} | {originalRelease}</h2>
           {/* <h3><a href={this.props.game.reviews}>Reviews</a> | <a href={this.props.game.linkToSite}>Visit on Giant Bomb</a></h3> */}
           <span>{this.props.game.deck}</span>
         </div>
