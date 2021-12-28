@@ -46,6 +46,7 @@ body {
   color: white;
   box-shadow: 0 1px 40px 3px rgb(14, 14, 14, 0.7);
   transition: 0.2s;
+  width: 16vw;
 }
 
 .add-to-playlist:hover{
@@ -57,7 +58,8 @@ body {
   position: absolute;
   text-align: center;
   padding: 13px;
-  width:219px;
+  width: 16vw;
+  min-width: 150px;
   margin-top: 67px;
   background-color: rgb(250, 162, 0);
   border-color: transparent;
