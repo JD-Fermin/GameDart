@@ -55,12 +55,14 @@
   margin: 10px;
   text-align: center;
   transition: 0.2s;
-  border: 1.5px solid;
+  /* border: 1.5px solid; */
   /* background-color: black; */
   flex-direction: row;
   justify-content: space-around;
   overflow: hidden;
   display: block;
+  outline: 1.98px solid rgb(201, 201, 201);
+  outline-offset: .5px;
 }
 
 .backlogGame-item img {

@@ -19,6 +19,8 @@
 
 .game-dart-instructions {
   background: rgb(61, 61, 61);
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
   border-radius: 15px;
   padding: 30px;
   width: 70%;
@@ -61,12 +63,12 @@
 
 .game-dart-instructions h2 {
   padding: 5px;
-  font-size: 20px;
+  font-size: 1.5em;
 }
 
 .game-dart-instructions h3 {
-  padding: 10px;
-  font-size: 13px;
+  padding-top: 10px;
+  font-size: 1em;
 }
 
 .game-dart-instructions input{
