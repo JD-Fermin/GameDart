@@ -99,10 +99,10 @@ class GenreGameIndex extends React.Component {
     return(
       <div className="genre-game-index">
         <div className="select-games-form">
-          <span className="material-icons left-arrow" onClick={() => this.handleScroll('left', 'disney')}>
+          <span className="material-icons left-arrow" onClick={() => this.handleScroll('left')}>
             arrow_back_ios
           </span>
-          <span className="material-icons right-arrow" onClick={() => this.handleScroll('right', 'disney')}>
+          <span className="material-icons right-arrow" onClick={() => this.handleScroll('right')}>
             arrow_forward_ios
           </span>
           <ul className="genre-row" ref={this.genreGames}> 
