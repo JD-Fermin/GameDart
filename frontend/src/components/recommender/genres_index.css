@@ -179,8 +179,8 @@
   font-size: 30px;
   top: 23px;
   position: relative;
-  margin: auto;
-  width: 98%;
+  /* margin: auto; */
+  width: 96%;
 }
 
 @keyframes fadeIn {
@@ -329,7 +329,9 @@ input[type="checkbox"] {
   margin-bottom: -10px;
   transition: all 0.4s ease 0s;
   transform: translate(-50%, 20%);
-  position: fixed;
+  position: absolute;
+  margin-left: 21px;
+  text-align: center;
   box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
 }
 
@@ -353,7 +355,7 @@ input[type="checkbox"] {
   color: rgba(112, 112, 112, 0.247);
   position: relative;
   top: -12px;
-  left: -22px;
+  left: -11px;
   transition: all 0.4s ease 0s;
 }
 
@@ -381,7 +383,7 @@ input[type="checkbox"] {
 
 .left-arrow {
   margin-top: 25vh;
-  margin-left: 0.2vw;
+  margin-left: 0.7vw;
   font-size: 1.8em;
   color: rgba(128, 127, 127, 0.151);
   position: absolute;
@@ -392,7 +394,7 @@ input[type="checkbox"] {
 
 .right-arrow {
   margin-top: 25vh;
-  margin-left: 95.4vw;
+  margin-left: 96vw;
   font-size: 1.8em;
   color: rgba(128, 127, 127, 0.151);
   position: absolute;
