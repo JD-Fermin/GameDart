@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CreateReviewForm from "./create_review";
-import ReviewItem from "./review_item";
+import ReviewItemContainer from "./review_item_container";
 
 class ResultShow extends React.Component {
   constructor(props) {
@@ -44,11 +44,7 @@ class ResultShow extends React.Component {
         image: this.props.game.image
       };
 
-      // if (this.props.game.similar_games) {
-      //   for (let i = 0; i < this.props.game.similar_games.length; i++) {
-      //     payload.similar_games.push(`3030-${this.props.game.similar_games[i].id}`)
-      //   }
-      // }   
+       
 
       this.props.updateBackLogGames(payload)
     }
@@ -137,16 +133,7 @@ class ResultShow extends React.Component {
       )
     }
 
-    // for (let i = 0; i < this.props.game.videos.length; i++) {
-    //   let videos = this.props.game.videos;
-
-    //   if (videos.length === 0) {
-    //     break;
-    //   } else {
-    //     video = this.props.game.videos[0].site_detail_url;
-    //     break;
-    //   }
-    // }
+    
 
 
 
@@ -167,10 +154,11 @@ class ResultShow extends React.Component {
           <span>{this.props.game.deck}</span>
         </div>
         <div className="review-container">
+          <h2>Reviews</h2>
           <ul>
             {
               Object.values(this.props.reviews).map((review, i) => {
-                return <ReviewItem
+                return <ReviewItemContainer
                   key={i}
                   review ={review}
                   updateReview ={this.props.updateReview}

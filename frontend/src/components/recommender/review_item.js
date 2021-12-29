@@ -6,6 +6,10 @@ class ReviewItem extends React.Component {
     super(props)
     
   }
+
+  componentDidMount() {
+    this.props.fetchUser(this.props.review.author)
+  }
   
   populateStars(){
     let stars = []
@@ -25,9 +29,15 @@ class ReviewItem extends React.Component {
 
 
   render() {
+    if (!this.props.users[this.props.review.author]) return null;
+    console.log(this.props.users[this.props.review.author])
     return (
     
-      <li >
+      <li>
+        <div>
+          <img src={this.props.users[this.props.review.author].profileImgUrl} alt="" />
+          {this.props.users[this.props.review.author].name}
+        </div>
         {this.props.review.body}
         <div>{this.populateStars()}</div>
       </li>
