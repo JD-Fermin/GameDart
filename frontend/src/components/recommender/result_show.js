@@ -125,8 +125,8 @@ class ResultShow extends React.Component {
           <div id='highlight' onClick={this.props.openModal}></div>
           <Carousel autoPlay={true} centerMode={true} showThumbs={false} infiniteLoop={true}>
             {
-              gameplay.map(gameImg => {
-                return <div>
+              gameplay.map((gameImg, i) => {
+                return <div key={i} >
                   <img src={gameImg} />
                 </div>
               })
@@ -152,7 +152,7 @@ class ResultShow extends React.Component {
     // console.log("images", video);
     // console.log('resultshowpage')
     // console.log(this.props)
-
+    
     console.log('YOUZER', this.props.user)
     return (
       <div className="result-show-container">
@@ -172,15 +172,18 @@ class ResultShow extends React.Component {
         <div className="review-container">
           <ul>
             {
-              Object.values(this.props.reviews).map((review) => {
-                return <li key={review.id}>{review.body}</li>
+              Object.values(this.props.reviews).map((review, i) => {
+                return <li key={i}>{review.body}
+                  {review.rating}
+                  
+                </li>
               })
             }
           </ul>
         </div>
         <CreateReviewForm
           gameId = {this.props.game.id}
-          currentUserId ={this.props.currentUserId}
+          currentUserId = {this.props.currentUserId}
           createReview = {this.props.createReview}
         />
       </div>
