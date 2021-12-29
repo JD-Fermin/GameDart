@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-export const createReview = (reviewData) => {
-  return axios.post('/api/reviews', reviewData);
+export const createReview = async (reviewData) => {
+  const res = await axios.post('/api/reviews', reviewData);
+  return res;
 };
 
 export const updateReview = async (reviewData) => {
@@ -10,7 +11,7 @@ export const updateReview = async (reviewData) => {
 }
 
 export const deleteReview = async (reviewId) => {
-
-  return axios.delete(`/api/reviews/${reviewId}`);
+  const res = await axios.delete(`/api/reviews/${reviewId}`);
+  return res;
 
 }

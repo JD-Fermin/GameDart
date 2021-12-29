@@ -4,7 +4,7 @@ import "./review_form.css"
 class ReviewItem extends React.Component {
   constructor(props) {
     super(props)
-    
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount() {
@@ -27,9 +27,20 @@ class ReviewItem extends React.Component {
     return stars;
   }
 
+  handleDelete() {
+    
+    this.props.deleteReview(this.props.review._id)
+
+  }
+
 
   render() {
+    
     if (!this.props.users[this.props.review.author]) return null;
+    let buttons = <>
+      <button>Edit</button>
+      <button onClick={this.handleDelete}>Delete</button>
+    </>
     console.log(this.props.users[this.props.review.author])
     return (
     
@@ -40,6 +51,7 @@ class ReviewItem extends React.Component {
         </div>
         {this.props.review.body}
         <div>{this.populateStars()}</div>
+        { this.props.review.author === this.props.currentId ? buttons : null}
       </li>
     )
   }
