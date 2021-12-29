@@ -1,4 +1,4 @@
-import * as reviewAPIUtil from "../util/review_api_util";
+import * as reviewAPIUtil from "../util/reviews_api_util";
 import * as gameAPIUtil from "../util/game_api_util";
 
 export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
@@ -37,25 +37,25 @@ export const _receiveReviewErrors = errors => ({
 
 export const fetchReviews = (gameId) => dispatch => (
   gameAPIUtil.getGameReviews(gameId)
-    .then((reviews) => dispatch(_receiveReviews(reviews)), // response
+    .then((reviews) => dispatch(_receiveReviews(reviews.data)), // response
       errors => dispatch(_receiveReviewErrors(errors))
     )
 )
 
 export const deleteReview = reviewId => dispatch => (
   reviewAPIUtil.deleteReview(reviewId)
-    .then((review) => dispatch(_deleteReview(review.id)),
+    .then((review) => dispatch(_deleteReview(review.data.id)),
       errors => dispatch(_receiveReviewErrors(errors)))
 )
 
 export const createReview = reviewData => dispatch => (
   reviewAPIUtil.createReview(reviewData)
-    .then(review => dispatch(_createReview(review)),
+    .then(review => dispatch(_createReview(review.data)),
       errors => dispatch(_receiveReviewErrors(errors)))
 )
 
 export const updateReview = reviewData => dispatch => (
   reviewAPIUtil.updateReview(reviewData)
-    .then(review => dispatch(_updateReview(review)),
+    .then(review => dispatch(_updateReview(review.data)),
       errors => dispatch(_receiveReviewErrors(errors)))
 ) 
