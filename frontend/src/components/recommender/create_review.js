@@ -64,7 +64,7 @@ class CreateReviewForm extends React.Component {
             <input onChange={this.handleRating} type="radio" id="star1" className="rate" value="1" />
             <label htmlFor="star1" title="text">1 star</label>
           </div>
-          <button type="submit">Create</button>
+          <button type="submit">Create</button> 
         </form>
       </div >
     )

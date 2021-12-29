@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CreateReviewForm from "./create_review";
+import ReviewItem from "./review_item";
 
 class ResultShow extends React.Component {
   constructor(props) {
@@ -173,10 +174,12 @@ class ResultShow extends React.Component {
           <ul>
             {
               Object.values(this.props.reviews).map((review, i) => {
-                return <li key={i}>{review.body}
-                  {review.rating}
-                  
-                </li>
+                return <ReviewItem
+                  key={i}
+                  review ={review}
+                  updateReview ={this.props.updateReview}
+                  deleteReview ={this.props.deleteReview}
+                /> 
               })
             }
           </ul>
