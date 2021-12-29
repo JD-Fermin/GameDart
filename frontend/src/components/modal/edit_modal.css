@@ -27,7 +27,7 @@ input[type=radio]:checked + label{
   position: relative;
   top: 10px;
   font-family: 'Radjhani', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 #avi-akali + label{
@@ -60,4 +60,56 @@ input[type=radio]:checked + label{
 
 #avi-rindou + label{
   background-image: url('https://i.imgur.com/Ta37y5u.png');
+}
+
+#avi-shyguy + label{
+  background-image: url('https://i.imgur.com/7nNsCKi.jpg');
+}
+
+#avi-peach + label{
+  background-image: url('https://i.imgur.com/fPM0ab5.png');
+}
+
+#avi-spidey + label{
+  background-image: url('https://i.imgur.com/kNuWjTs.jpg');
+}
+
+#avi-cj + label{
+  background-image: url('https://i.imgur.com/fJhgSro.jpg');
+}
+
+#avi-chief + label{
+  background-image: url('https://i.imgur.com/5vM7wn5.jpg');
+}
+
+#avi-chunli + label{
+  background-image: url('https://i.imgur.com/YBluko7.jpg');
+}
+
+#avi-sora + label{
+  background-image: url('https://i.imgur.com/q9r7Thq.png');
+}
+
+#avi-tifa + label{
+  background-image: url('https://i.imgur.com/iEs6nvG.jpg');
+}
+
+#avi-samus + label{
+  background-image: url('https://i.imgur.com/ofMRQhY.png');
+}
+
+#avi-ezio + label{
+  background-image: url('https://i.imgur.com/lT8SIAO.jpg');
+}
+
+#avi-fortnite + label{
+  background-image: url('https://i.imgur.com/oPG6WtS.jpg');
+}
+
+#avi-kratos + label{
+  background-image: url('https://i.imgur.com/aEeE4Jb.jpg');
+}
+
+#avi-default + label{
+  background-image: url('https://ubisoft-avatars.akamaized.net/46564bd6-ef0b-4b05-97ec-68d8473167c6/default_256_256.png');
 }

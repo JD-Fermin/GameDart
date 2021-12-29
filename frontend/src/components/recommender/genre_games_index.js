@@ -10,6 +10,7 @@ class GenreGameIndex extends React.Component {
     this.pushGameToSelected = this.pushGameToSelected.bind(this);
     this.deleteGameFromArray = this.deleteGameFromArray.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.genreGames = React.createRef();
   }
 
   componentDidMount() {
@@ -19,6 +20,15 @@ class GenreGameIndex extends React.Component {
     }
     // this.props.games.forEach(game => this.props.fetchGame(game))
   }
+
+  handleScroll = direction => {
+    if (direction === 'left') {
+      this.genreGames.current.style.transform = 'translateX(0px)';
+    } else if (direction === 'right') {
+      this.genreGames.current.style.transform = 'translateX(-94vw)';
+    }
+  } 
+
 
   handleClick() {
     if (this.selected.length === 0) {
@@ -89,15 +99,22 @@ class GenreGameIndex extends React.Component {
     return(
       <div className="genre-game-index">
         <div className="select-games-form">
-        {
-          games.map(game => {
-            if (game.id) {              
-              let gameId = parseInt(game.id.split('-').join(''));
-
-              return <GenreGameItem key={gameId} gameId={gameId} game={game} pushGame={this.pushGameToSelected} deleteGame={this.deleteGameFromArray}/> 
+          <span className="material-icons left-arrow" onClick={() => this.handleScroll('left', 'disney')}>
+            arrow_back_ios
+          </span>
+          <span className="material-icons right-arrow" onClick={() => this.handleScroll('right', 'disney')}>
+            arrow_forward_ios
+          </span>
+          <ul className="genre-row" ref={this.genreGames}> 
+            {
+              games.map(game => {
+                if (game.id) {              
+                  let gameId = parseInt(game.id.split('-').join(''));
+                  return <GenreGameItem key={gameId} gameId={gameId} game={game} pushGame={this.pushGameToSelected} deleteGame={this.deleteGameFromArray}/> 
+                }
+              })
             }
-          })
-        }
+          </ul>
         </div>
         <div className="submit-select-button" onClick={this.handleClick}><input type="submit" value="GameDart it!" id="game-dart-button"/></div>
       </div>
