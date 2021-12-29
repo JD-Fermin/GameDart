@@ -8,28 +8,28 @@ export const UPDATE_REVIEW = "UPDATE_REVIEW";
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS"
 
 
-export const receiveReviews = reviews => ({
+export const _receiveReviews = reviews => ({
   type: RECEIVE_REVIEWS,
   reviews
 })
 
 
-export const createReview = review => ({
+export const _createReview = review => ({
   type: CREATE_REVIEW,
   review
 })
 
-export const deleteReview = reviewId => ({
+export const _deleteReview = reviewId => ({
   type: DELETE_REVIEW,
   reviewId
 })
 
-export const updateReview = review => ({
+export const _updateReview = review => ({
   type: UPDATE_REVIEW,
   review
 })
 
-export const receiveReviewErrors = errors => ({
+export const _receiveReviewErrors = errors => ({
   type: RECEIVE_REVIEW_ERRORS,
   errors
 })
@@ -37,25 +37,25 @@ export const receiveReviewErrors = errors => ({
 
 export const fetchReviews = (gameId) => dispatch => (
   gameAPIUtil.getGameReviews(gameId)
-    .then((reviews) => dispatch(receiveReviews(reviews)), // response
-      errors => dispatch(receiveReviewErrors(errors))
+    .then((reviews) => dispatch(_receiveReviews(reviews)), // response
+      errors => dispatch(_receiveReviewErrors(errors))
     )
 )
 
 export const deleteReview = reviewId => dispatch => (
   reviewAPIUtil.deleteReview(reviewId)
-    .then((review) => dispatch(deleteReview(review.id)),
-      errors => dispatch(receiveReviewErrors(errors)))
+    .then((review) => dispatch(_deleteReview(review.id)),
+      errors => dispatch(_receiveReviewErrors(errors)))
 )
 
 export const createReview = reviewData => dispatch => (
   reviewAPIUtil.createReview(reviewData)
-    .then(review => dispatch(createReview(review)),
-      errors => dispatch(receiveReviewErrors(errors)))
+    .then(review => dispatch(_createReview(review)),
+      errors => dispatch(_receiveReviewErrors(errors)))
 )
 
 export const updateReview = reviewData => dispatch => (
   reviewAPIUtil.updateReview(reviewData)
-    .then(review => dispatch(updateReview(review)),
-      errors => dispatch(receiveReviewErrors(errors)))
+    .then(review => dispatch(_updateReview(review)),
+      errors => dispatch(_receiveReviewErrors(errors)))
 ) 
