@@ -1,4 +1,4 @@
-import Backlog from "./backlog";
+import Backlog from "./backlog_new";
 import { 
   updatePlayedGames, 
   deleteBackLogGames,
