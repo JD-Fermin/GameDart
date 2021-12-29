@@ -132,3 +132,11 @@ body {
   width: auto !important;
   height: 500px;
 }
+
+.review-item-rating {
+  color: #ffc700;
+}
+
+.ex-review-item-rating {
+  color: #ccc
+}

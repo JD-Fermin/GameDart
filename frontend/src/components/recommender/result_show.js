@@ -150,11 +150,7 @@ class ResultShow extends React.Component {
 
 
 
-    // console.log("images", video);
-    // console.log('resultshowpage')
-    // console.log(this.props)
     
-    console.log('YOUZER', this.props.user)
     return (
       <div className="result-show-container">
         {gallery}
