@@ -10,6 +10,7 @@ class ResultShow extends React.Component {
     super(props)
     this.handleButton = this.handleButton.bind(this);
     this.visitSite = this.visitSite.bind(this);
+    this.newGame = this.newGame.bind(this);
   }
 
   componentDidMount() {
@@ -29,6 +30,10 @@ class ResultShow extends React.Component {
     }
 
     return false; 
+  }
+
+  newGame() {
+    this.props.history.push('/gamedartit');
   }
 
   handleButton(e) {
@@ -161,6 +166,7 @@ class ResultShow extends React.Component {
             <img src={this.props.game.image} />
             <button onClick={this.handleButton} className="add-to-playlist">{ this.checkInclusion(this.props.user.backLogGames, this.props.user.playedGames, this.props.game.id) ? "Return to Playlist" : "Add to Playlist"}</button>
             <div onClick={this.visitSite} className="visit-on-giant-bomb">Giant Bomb</div>
+            <div onClick={this.newGame} className="new-game">New Game</div>
           </div>
 
           <h1 id='game-name'>{this.props.game.name}</h1>
