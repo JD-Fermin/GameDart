@@ -44,7 +44,7 @@ export const fetchReviews = (gameId) => dispatch => (
 
 export const deleteReview = reviewId => dispatch => (
   reviewAPIUtil.deleteReview(reviewId)
-    .then((review) => dispatch(_deleteReview(review.data.id)),
+    .then((review) => dispatch(_deleteReview(review.data._id)),
       errors => dispatch(_receiveReviewErrors(errors)))
 )
 

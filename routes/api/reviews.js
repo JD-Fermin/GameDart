@@ -30,7 +30,6 @@ router.post('/',
               });
               newReview.save()
               .then ((cur) => {
-                console.log(cur)
                res.send(cur)
               })
               .catch(err => res.status(400).json({ uniqueError: "User already made review of this game" }))
