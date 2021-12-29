@@ -1,10 +1,13 @@
 import React from 'react';
 import "./review_form.css"
+import EditReviewForm from './edit_review';
 
 class ReviewItem extends React.Component {
   constructor(props) {
     super(props)
+    this.state = { editing: false }
     this.handleDelete = this.handleDelete.bind(this)
+    this.toggleEdit = this.toggleEdit.bind(this)
   }
 
   componentDidMount() {
@@ -28,9 +31,11 @@ class ReviewItem extends React.Component {
   }
 
   handleDelete() {
-    
     this.props.deleteReview(this.props.review._id)
+  }
 
+  toggleEdit() {
+    this.setState({ editing: !this.state.editing })
   }
 
 
@@ -38,7 +43,7 @@ class ReviewItem extends React.Component {
     
     if (!this.props.users[this.props.review.author]) return null;
     let buttons = <>
-      <button>Edit</button>
+      <button onClick={this.toggleEdit}>Edit</button>
       <button onClick={this.handleDelete}>Delete</button>
     </>
     console.log(this.props.users[this.props.review.author])
@@ -49,9 +54,13 @@ class ReviewItem extends React.Component {
           <img src={this.props.users[this.props.review.author].profileImgUrl} alt="" />
           {this.props.users[this.props.review.author].name}
         </div>
-        {this.props.review.body}
-        <div>{this.populateStars()}</div>
+
+        <div>
+          {this.populateStars()}
+          {this.props.review.body}
+        </div>
         { this.props.review.author === this.props.currentId ? buttons : null}
+        { this.state.editing ? <EditReviewForm toggleEdit={this.toggleEdit} review={this.props.review} updateReview={this.props.updateReview}/> : null}
       </li>
     )
   }
