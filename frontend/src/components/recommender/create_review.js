@@ -1,5 +1,6 @@
 import React from 'react';
 import "./review_form.css"
+import StarRating from '../rating/star_rating';
 
 class CreateReviewForm extends React.Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class CreateReviewForm extends React.Component {
   };
 
   handleRating(e) {
+    console.log(e.target.value) // we can make left turns in nj 
     this.setState(
       {
         rating: e.target.value
@@ -52,7 +54,12 @@ class CreateReviewForm extends React.Component {
         <h2>Create Review</h2>
         <form onSubmit={this.handleSubmit}>
           <textarea onChange={this.handleBody} placeholder="Write your review here" value={this.state.body}></textarea>
-          <div className="rate">
+          <StarRating
+            handleRating ={e => {
+              this.handleRating(e)
+            }}
+          />
+          {/* <div className="rate">
             <input onChange={this.handleRating} type="radio" id="star5" className="rate" value="5" />
             <label htmlFor="star5" title="text">5 stars</label>
             <input onChange={this.handleRating} type="radio" id="star4" className="rate" value="4" />
@@ -63,7 +70,7 @@ class CreateReviewForm extends React.Component {
             <label htmlFor="star2" title="text">2 stars</label>
             <input onChange={this.handleRating} type="radio" id="star1" className="rate" value="1" />
             <label htmlFor="star1" title="text">1 star</label>
-          </div>
+          </div> */}
           <button type="submit">Create</button> 
         </form>
       </div >

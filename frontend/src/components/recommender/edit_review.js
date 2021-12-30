@@ -1,5 +1,6 @@
 import React from "react";
 import "./review_form.css";
+import StarRating from "../rating/star_rating";
 
 class EditReviewForm extends React.Component {
   constructor(props) {
@@ -32,6 +33,24 @@ class EditReviewForm extends React.Component {
     )
   };
   
+  populateStars() {
+    let stars = []
+
+    // populate gold stars
+    for (let i = 0; i < this.props.review.rating; i++) {
+      stars.push(<span key={i} className="review-item-rating">★</span>)
+    }
+
+    // populate empty stars
+    while (stars.length < 5) {
+      stars.push(<span key={stars.length} className='ex-review-item-rating'>★</span>)
+    }
+
+    return stars;
+  }
+
+
+
 
   render() {
     return (
@@ -44,6 +63,8 @@ class EditReviewForm extends React.Component {
             value={this.state.body}
           ></textarea>
           <div className="rate">
+            <StarRating/>
+            {/* {this.populateStars()}
             <input
               onChange={this.handleRating}
               type="radio"
@@ -93,7 +114,7 @@ class EditReviewForm extends React.Component {
             />
             <label htmlFor="star1" title="text">
               1 star
-            </label>
+            </label> */}
           </div>
           <button type="submit">Edit</button>
         </form>
