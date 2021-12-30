@@ -2,13 +2,17 @@ import React, { useState, useCallback } from "react";
 import { FaStar } from "react-icons/fa";
 
 const StarRating = (props) => {
-  const [rating, setRating] = useState(null);
+
+  let reviewedRating = props.status === "editing" ? props.rating : null
+  console.log(reviewedRating)
+  const [rating, setRating] = useState(reviewedRating);
   const [hover, setHover] = useState(null);
   const handleSetRating = event => {
     console.log(event)
     props.handleRating(event)
   }
 
+  console.log(props)
   return (<div> 
     {[...Array(5)].map((star, i) => {
       const ratingValue = i + 1;

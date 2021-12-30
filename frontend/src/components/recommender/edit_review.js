@@ -67,6 +67,8 @@ class EditReviewForm extends React.Component {
               handleRating={e => {
                 this.handleRating(e)
               }}
+              status = {"editing"}
+              rating = {this.props.review.rating}
             />
             {/* {this.populateStars()}
             <input
