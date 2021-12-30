@@ -63,7 +63,11 @@ class EditReviewForm extends React.Component {
             value={this.state.body}
           ></textarea>
           <div className="rate">
-            <StarRating/>
+            <StarRating
+              handleRating={e => {
+                this.handleRating(e)
+              }}
+            />
             {/* {this.populateStars()}
             <input
               onChange={this.handleRating}
