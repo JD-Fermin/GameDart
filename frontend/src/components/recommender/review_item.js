@@ -50,14 +50,15 @@ class ReviewItem extends React.Component {
     return (
     
       <li>
-        <div>
+        <div className="review">
           <img src={this.props.users[this.props.review.author].profileImgUrl} alt="" />
-          {this.props.users[this.props.review.author].name}
-        </div>
-
-        <div>
-          {this.populateStars()}
-          {this.props.review.body}
+          <div className="review-details">         
+            <h2>{this.props.users[this.props.review.author].name}</h2>
+            <div className="user-rating">
+              {this.populateStars()}
+            </div>
+            <h3>{this.props.review.body}</h3>
+          </div>
         </div>
         { this.props.review.author === this.props.currentId ? buttons : null}
         { this.state.editing ? <EditReviewForm toggleEdit={this.toggleEdit} review={this.props.review} updateReview={this.props.updateReview}/> : null}

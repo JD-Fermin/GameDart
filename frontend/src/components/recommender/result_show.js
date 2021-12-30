@@ -17,7 +17,7 @@ class ResultShow extends React.Component {
   componentDidMount() {
     this.props.fetchGames();
     this.props.fetchUser(this.props.currentUserId);
-    this.props.fetchReviews()
+    this.props.fetchReviews();
   }
 
   checkInclusion(arr1, arr2, target) {
@@ -75,7 +75,7 @@ class ResultShow extends React.Component {
     }
     let avg = sum / arr.length;
 
-    return avg
+    return Math.round(avg * 10) / 10
   }
 
 
@@ -154,10 +154,8 @@ class ResultShow extends React.Component {
       )
     }
 
-    
-
-
-
+    console.log('CERTIFIED MILF', this.props);
+    let currentUser = this.props.currentUserId;
     
     return (
       <div className="result-show-container">
@@ -170,18 +168,23 @@ class ResultShow extends React.Component {
             <div onClick={this.newGame} className="new-game">New Game</div>
           </div>
 
-          <h1 id='game-name'>{this.props.game.name}</h1>
+          <div className="game-title-and-rating">
+            <h1 id='game-name'>{this.props.game.name} | {this.avgRating(this.props.reviews)} <span className='avg-rating'>★</span></h1>
+            {/* <h2 id='avg-rating'>{this.avgRating(this.props.reviews)} <span className='ex-review-item-rating'>★</span></h2> */}
+          </div>
+
           <h2 id='general-info'>{genres} | {publishers} | {platforms} | {originalRelease}</h2>
           {/* <h3><a href={this.props.game.reviews}>Reviews</a> | <a href={this.props.game.linkToSite}>Visit on Giant Bomb</a></h3> */}
-          <span>{this.props.game.deck}</span>
+          <span id="game-description">{this.props.game.deck}</span>
         </div>
-        <div>
+        <div className="review-section">
+        {/* <div className="rating-header">
           <h2>Game Rating Average</h2>
-         
           <h3>{this.avgRating(this.props.reviews)} <span className='ex-review-item-rating'>★</span> </h3>
-        </div>
+        </div> */}
+
         <div className="review-container">
-          <h2>Reviews</h2>
+          <h1>Reviews</h1>
           <ul>
             {
               Object.values(this.props.reviews).map((review, i) => {
@@ -195,11 +198,13 @@ class ResultShow extends React.Component {
             }
           </ul>
         </div>
-        <CreateReviewForm
-          gameId = {this.props.game.id}
-          currentUserId = {this.props.currentUserId}
-          createReview = {this.props.createReview}
-        />
+        {/* {this.props.reviews.currentUser ? "" : */}
+          <CreateReviewForm
+            gameId = {this.props.game.id}
+            currentUserId = {this.props.currentUserId}
+            createReview = {this.props.createReview}
+          /> 
+      </div>
       </div>
     )
   }

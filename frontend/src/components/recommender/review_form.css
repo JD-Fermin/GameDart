@@ -7,6 +7,11 @@
     height: 46px;
     padding: 0 10px;
 }
+
+.rate:hover {
+  cursor: pointer;
+}
+
 .rate:not(:checked) > input {
     position:absolute;
     top:-9999px;
@@ -28,7 +33,7 @@
 }
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
+    color: #646464;  
 }
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
@@ -36,4 +41,48 @@
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
+}
+
+.ex-review-item-rating {
+  color: #747474d8;
+}
+
+.rating-header {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.review img {
+  height: 169px;
+  border-radius: 10px;
+}
+
+.review {
+  background-color: rgb(61, 61, 61);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.review-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+}
+ 
+.stars > label {
+  cursor: pointer;
+}
+
+.user-rating {
+  font-size: 2.8em;
+  position: relative;
+  bottom: 23px;
+}
+
+.user-rating h3 {
+  position: relative;
+  bottom: 10px;
 }

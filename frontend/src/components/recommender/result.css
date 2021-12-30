@@ -38,6 +38,24 @@ body {
   100% {opacity:1;}
 }
 
+#game-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3em;
+  position: relative;
+}
+
+#general-info {
+  padding-bottom: 10px;
+  position: relative;
+  top: -9px;
+  left: 3px;
+}
+
+#game-description {
+  position: relative;
+  left: 4px;
+}
+
 .add-to-playlist {
   position: absolute;
   /* top: -10px; */
@@ -160,3 +178,42 @@ body {
 .ex-review-item-rating {
   color: #ccc
 }
+
+.review-container {
+  margin: 20px 5vw;
+  border-radius: 10px;
+}
+
+.review-container ul {
+  list-style: none;
+}
+
+.review-container h1 {
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3em;
+}
+
+.review-container h2 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.3em;
+}
+
+.game-title-and-rating {
+  display:flex;
+  flex-direction: row;
+}
+
+.avg-rating {
+  color: #ffc700;
+  font-size: 0.9em;
+  position: relative;
+  bottom: 2px;
+} 
+
+/* #avg-rating {
+  position: relative;
+  top: 16px;
+  left: 16px;
+  font-size: 30px;
+} */
