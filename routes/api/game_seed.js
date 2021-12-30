@@ -55,7 +55,11 @@ router.get("/:id/reviews", async (req, res) => {
   const reviews = await Review.find({ gameId: req.params.id})
   .then(reviews => {
     if (reviews) {
-      res.send(reviews)
+      let payload = {}
+      reviews.forEach((review) => {
+        payload[review.id] = review
+      })
+      res.send(payload)
     }
   })
   .catch(errs => res.status(400).json(errs))

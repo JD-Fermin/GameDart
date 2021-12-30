@@ -3,7 +3,8 @@ import './result.css';
 import { withRouter } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
+import CreateReviewForm from "./create_review";
+import ReviewItemContainer from "./review_item_container";
 
 class ResultShow extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class ResultShow extends React.Component {
   componentDidMount() {
     this.props.fetchGames();
     this.props.fetchUser(this.props.currentUserId);
+    this.props.fetchReviews()
   }
 
   checkInclusion(arr1, arr2, target) {
@@ -23,13 +25,13 @@ class ResultShow extends React.Component {
       let gameObj = arr1[i];
       if (gameObj.id === target) return true;
     }
-    
+
     for (let i = 0; i < arr2.length; i++) {
       let gameObj = arr2[i];
       if (gameObj.id === target) return true;
     }
 
-    return false; 
+    return false;
   }
 
   newGame() {
@@ -38,7 +40,7 @@ class ResultShow extends React.Component {
 
   handleButton(e) {
     if (!this.checkInclusion(this.props.user.backLogGames, this.props.user.playedGames, this.props.game.id)) {
-    
+
       const payload = {
         gameId: this.props.game.id,
         similar_games: [],
@@ -46,12 +48,8 @@ class ResultShow extends React.Component {
         name: this.props.game.name,
         image: this.props.game.image
       };
-  
-    // if (this.props.game.similar_games) {
-    //   for (let i = 0; i < this.props.game.similar_games.length; i++) {
-    //     payload.similar_games.push(`3030-${this.props.game.similar_games[i].id}`)
-    //   }
-    // }   
+
+       
 
       this.props.updateBackLogGames(payload)
     }
@@ -64,11 +62,11 @@ class ResultShow extends React.Component {
       this.props.game.linkToSite, '_blank'
     );
   }
-
+  
   render() {
 
     document.body.style.backgroundImage = "url('https://i.imgur.com/eBPL6Bz.jpg')";
-   
+
     if (!this.props.game) {
       return null;
     }
@@ -77,7 +75,7 @@ class ResultShow extends React.Component {
       return null;
     }
 
-    let originalRelease; 
+    let originalRelease;
     let publishers;
     let video = '';
     let platforms = '';
@@ -108,7 +106,7 @@ class ResultShow extends React.Component {
         }
       }
     }
-    
+
     if (this.props.game.gameplay) {
       for (let i = 0; i < this.props.game.gameplay.length; i++) {
         let gameImg = this.props.game.gameplay[i];
@@ -116,21 +114,21 @@ class ResultShow extends React.Component {
         if (gameImg === undefined) {
           break;
         }
-      
+
         gameplay.push(gameImg.original);
       }
     }
 
 
     let gallery;
-    if (gameplay.length !== 0){
+    if (gameplay.length !== 0) {
       gallery = (
         <div className="gameplay-images">
           <div id='highlight' onClick={this.props.openModal}></div>
           <Carousel autoPlay={true} centerMode={true} showThumbs={false} infiniteLoop={true}>
             {
-              gameplay.map(gameImg => {
-                return <div>
+              gameplay.map((gameImg, i) => {
+                return <div key={i} >
                   <img src={gameImg} />
                 </div>
               })
@@ -140,31 +138,18 @@ class ResultShow extends React.Component {
       )
     }
 
-    // for (let i = 0; i < this.props.game.videos.length; i++) {
-    //   let videos = this.props.game.videos;
-
-    //   if (videos.length === 0) {
-    //     break;
-    //   } else {
-    //     video = this.props.game.videos[0].site_detail_url;
-    //     break;
-    //   }
-    // }
+    
 
 
 
-    // console.log("images", video);
-    // console.log('resultshowpage')
-    // console.log(this.props)
-
-    console.log('YOUZER', this.props.user)
+    
     return (
       <div className="result-show-container">
         {gallery}
         <div id='game-info-container'>
           <div id="game-cover">
             <img src={this.props.game.image} />
-            <button onClick={this.handleButton} className="add-to-playlist">{ this.checkInclusion(this.props.user.backLogGames, this.props.user.playedGames, this.props.game.id) ? "Return to Playlist" : "Add to Playlist"}</button>
+            <button onClick={this.handleButton} className="add-to-playlist">{this.checkInclusion(this.props.user.backLogGames, this.props.user.playedGames, this.props.game.id) ? "Return to Playlist" : "Add to Playlist"}</button>
             <div onClick={this.visitSite} className="visit-on-giant-bomb">Giant Bomb</div>
             <div onClick={this.newGame} className="new-game">New Game</div>
           </div>
@@ -174,6 +159,26 @@ class ResultShow extends React.Component {
           {/* <h3><a href={this.props.game.reviews}>Reviews</a> | <a href={this.props.game.linkToSite}>Visit on Giant Bomb</a></h3> */}
           <span>{this.props.game.deck}</span>
         </div>
+        <div className="review-container">
+          <h2>Reviews</h2>
+          <ul>
+            {
+              Object.values(this.props.reviews).map((review, i) => {
+                return <ReviewItemContainer
+                  key={i}
+                  review ={review}
+                  updateReview ={this.props.updateReview}
+                  deleteReview ={this.props.deleteReview}
+                /> 
+              })
+            }
+          </ul>
+        </div>
+        <CreateReviewForm
+          gameId = {this.props.game.id}
+          currentUserId = {this.props.currentUserId}
+          createReview = {this.props.createReview}
+        />
       </div>
     )
   }

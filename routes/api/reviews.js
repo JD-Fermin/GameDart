@@ -65,7 +65,8 @@ router.patch('/:id',
                   gameId: req.body.gameId,
                   author: req.body.author,
                   body: req.body.body,
-                  rating: parseInt(req.body.rating)
+                  rating: parseInt(req.body.rating),
+                  id: docs._id
                 })
               })
         }
