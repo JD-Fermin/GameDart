@@ -13,8 +13,8 @@ class CreateReviewForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleBody = this.handleBody.bind(this)
-    this.handleRating = this.handleRating.bind(this)
+    this.handleBody = this.handleBody.bind(this);
+    this.handleRating = this.handleRating.bind(this);
   }
 
   handleBody(e) {
@@ -34,19 +34,19 @@ class CreateReviewForm extends React.Component {
         rating: ""
       }
     )
-    let inputs = document.querySelectorAll("input[type=radio]:checked"),
-    x = inputs.length;
-    while (x--) inputs[x].checked = 0;
+    window.location.reload()
   };
 
   handleRating(e) {
-    console.log(e.target.value) // we can make left turns in nj 
+   // we can make left turns in nj 
     this.setState(
       {
         rating: e.target.value
       }
     )
   };
+
+ 
 
   render() {
     return (

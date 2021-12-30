@@ -46,7 +46,7 @@ class ReviewItem extends React.Component {
       <button onClick={this.toggleEdit}>Edit</button>
       <button onClick={this.handleDelete}>Delete</button>
     </>
-    console.log(this.props.users[this.props.review.author])
+    
     return (
     
       <li>
