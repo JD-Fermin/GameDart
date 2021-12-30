@@ -54,8 +54,8 @@ body {
 #game-description {
   position: relative;
   left: 4px;
+  font-size: 1.2em;
 }
-
 .add-to-playlist {
   position: absolute;
   /* top: -10px; */
@@ -192,6 +192,7 @@ body {
   text-align: center;
   font-family: 'Rajdhani', sans-serif;
   font-size: 3em;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.582);
 }
 
 .review-container h2 {

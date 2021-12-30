@@ -42,10 +42,11 @@ class ReviewItem extends React.Component {
   render() {
     
     if (!this.props.users[this.props.review.author]) return null;
-    let buttons = <>
-      <button onClick={this.toggleEdit}>Edit</button>
-      <button onClick={this.handleDelete}>Delete</button>
-    </>
+    let buttons = 
+      <>
+        <span className="material-icons-outlined edit-buttons" onClick={this.toggleEdit}>edit</span>
+        <span className="material-icons-outlined edit-buttons" onClick={this.handleDelete}>delete</span>
+      </>
     
     return (
     
@@ -53,14 +54,13 @@ class ReviewItem extends React.Component {
         <div className="review">
           <img src={this.props.users[this.props.review.author].profileImgUrl} alt="" />
           <div className="review-details">         
-            <h2>{this.props.users[this.props.review.author].name}</h2>
+            <h2>{this.props.users[this.props.review.author].name} { this.props.review.author === this.props.currentId ? buttons : null}</h2>
             <div className="user-rating">
               {this.populateStars()}
             </div>
-            <h3>{this.props.review.body}</h3>
+            <h3 id="review-description">{this.props.review.body}</h3>
           </div>
         </div>
-        { this.props.review.author === this.props.currentId ? buttons : null}
         { this.state.editing ? <EditReviewForm toggleEdit={this.toggleEdit} review={this.props.review} updateReview={this.props.updateReview}/> : null}
       </li>
     )

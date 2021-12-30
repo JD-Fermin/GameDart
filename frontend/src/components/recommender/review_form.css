@@ -86,3 +86,19 @@
   position: relative;
   bottom: 10px;
 }
+
+#review-description {
+  position: relative;
+  bottom: 25px;
+  left: 2px;
+  font-weight: 100;
+}
+
+.edit-buttons {
+  color: rgb(133, 133, 133);
+}
+
+.edit-buttons:hover {
+  color: white;
+  cursor: pointer;
+}
