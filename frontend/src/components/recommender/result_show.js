@@ -58,6 +58,22 @@ class ResultShow extends React.Component {
     );
   }
   
+  avgRating(obj) {
+    let arr = Object.values(obj)
+    if (arr.length === 0) {
+      return "n/a"
+    }
+
+    let sum = 0
+    for (let i = 0; i < arr.length; i++ ) {
+      sum += arr[i].rating;
+    }
+    let avg = sum / arr.length;
+
+    return avg
+  }
+
+
   render() {
 
     document.body.style.backgroundImage = "url('https://i.imgur.com/eBPL6Bz.jpg')";
@@ -152,6 +168,11 @@ class ResultShow extends React.Component {
           <h2 id='general-info'>{genres} | {publishers} | {platforms} | {originalRelease}</h2>
           {/* <h3><a href={this.props.game.reviews}>Reviews</a> | <a href={this.props.game.linkToSite}>Visit on Giant Bomb</a></h3> */}
           <span>{this.props.game.deck}</span>
+        </div>
+        <div>
+          <h2>Game Rating Average</h2>
+         
+          <h3>{this.avgRating(this.props.reviews)} <span className='ex-review-item-rating'>★</span> </h3>
         </div>
         <div className="review-container">
           <h2>Reviews</h2>
