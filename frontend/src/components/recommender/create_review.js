@@ -34,7 +34,7 @@ class CreateReviewForm extends React.Component {
         rating: ""
       }
     )
-    window.location.reload()
+    // window.location.reload()
   };
 
   handleRating(e) {

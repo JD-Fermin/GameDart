@@ -78,6 +78,16 @@ class ResultShow extends React.Component {
     return Math.round(avg * 10) / 10
   }
 
+  madeReview(userId) {
+    for (let review in this.props.reviews) {
+      if (this.props.reviews[review].author === userId) {
+        return true;
+      }
+    }
+    
+    return false;
+  }
+
 
   render() {
 
@@ -154,8 +164,8 @@ class ResultShow extends React.Component {
       )
     }
 
-    console.log('CERTIFIED MILF', this.props);
-    let currentUser = this.props.currentUserId;
+    console.log('CERTIFIED MILF', this.props.reviews);
+    // let currentUser = this.props.currentUserId;
     
     return (
       <div className="result-show-container">
@@ -198,12 +208,14 @@ class ResultShow extends React.Component {
             }
           </ul>
         </div>
-        {/* {this.props.reviews.currentUser ? "" : */}
-          <CreateReviewForm
-            gameId = {this.props.game.id}
-            currentUserId = {this.props.currentUserId}
-            createReview = {this.props.createReview}
-          /> 
+        {
+          this.madeReview(this.props.currentUserId) ? null :
+            <CreateReviewForm
+              gameId = {this.props.game.id}
+              currentUserId = {this.props.currentUserId}
+              createReview = {this.props.createReview}
+            />
+        } 
       </div>
       </div>
     )
