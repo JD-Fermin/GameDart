@@ -52,7 +52,7 @@ class CreateReviewForm extends React.Component {
   render() {
     return (
       <div className="create-review-form">
-        <h2>Create Review</h2>
+        <h1>Create Review</h1>
         <form onSubmit={this.handleSubmit}>
           <StarRating
             handleRating ={e => {
@@ -73,8 +73,10 @@ class CreateReviewForm extends React.Component {
             <input onChange={this.handleRating} type="radio" id="star1" className="rate" value="1" />
             <label htmlFor="star1" title="text">1 star</label>
           </div> */}
-          <button type="submit">Create</button> 
-          <button onClick={this.props.toggleCreateReview}>Cancel</button>
+          <div className="create-review-buttons">
+            <button type="submit">Create</button> 
+            <button onClick={this.props.toggleCreateReview}>Cancel</button>
+          </div>
         </form>
       </div >
     )

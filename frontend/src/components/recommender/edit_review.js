@@ -56,6 +56,7 @@ class EditReviewForm extends React.Component {
     console.log('CERTIFIEEEED', this.props)
 
     return (
+      <div className="review">
       <div className="edit-review-container">
         <img src={this.props.profileImg} alt="" />
         
@@ -85,6 +86,8 @@ class EditReviewForm extends React.Component {
           {/* <button type="submit">Edit</button> */}
         </form>
         </div>
+        {/* <img src={this.props.profileImg} alt="" /> */}
+      </div>
       </div>
     );
   }
