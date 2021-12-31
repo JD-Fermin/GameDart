@@ -53,16 +53,16 @@ class EditReviewForm extends React.Component {
 
 
   render() {
+    console.log('CERTIFIEEEED', this.props)
+
     return (
-      <div>
-        <h2>Edit Review</h2>
+      <div className="edit-review-container">
+        <img src={this.props.profileImg} alt="" />
+        
+        <div className="edit-review-details">
+        <h2>{this.props.author} <span className="material-icons-outlined cancel-edit" onClick={this.props.toggleEdit}>close</span></h2>
         <form onSubmit={this.handleSubmit}>
-          <textarea
-            onChange={this.handleBody}
-            placeholder="Write your review here"
-            value={this.state.body}
-          ></textarea>
-          <div className="rate">
+          <div className="edit-stars">
             <StarRating
               handleRating={e => {
                 this.handleRating(e)
@@ -70,7 +70,26 @@ class EditReviewForm extends React.Component {
               status = {"editing"}
               rating = {this.props.review.rating}
             />
-            {/* {this.populateStars()}
+          </div>
+
+          <textarea
+            onChange={this.handleBody}
+            placeholder="Write your review here"
+            value={this.state.body}
+          ></textarea>
+
+          <button type="submit">Edit</button>
+        </form>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default EditReviewForm;
+
+
+   {/* {this.populateStars()}
             <input
               onChange={this.handleRating}
               type="radio"
@@ -121,13 +140,3 @@ class EditReviewForm extends React.Component {
             <label htmlFor="star1" title="text">
               1 star
             </label> */}
-          </div>
-          <button type="submit">Edit</button>
-        </form>
-        <button onClick={this.props.toggleEdit}>Cancel</button>
-      </div>
-    );
-  }
-}
-
-export default EditReviewForm;

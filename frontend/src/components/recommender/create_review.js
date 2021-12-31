@@ -34,7 +34,8 @@ class CreateReviewForm extends React.Component {
         rating: ""
       }
     )
-    // window.location.reload()
+    
+    this.props.toggleCreateReview();
   };
 
   handleRating(e) {
@@ -50,15 +51,16 @@ class CreateReviewForm extends React.Component {
 
   render() {
     return (
-      <div >
+      <div className="create-review-form">
         <h2>Create Review</h2>
         <form onSubmit={this.handleSubmit}>
-          <textarea onChange={this.handleBody} placeholder="Write your review here" value={this.state.body}></textarea>
           <StarRating
             handleRating ={e => {
               this.handleRating(e)
             }}
           />
+          
+          <textarea onChange={this.handleBody} placeholder="Write your review here" value={this.state.body}></textarea>
           {/* <div className="rate">
             <input onChange={this.handleRating} type="radio" id="star5" className="rate" value="5" />
             <label htmlFor="star5" title="text">5 stars</label>
@@ -72,6 +74,7 @@ class CreateReviewForm extends React.Component {
             <label htmlFor="star1" title="text">1 star</label>
           </div> */}
           <button type="submit">Create</button> 
+          <button onClick={this.props.toggleCreateReview}>Cancel</button>
         </form>
       </div >
     )

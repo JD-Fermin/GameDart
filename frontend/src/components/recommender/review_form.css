@@ -47,6 +47,10 @@
   color: #747474d8;
 }
 
+.edit-star {
+  color: rgb(255, 0, 0);
+}
+
 .rating-header {
   font-family: 'Rajdhani', sans-serif;
 }
@@ -70,6 +74,10 @@
   display: flex;
   flex-direction: column;
   margin-left: 25px;
+}
+
+.edit-stars {
+
 }
  
 .stars > label {
@@ -102,4 +110,61 @@
 .edit-buttons:hover {
   color: white;
   cursor: pointer;
+}
+
+.toggle-review {
+  text-align: center;
+  position: relative;
+  bottom: 14px;
+}
+
+.add-review {
+  font-size: 5em;
+  text-align: center;
+  transition: all 0.4s ease 0s;
+  color: rgba(255, 255, 255, 0.363);
+}
+
+.add-review:hover {
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+.edit-review-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.edit-review-container img {
+  height: 169px;
+  border-radius: 10px;
+}
+
+.edit-review-container {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(61, 61, 61);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.edit-review-details {
+  position: relative;
+  left: 25px;
+}
+
+.create-review-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.cancel-edit {
+  color: rgb(133, 133, 133);
+  transition: all 0.4s ease 0s;
+  font-size: 25px;
+}
+
+.cancel-edit:hover {
+  cursor: pointer;
+  color: white;
 }

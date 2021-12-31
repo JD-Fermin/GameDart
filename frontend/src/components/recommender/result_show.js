@@ -12,12 +12,19 @@ class ResultShow extends React.Component {
     this.handleButton = this.handleButton.bind(this);
     this.visitSite = this.visitSite.bind(this);
     this.newGame = this.newGame.bind(this);
+    this.toggleCreateReview = this.toggleCreateReview.bind(this);
+
+    this.state = { createReview: false };
   }
 
   componentDidMount() {
     this.props.fetchGames();
     this.props.fetchUser(this.props.currentUserId);
     this.props.fetchReviews();
+  }
+
+  toggleCreateReview() {
+    this.setState({ createReview: !this.state.createReview })
   }
 
   checkInclusion(arr1, arr2, target) {
@@ -84,7 +91,7 @@ class ResultShow extends React.Component {
         return true;
       }
     }
-    
+
     return false;
   }
 
@@ -150,7 +157,7 @@ class ResultShow extends React.Component {
     if (gameplay.length !== 0) {
       gallery = (
         <div className="gameplay-images">
-          <div id='highlight' onClick={this.props.openModal}></div>
+          <div id='highlight' onClick={this.props.openCarousel}></div>
           <Carousel autoPlay={true} centerMode={true} showThumbs={false} infiniteLoop={true}>
             {
               gameplay.map((gameImg, i) => {
@@ -163,10 +170,15 @@ class ResultShow extends React.Component {
         </div>
       )
     }
-
-    console.log('CERTIFIED MILF', this.props.reviews);
-    // let currentUser = this.props.currentUserId;
     
+    let createForm = this.state.createReview ? 
+      <CreateReviewForm
+        gameId = {this.props.game.id}
+        currentUserId = {this.props.currentUserId}
+        createReview = {this.props.createReview}
+        toggleCreateReview = {this.toggleCreateReview}
+      /> : null;
+
     return (
       <div className="result-show-container">
         {gallery}
@@ -175,7 +187,7 @@ class ResultShow extends React.Component {
             <img src={this.props.game.image} />
             <button onClick={this.handleButton} className="add-to-playlist">{this.checkInclusion(this.props.user.backLogGames, this.props.user.playedGames, this.props.game.id) ? "Return to Playlist" : "Add to Playlist"}</button>
             <div onClick={this.visitSite} className="visit-on-giant-bomb">Giant Bomb</div>
-            <div onClick={this.newGame} className="new-game">New Game</div>
+            <div onClick={this.newGame} className="new-game">Back to GameDart</div>
           </div>
 
           <div className="game-title-and-rating">
@@ -193,6 +205,8 @@ class ResultShow extends React.Component {
           <h3>{this.avgRating(this.props.reviews)} <span className='ex-review-item-rating'>★</span> </h3>
         </div> */}
 
+
+        { !this.state.createReview ? 
         <div className="review-container">
           <h1>Reviews</h1>
           <ul>
@@ -207,16 +221,28 @@ class ResultShow extends React.Component {
               })
             }
           </ul>
+          { !this.state.createReview && !this.madeReview(this.props.currentUserId) ? 
+          
+            <>
+              <span onClick={this.toggleCreateReview} className="material-icons-outlined add-review">add_circle</span>
+            </>
+          
+            : null 
+          }
+
+          </div>
+
+        : 
+
+        <div className="toggle-review">
+          {
+            this.madeReview(this.props.currentUserId) ? null :
+            <>{createForm}</>
+          } 
         </div>
-        {
-          this.madeReview(this.props.currentUserId) ? null :
-            <CreateReviewForm
-              gameId = {this.props.game.id}
-              currentUserId = {this.props.currentUserId}
-              createReview = {this.props.createReview}
-            />
-        } 
+        }
       </div>
+      
       </div>
     )
   }

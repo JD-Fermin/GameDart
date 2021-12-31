@@ -27,7 +27,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchGames: () => dispatch(fetchGame(ownProps.match.params.gameId)),
     updateBackLogGames: (data) => dispatch(updateBackLogGames(data)),
-    openModal: () => dispatch(openModal('gameCarousel')),
+    openCarousel: () => dispatch(openModal('gameCarousel')),
+    openReview: () => dispatch(openModal('reviewModal')),
     fetchUser: userId => dispatch(fetchUserInfo(userId)),
     fetchReviews: () => dispatch(fetchReviews(ownProps.match.params.gameId)),
     deleteReview: reviewId => dispatch(deleteReview(reviewId)),

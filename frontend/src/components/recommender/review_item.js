@@ -42,6 +42,10 @@ class ReviewItem extends React.Component {
   render() {
     
     if (!this.props.users[this.props.review.author]) return null;
+    
+    let profileImg = this.props.users[this.props.review.author].profileImgUrl;
+    let author = this.props.users[this.props.review.author].name;
+
     let buttons = 
       <>
         <span className="material-icons-outlined edit-buttons" onClick={this.toggleEdit}>edit</span>
@@ -51,17 +55,18 @@ class ReviewItem extends React.Component {
     return (
     
       <li>
+        { this.state.editing ? <EditReviewForm toggleEdit={this.toggleEdit} review={this.props.review} updateReview={this.props.updateReview} profileImg={profileImg} author={author} /> :
         <div className="review">
-          <img src={this.props.users[this.props.review.author].profileImgUrl} alt="" />
+          <img src={profileImg} alt="" />
           <div className="review-details">         
-            <h2>{this.props.users[this.props.review.author].name} { this.props.review.author === this.props.currentId ? buttons : null}</h2>
+            <h2>{author} { this.props.review.author === this.props.currentId ? buttons : null}</h2>
             <div className="user-rating">
               {this.populateStars()}
             </div>
             <h3 id="review-description">{this.props.review.body}</h3>
           </div>
         </div>
-        { this.state.editing ? <EditReviewForm toggleEdit={this.toggleEdit} review={this.props.review} updateReview={this.props.updateReview}/> : null}
+        }
       </li>
     )
   }
