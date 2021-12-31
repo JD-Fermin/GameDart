@@ -60,8 +60,12 @@ class EditReviewForm extends React.Component {
         <img src={this.props.profileImg} alt="" />
         
         <div className="edit-review-details">
-        <h2>{this.props.author} <span className="material-icons-outlined cancel-edit" onClick={this.props.toggleEdit}>close</span></h2>
-        <form onSubmit={this.handleSubmit}>
+        <form>
+          <h2>{this.props.author}
+            <span className="material-icons-outlined submit-edit" onClick={this.handleSubmit}>check</span>
+            <span className="material-icons-outlined cancel-edit" onClick={this.props.toggleEdit}>close</span>
+          </h2>
+          
           <div className="edit-stars">
             <StarRating
               handleRating={e => {
@@ -78,7 +82,7 @@ class EditReviewForm extends React.Component {
             value={this.state.body}
           ></textarea>
 
-          <button type="submit">Edit</button>
+          {/* <button type="submit">Edit</button> */}
         </form>
         </div>
       </div>

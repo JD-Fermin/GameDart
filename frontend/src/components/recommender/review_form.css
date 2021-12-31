@@ -26,7 +26,7 @@
     color:#ccc;
 }
 .rate:not(:checked) > label:before {
-    content: '★ ';
+    content: '★';
 }
 .rate > input:checked ~ label {
     color: #ffc700;    
@@ -77,7 +77,7 @@
 }
 
 .edit-stars {
-
+  margin-bottom: 5px;
 }
  
 .stars > label {
@@ -103,8 +103,11 @@
 }
 
 .edit-buttons {
+  font-size: 28px;
   color: rgb(133, 133, 133);
-  transition: 0.3s ease 0s;
+  transition: all 0.4s ease 0s;
+  position: relative;
+  /* left: 2px; */
 }
 
 .edit-buttons:hover {
@@ -130,11 +133,6 @@
   color: rgb(255, 255, 255);
 }
 
-.edit-review-container {
-  display: flex;
-  flex-direction: row;
-}
-
 .edit-review-container img {
   height: 169px;
   border-radius: 10px;
@@ -146,11 +144,17 @@
   background-color: rgb(61, 61, 61);
   padding: 20px;
   border-radius: 10px;
+  margin-bottom: 30px;
 }
 
 .edit-review-details {
   position: relative;
   left: 25px;
+  bottom: 9px;
+}
+
+.edit-review-details button {
+  content: 'CERTIFIED';
 }
 
 .create-review-form {
@@ -158,13 +162,30 @@
   flex-direction: column;
 }
 
-.cancel-edit {
-  color: rgb(133, 133, 133);
-  transition: all 0.4s ease 0s;
-  font-size: 25px;
+.submit-edit:hover {
+  cursor: pointer;
+  color: rgb(39, 226, 55);
 }
 
 .cancel-edit:hover {
   cursor: pointer;
-  color: white;
+  color: rgb(245, 55, 55);
 }
+
+.edit-review-container h2 {
+  position: relative;
+  bottom: -9px;
+}
+
+.edit-review-details span {
+  font-size: 33px;
+  color: rgb(133, 133, 133);
+  transition: all 0.4s ease 0s;
+  position: relative;
+  left: 5px;
+}
+
+.edit-review-details span:hover {
+  cursor: pointer;
+}
+
