@@ -147,17 +147,20 @@ router.patch('/:id',
           profileImgUrl: req.body.profileImgUrl,
           password: hash
         }}, (err, docs) => {
-          if (err){
+          if (err) {
             console.log(err)
           }
           
-          let payload =  {
+          let payload = {
             id: req.body.id,
             name: req.body.name,
             email: req.body.email,
             bio: req.body.bio,
-            profileImgUrl: req.body.profileImgUrl
+            profileImgUrl: req.body.profileImgUrl,
+            backLogGames: docs.backLogGames,
+            playedGames: docs.playedGames
           }
+          
           res.send(payload)
         });
       })

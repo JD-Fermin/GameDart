@@ -66,7 +66,7 @@ router.patch('/:id',
                   author: req.body.author,
                   body: req.body.body,
                   rating: parseInt(req.body.rating),
-                  id: docs._id
+                  _id: docs._id
                 })
               })
         }
