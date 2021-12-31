@@ -1,6 +1,7 @@
 .NavBar {
   position: fixed;
   display: flex;
+  padding: 0 20px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -18,7 +19,8 @@
 } */
 
 #nav-logo img {
-  width: 13vw;
+  width: 200px;
+  margin-left: 80px;
 }
 
 .NavBar a {
@@ -55,12 +57,13 @@
 #sandwich-icon {
   display: inline-block;
   cursor: pointer;
+  z-index: 3;
 }
 
 #bar1, #bar2, #bar3 {
   width: 35px;
   height: 5px;
-  background-color: rgb(199, 199, 199);
+  background-color: white;
   margin: 6px 0;
   transition: 0.4s;
 }
@@ -83,17 +86,17 @@
 }
 
 #side-nav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   left: 0;
   overflow: scroll;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
 }
 
 #user-menu {

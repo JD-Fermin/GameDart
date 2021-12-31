@@ -20,23 +20,13 @@ class NavBar extends React.Component {
   toggleSideNav() {
     document.getElementById("sandwich-icon").classList.toggle("change");
     if (document.getElementById("side-nav").clientWidth === 0) {
-      this.openNav();
+      document.getElementById("side-nav").style.width = "350px";
     } else {
-      console.log("toggle");
-      this.closeNav();
+      document.getElementById("side-nav").style.width = "0";
     }
   }
   
-  openNav() {
-    document.getElementById("side-nav").style.width = "350px";
-  }
-  
-  closeNav() {
-    document.getElementById("side-nav").style.width = "0";
-  }
-  
   openDropdown(type) {
-    // console.log('open dropdown')
     switch(type){
       case 'showSettings':
         this.setState({showSettings: true})
@@ -47,7 +37,6 @@ class NavBar extends React.Component {
   }
 
   closeDropdown() {
-    // console.log('close dropdown')
     this.setState({showSettings: false})
   }
 
