@@ -12,10 +12,6 @@ class BackLog extends React.Component {
     this.viewGame = this.viewGame.bind(this);
     this.scrollToTop = this.scrollToTop.bind(this);
     // this.handleSwitch = this.handleSwitch.bind(this);
-
-    // this.state = {
-    //   showPlayed: false
-    // }
   }
 
   componentDidMount() {
@@ -46,11 +42,6 @@ class BackLog extends React.Component {
       image: game.image
     };
 
-    // if (this.props.game.similar_games) {
-    //   for (let i = 0; i < this.props.game.similar_games.length; i++) {
-    //     payload.similar_games.push(`3030-${this.props.game.similar_games[i].id}`)
-    //   }
-    // }   
     this.props.setPlayed(payload);
     this.props.delete(payload);
   }

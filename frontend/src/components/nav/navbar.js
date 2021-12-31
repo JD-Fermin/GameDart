@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './navbar.css'
+import BacklogContainer from '../backlog/backlog_container';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -12,8 +13,28 @@ class NavBar extends React.Component {
     this.getLinks = this.getLinks.bind(this);
     this.openDropdown = this.openDropdown.bind(this);
     this.closeDropdown = this.closeDropdown.bind(this);
+    this.toggleSideNav = this.toggleSideNav.bind(this);
   }
 
+  
+  toggleSideNav() {
+    document.getElementById("sandwich-icon").classList.toggle("change");
+    if (document.getElementById("side-nav").clientWidth === 0) {
+      this.openNav();
+    } else {
+      console.log("toggle");
+      this.closeNav();
+    }
+  }
+  
+  openNav() {
+    document.getElementById("side-nav").style.width = "350px";
+  }
+  
+  closeNav() {
+    document.getElementById("side-nav").style.width = "0";
+  }
+  
   openDropdown(type) {
     // console.log('open dropdown')
     switch(type){
@@ -39,10 +60,18 @@ class NavBar extends React.Component {
       if (this.props.loggedIn) {
         return (
           <div className="NavBar">
+            <div id="sandwich-icon" onClick={this.toggleSideNav}>
+              <div id="bar1"></div>
+              <div id="bar2"></div>
+              <div id="bar3"></div>
+            </div>
+            <div id="side-nav">
+              <BacklogContainer/>
+            </div>
             <div id="nav-logo" >
               <img src="https://i.imgur.com/kucktM9.png"/>
             </div>
-            <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>Menu
+            <div id='user-menu' onMouseEnter={() => this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>Menu
             {
               this.state.showSettings ? (
                 <div className='dropdown-menu'>
