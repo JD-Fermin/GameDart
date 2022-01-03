@@ -9,8 +9,10 @@ import {
   fetchReviews,
   deleteReview,
   createReview,
-  updateReview
+  updateReview,
+  removeReviewErrors
 } from '../../actions/review_actions'
+
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,7 +21,8 @@ const mapStateToProps = (state, ownProps) => {
     game: state.game[ownProps.match.params.gameId],
     currentUserId: state.session.user.id,
     user: state.user[state.session.user.id],
-    reviews: state.review
+    reviews: state.review,
+    errors: state.errors.reviews
   };
 };
 
@@ -33,7 +36,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchReviews: () => dispatch(fetchReviews(ownProps.match.params.gameId)),
     deleteReview: reviewId => dispatch(deleteReview(reviewId)),
     createReview: review => dispatch(createReview(review)),
-    updateReview: review => dispatch(updateReview(review))
+    updateReview: review => dispatch(updateReview(review)),
+    removeReviewErrors: () => dispatch(removeReviewErrors())
   };
 };
 

@@ -17,6 +17,10 @@ class CreateReviewForm extends React.Component {
     this.handleRating = this.handleRating.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.removeReviewErrors();
+  }
+
   handleBody(e) {
     this.setState(
       {
@@ -28,16 +32,19 @@ class CreateReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     this.props.createReview(this.state)
-    this.setState(
-      {
-        body: "",
-        rating: ""
-      }
-    )
-
-    this.props.toggleCreateReview();
-  };
-
+      // .then(res => {
+        // if (!this.props.errors || Object.values(this.props.errors).length <= 0) {
+          this.props.toggleCreateReview();
+      //   }
+      // })
+      this.setState(
+        {
+          body: "",
+          rating: ""
+        }
+      )
+    };
+    
   handleRating(e) {
     this.setState(
       {
@@ -47,7 +54,7 @@ class CreateReviewForm extends React.Component {
   };
 
   renderErrors() {
-    const errors = this.props.errors;
+  let errors = Object.values(this.props.errors)
     return (
       <div className="errors-container">
         <ul className="errors">
@@ -68,6 +75,7 @@ class CreateReviewForm extends React.Component {
 
 
   render() {
+    let errorsArr = Object.values(this.props.errors)
     return (
       <div className="create-review-form">
         <h2>Create Review</h2>
@@ -79,13 +87,13 @@ class CreateReviewForm extends React.Component {
           />
 
           <textarea onChange={this.handleBody} placeholder="Write your review here" value={this.state.body}></textarea>
-          {/* <div>
+          <div>
             {
-              this.props.errors.length > 0 ? (
+              this.props.errors && errorsArr.length > 0 ? (
                 this.renderErrors()
               ) : ("")
             }
-          </div> */}
+          </div>
           <button type="submit">Create</button>
           <button onClick={this.props.toggleCreateReview}>Cancel</button>
         </form>
