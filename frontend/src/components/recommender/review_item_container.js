@@ -1,10 +1,12 @@
+
 import { connect } from 'react-redux';
 import { fetchUserInfo } from "../../actions/user_actions"
 import ReviewItem from './review_item';
 
 const mapStateToProps = (state) => ({
     users: state.user,
-    currentId: state.session.user.id
+    currentId: state.session.user.id,
+    errors: state.errors.reviews
 })
 
 const mapDispatchToProps = (dispatch) => ({

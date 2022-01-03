@@ -5,7 +5,7 @@ import StarRating from '../rating/star_rating';
 class CreateReviewForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state =  {
+    this.state = {
       author: this.props.currentUserId,
       gameId: this.props.gameId,
       body: "",
@@ -34,12 +34,11 @@ class CreateReviewForm extends React.Component {
         rating: ""
       }
     )
-    
+
     this.props.toggleCreateReview();
   };
 
   handleRating(e) {
-   // we can make left turns in nj 
     this.setState(
       {
         rating: e.target.value
@@ -47,7 +46,26 @@ class CreateReviewForm extends React.Component {
     )
   };
 
- 
+  renderErrors() {
+    const errors = this.props.errors;
+    return (
+      <div className="errors-container">
+        <ul className="errors">
+          {
+            errors.map((error, idx) => {
+              return (
+                <li key={idx} className="error" >
+                  {error}
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    )
+  }
+
+
 
   render() {
     return (
@@ -55,25 +73,20 @@ class CreateReviewForm extends React.Component {
         <h2>Create Review</h2>
         <form onSubmit={this.handleSubmit}>
           <StarRating
-            handleRating ={e => {
+            handleRating={e => {
               this.handleRating(e)
             }}
           />
-          
+
           <textarea onChange={this.handleBody} placeholder="Write your review here" value={this.state.body}></textarea>
-          {/* <div className="rate">
-            <input onChange={this.handleRating} type="radio" id="star5" className="rate" value="5" />
-            <label htmlFor="star5" title="text">5 stars</label>
-            <input onChange={this.handleRating} type="radio" id="star4" className="rate" value="4" />
-            <label htmlFor="star4" title="text">4 stars</label>
-            <input onChange={this.handleRating} type="radio" id="star3" className="rate" value="3" />
-            <label htmlFor="star3" title="text">3 stars</label>
-            <input onChange={this.handleRating} type="radio" id="star2" className="rate" value="2" />
-            <label htmlFor="star2" title="text">2 stars</label>
-            <input onChange={this.handleRating} type="radio" id="star1" className="rate" value="1" />
-            <label htmlFor="star1" title="text">1 star</label>
+          {/* <div>
+            {
+              this.props.errors.length > 0 ? (
+                this.renderErrors()
+              ) : ("")
+            }
           </div> */}
-          <button type="submit">Create</button> 
+          <button type="submit">Create</button>
           <button onClick={this.props.toggleCreateReview}>Cancel</button>
         </form>
       </div >

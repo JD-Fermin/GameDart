@@ -38,24 +38,24 @@ export const _receiveReviewErrors = errors => ({
 export const fetchReviews = (gameId) => dispatch => (
   gameAPIUtil.getGameReviews(gameId)
     .then((reviews) => dispatch(_receiveReviews(reviews.data)), // response
-      errors => dispatch(_receiveReviewErrors(errors))
+      errors => dispatch(_receiveReviewErrors(errors.response.data))
     )
 )
 
 export const deleteReview = reviewId => dispatch => (
   reviewAPIUtil.deleteReview(reviewId)
     .then((review) => dispatch(_deleteReview(review.data._id)),
-      errors => dispatch(_receiveReviewErrors(errors)))
+      errors => dispatch(_receiveReviewErrors(errors.response.data)))
 )
 
 export const createReview = reviewData => dispatch => (
   reviewAPIUtil.createReview(reviewData)
     .then(review => dispatch(_createReview(review.data)),
-      errors => dispatch(_receiveReviewErrors(errors)))
+      errors => dispatch(_receiveReviewErrors(errors.response.data)))
 )
 
 export const updateReview = reviewData => dispatch => (
   reviewAPIUtil.updateReview(reviewData)
     .then(review => dispatch(_updateReview(review.data)),
-      errors => dispatch(_receiveReviewErrors(errors)))
+      errors => dispatch(_receiveReviewErrors(errors.response.data)))
 ) 

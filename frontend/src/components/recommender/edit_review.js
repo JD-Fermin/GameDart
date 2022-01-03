@@ -49,12 +49,31 @@ class EditReviewForm extends React.Component {
     return stars;
   }
 
+  renderErrors() {
+    let errors = Object.values(this.props.errors)
+    return (
+      <div className="errors-container">
+        <ul className="errors">
+          {
+            errors.map((error, idx) => {
+              return (
+                <li key={idx} className="error" >
+                  {error}
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    )
+  }
+
+
 
 
 
   render() {
-    console.log('CERTIFIEEEED', this.props)
-
+    let errorsArr = Object.values(this.props.errors)
     return (
       <div className="edit-review-container">
         <img src={this.props.profileImg} alt="" />
@@ -77,6 +96,16 @@ class EditReviewForm extends React.Component {
             placeholder="Write your review here"
             value={this.state.body}
           ></textarea>
+              
+
+            <div>
+              {
+                this.props.errors && errorsArr.length > 0 ? (
+                  this.renderErrors()
+                ) : ("")
+              }
+            </div>
+
 
           <button type="submit">Edit</button>
         </form>
