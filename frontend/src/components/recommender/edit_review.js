@@ -82,12 +82,17 @@ class EditReviewForm extends React.Component {
   render() {
     let errorsArr = Object.values(this.props.errors)
     return (
+      <div className="review">
       <div className="edit-review-container">
         <img src={this.props.profileImg} alt="" />
         
         <div className="edit-review-details">
-        <h2>{this.props.author} <span className="material-icons-outlined cancel-edit" onClick={this.props.toggleEdit}>close</span></h2>
-        <form onSubmit={this.handleSubmit}>
+        <form>
+          <h2>{this.props.author}
+            <span className="material-icons-outlined submit-edit" onClick={this.handleSubmit}>check</span>
+            <span className="material-icons-outlined cancel-edit" onClick={this.props.toggleEdit}>close</span>
+          </h2>
+          
           <div className="edit-stars">
             <StarRating
               handleRating={e => {
@@ -114,9 +119,11 @@ class EditReviewForm extends React.Component {
             </div>
 
 
-          <button type="submit">Edit</button>
+          {/* <button type="submit">Edit</button> */}
         </form>
         </div>
+        {/* <img src={this.props.profileImg} alt="" /> */}
+      </div>
       </div>
     );
   }

@@ -78,7 +78,7 @@ class CreateReviewForm extends React.Component {
     let errorsArr = Object.values(this.props.errors)
     return (
       <div className="create-review-form">
-        <h2>Create Review</h2>
+        <h1>Create Review</h1>
         <form onSubmit={this.handleSubmit}>
           <StarRating
             handleRating={e => {
@@ -87,6 +87,7 @@ class CreateReviewForm extends React.Component {
           />
 
           <textarea onChange={this.handleBody} placeholder="Write your review here" value={this.state.body}></textarea>
+
           <div>
             {
               this.props.errors && errorsArr.length > 0 ? (
@@ -94,8 +95,24 @@ class CreateReviewForm extends React.Component {
               ) : ("")
             }
           </div>
-          <button type="submit">Create</button>
-          <button onClick={this.props.toggleCreateReview}>Cancel</button>
+
+          {/* <div className="rate">
+            <input onChange={this.handleRating} type="radio" id="star5" className="rate" value="5" />
+            <label htmlFor="star5" title="text">5 stars</label>
+            <input onChange={this.handleRating} type="radio" id="star4" className="rate" value="4" />
+            <label htmlFor="star4" title="text">4 stars</label>
+            <input onChange={this.handleRating} type="radio" id="star3" className="rate" value="3" />
+            <label htmlFor="star3" title="text">3 stars</label>
+            <input onChange={this.handleRating} type="radio" id="star2" className="rate" value="2" />
+            <label htmlFor="star2" title="text">2 stars</label>
+            <input onChange={this.handleRating} type="radio" id="star1" className="rate" value="1" />
+            <label htmlFor="star1" title="text">1 star</label>
+          </div> */}
+          <div className="create-review-buttons">
+            <button type="submit">Create</button> 
+            <button onClick={this.props.toggleCreateReview}>Cancel</button>
+          </div>
+
         </form>
       </div >
     )

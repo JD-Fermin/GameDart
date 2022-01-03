@@ -65,6 +65,7 @@ class ReviewItem extends React.Component {
             </div>
             <h3 id="review-description">{this.props.review.body}</h3>
           </div>
+          {/* <img src={profileImg} alt="" /> */}
         </div>
         }
       </li>

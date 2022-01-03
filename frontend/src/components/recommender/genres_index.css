@@ -177,10 +177,23 @@
 
 .games-per-genre {
   font-size: 30px;
-  top: 23px;
+  top: 50px;
   position: relative;
   /* margin: auto; */
-  width: 96%;
+  width: 100%;
+}
+
+.games-per-genre p {
+  font-size: 0.55em;
+  position: relative;
+  bottom: inherit;
+  right: 25px;
+  color: rgba(128, 128, 128, 0.473);
+  transition: all 0.4s ease 0s;
+}
+
+.games-per-genre p:hover {
+  color: white;
 }
 
 @keyframes fadeIn {
@@ -298,16 +311,14 @@ input[type="checkbox"] {
 .select-games-form {
   margin-top: 0.2vh;
   height: 69vh;
-  /* overflow-y: visible;
-  overflow-x: hidden; */
-  /* display:flex;
-  flex-direction: row;
-  justify-content: space-evenly; */
+  /* margin: auto; */
+  position: fixed;
   animation: fadeIn linear 1.2s;
   -webkit-animation: fadeIn linear 1.2s;
   -moz-animation: fadeIn linear 1.2s;
   -o-animation: fadeIn linear 1.2s;
   -ms-animation: fadeIn linear 1.2s;
+  left: 50px;
 }
 
 .submit-select-button {
@@ -331,13 +342,15 @@ input[type="checkbox"] {
 
 #game-dart-button {
   background-color: rgb(230, 50, 50);
-  margin-bottom: -10px;
+  /* margin-bottom: -10px; */
   transition: all 0.4s ease 0s;
-  transform: translate(-50%, 20%);
-  position: absolute;
-  margin-left: 24px;
+  /* transform: translate(-50%, 20%); */
+  position: relative;
+  /* margin-left: 24px; */
+  top: 5;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+  top: 63vh;
 }
 
 #game-dart-button:hover {
@@ -352,6 +365,7 @@ input[type="checkbox"] {
   position: relative;
   bottom: 21px;
   display: flex;
+  justify-content: space-between;
 }
 
 #back-to-genres-button {
@@ -359,8 +373,8 @@ input[type="checkbox"] {
   font-size: 1.7em;
   color: rgba(112, 112, 112, 0.247);
   position: relative;
-  top: -12px;
-  left: -11px;
+  top: -40px;
+  left: -5px;
   transition: all 0.4s ease 0s;
 }
 

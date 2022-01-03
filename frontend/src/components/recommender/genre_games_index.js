@@ -98,13 +98,14 @@ class GenreGameIndex extends React.Component {
     // console.log('GAAAAMMMEMEMEESSSS', games);
     return(
       <div className="genre-game-index">
-        <div className="select-games-form">
           <span className="material-icons left-arrow" onClick={() => this.handleScroll('left')}>
             arrow_back_ios
           </span>
           <span className="material-icons right-arrow" onClick={() => this.handleScroll('right')}>
             arrow_forward_ios
           </span>
+        <div className="select-games-form">
+
           <ul className="genre-row" ref={this.genreGames}> 
             {
               games.map(game => {

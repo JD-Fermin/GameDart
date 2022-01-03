@@ -26,7 +26,7 @@
     color:#ccc;
 }
 .rate:not(:checked) > label:before {
-    content: '★ ';
+    content: '★';
 }
 .rate > input:checked ~ label {
     color: #ffc700;    
@@ -61,6 +61,7 @@
 }
 
 .review {
+  text-align: center;
   background-color: rgb(61, 61, 61);
   border-radius: 10px;
   display: flex;
@@ -68,16 +69,20 @@
   list-style: none;
   margin-bottom: 30px;
   padding: 20px;
+  width: 847px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .review-details {
   display: flex;
   flex-direction: column;
-  margin-left: 25px;
+  width: 100%;
+  /* margin-left: 25px; */
 }
 
 .edit-stars {
-
+  margin-bottom: 5px;
 }
  
 .stars > label {
@@ -100,11 +105,15 @@
   bottom: 25px;
   left: 2px;
   font-weight: 100;
+  margin: 12px;
 }
 
 .edit-buttons {
+  font-size: 28px;
   color: rgb(133, 133, 133);
-  transition: 0.3s ease 0s;
+  transition: all 0.4s ease 0s;
+  position: relative;
+  /* left: 2px; */
 }
 
 .edit-buttons:hover {
@@ -116,23 +125,50 @@
   text-align: center;
   position: relative;
   bottom: 14px;
+  animation: fadeIn 1.2s;
+  -webkit-animation: fadeIn 1.2s;
+  -moz-animation: fadeIn 1.2s;
+  -o-animation: fadeIn 1.2s;
+  -ms-animation: fadeIn 1.2s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 .add-review {
+  position: relative;
+  bottom: 12px;
   font-size: 5em;
   text-align: center;
   transition: all 0.4s ease 0s;
-  color: rgba(255, 255, 255, 0.363);
+  color: rgba(255, 255, 255, 0.514);
 }
 
 .add-review:hover {
   cursor: pointer;
   color: rgb(255, 255, 255);
-}
-
-.edit-review-container {
-  display: flex;
-  flex-direction: row;
 }
 
 .edit-review-container img {
@@ -144,27 +180,114 @@
   display: flex;
   flex-direction: row;
   background-color: rgb(61, 61, 61);
-  padding: 20px;
   border-radius: 10px;
+  /* margin-bottom: 30px; */
+  width: 100%;
 }
 
 .edit-review-details {
   position: relative;
-  left: 25px;
+  bottom: 9px;
+  width: 100%;
+}
+
+.edit-review-details button {
+  content: 'CERTIFIED';
+}
+
+.edit-review-details textarea {
+  /* border-radius: 4px; */
+  color: white;
+  width: 27vw;
+  height: 10vh;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.425);
 }
 
 .create-review-form {
   display: flex;
   flex-direction: column;
+  position: relative;
+  top: 10px;
 }
 
-.cancel-edit {
-  color: rgb(133, 133, 133);
-  transition: all 0.4s ease 0s;
-  font-size: 25px;
+.create-review-form h1 {
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.8em;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.801);
+  position: relative;
+  top: 10px;
+  margin-bottom: -5px;
+}
+
+.create-review-form form {
+  position: relative;
+  top: 10px;
+}
+
+.create-review-form textarea {
+  width: 60vw;
+  height: 25vh;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.582);
+}
+
+
+.submit-edit:hover {
+  cursor: pointer;
+  color: rgb(39, 226, 55);
 }
 
 .cancel-edit:hover {
   cursor: pointer;
-  color: white;
+  color: rgb(245, 55, 55);
 }
+
+.edit-review-container h2 {
+  position: relative;
+  bottom: -9px;
+}
+
+.edit-review-details span {
+  font-size: 33px;
+  color: rgb(133, 133, 133);
+  transition: all 0.4s ease 0s;
+  position: relative;
+  left: 5px;
+}
+
+.edit-review-details span:hover {
+  cursor: pointer;
+}
+
+.create-review-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  gap: 5px;
+}
+
+.create-review-buttons button {
+  background-color: #e92727; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: all 0.4s ease 0s;
+}
+
+.create-review-buttons button:hover {
+  cursor: pointer;
+  background-color: rgb(255, 51, 51);
+}
+
+

@@ -63,7 +63,7 @@ class GenreIndex extends React.Component {
     return (
       <div className="game-dart-container">
         {this.state.changeSection === false ? 
-        <h1>Select a Genre</h1> : <h1>Select Some Games (Click the cover art)</h1> }
+        <h1>Select a Genre</h1> : <h1>Select Some Games</h1> }
         
         {this.state.changeSection === false ? 
         <div className="genres-container">
@@ -80,6 +80,7 @@ class GenreIndex extends React.Component {
           <div id="back-to-genres">
             <span id="back-to-genres-button" className="material-icons-outlined" onClick={this.returnToGenres} onMouseEnter={(e) => this.revealReturnText} onMouseLeave={(e) => this.hideReturnText}>reply_all</span>
             { this.state.hideText === false ? <p id="return-to-genres-text">return to genres</p> : '' } 
+          <p>* right-click game to view info</p>
           </div>
           {/* <h2>{this.state.selectedGenre}</h2> */}
             <GenreGameIndexContainer games={this.props.genres[this.state.selectedGenre]} />

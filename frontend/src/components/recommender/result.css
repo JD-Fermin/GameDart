@@ -179,9 +179,19 @@ body {
   color: #ccc
 }
 
+.review-section {
+  animation: fadeIn 1.2s;
+  -webkit-animation: fadeIn 1.2s;
+  -moz-animation: fadeIn 1.2s;
+  -o-animation: fadeIn 1.2s;
+  -ms-animation: fadeIn 1.2s;
+}
+
 .review-container {
   margin: 20px 5vw;
   border-radius: 10px;
+  text-align: center;
+  
 }
 
 .review-container ul {
