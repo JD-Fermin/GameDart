@@ -21,6 +21,10 @@ class CreateReviewForm extends React.Component {
     this.props.removeReviewErrors();
   }
 
+  componentDidUpdate() {
+    console.log(this.props.errors, "updating")
+  }
+
   handleBody(e) {
     this.setState(
       {
@@ -32,11 +36,13 @@ class CreateReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     this.props.createReview(this.state)
-      // .then(res => {
-        // if (!this.props.errors || Object.values(this.props.errors).length <= 0) {
+      .then(res => {
+        console.log(this.props.errors, "errors")
+        if (!this.props.errors || Object.values(this.props.errors).length <= 0) {
           this.props.toggleCreateReview();
-      //   }
-      // })
+          console.log(this.props.errors, "after toggle")
+        }
+      })
       this.setState(
         {
           body: "",
