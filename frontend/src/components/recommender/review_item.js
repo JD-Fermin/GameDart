@@ -55,7 +55,7 @@ class ReviewItem extends React.Component {
     return (
     
       <li>
-        {this.state.editing ? <EditReviewForm toggleEdit={this.toggleEdit} review={this.props.review} updateReview={this.props.updateReview} profileImg={profileImg} author={author} errors={this.props.errors} /> :
+        {this.state.editing ? <EditReviewForm toggleEdit={this.toggleEdit} review={this.props.review} updateReview={this.props.updateReview} profileImg={profileImg} author={author} errors={this.props.errors} removeReviewErrors={this.props.removeReviewErrors} /> :
         <div className="review">
           <img src={profileImg} alt="" />
           <div className="review-details">         

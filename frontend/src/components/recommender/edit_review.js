@@ -11,10 +11,17 @@ class EditReviewForm extends React.Component {
     this.handleRating = this.handleRating.bind(this)
   }
 
+  componentWillUnmount() {
+    this.props.removeReviewErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault()
     this.props.updateReview(this.state)
-    this.props.toggleEdit()
+    .then ( res => { if (!this.props.errors || Object.values(this.props.errors).length <= 0) {
+        this.props.toggleEdit()
+      }
+    })
   }
 
   handleBody(e) {

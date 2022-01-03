@@ -6,13 +6,13 @@ export const CREATE_REVIEW = "CREATE_REVIEW";
 export const DELETE_REVIEW = "DELETE_REVIEW";
 export const UPDATE_REVIEW = "UPDATE_REVIEW";
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS"
+export const REMOVE_REVIEW_ERRORS = "REMOVE_REVIEW_ERRORS"
 
 
 export const _receiveReviews = reviews => ({
   type: RECEIVE_REVIEWS,
   reviews
 })
-
 
 export const _createReview = review => ({
   type: CREATE_REVIEW,
@@ -32,6 +32,10 @@ export const _updateReview = review => ({
 export const _receiveReviewErrors = errors => ({
   type: RECEIVE_REVIEW_ERRORS,
   errors
+})
+
+export const removeReviewErrors = () => ({
+  type: REMOVE_REVIEW_ERRORS
 })
 
 

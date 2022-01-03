@@ -4,6 +4,7 @@ import {
   CREATE_REVIEW, 
   DELETE_REVIEW, 
   UPDATE_REVIEW, 
+  REMOVE_REVIEW_ERRORS
   } 
   from "../actions/review_actions";
 
@@ -13,14 +14,16 @@ const ReviewErrorReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_REVIEW_ERRORS:
       return action.errors
+    case REMOVE_REVIEW_ERRORS:
+      return {};
     case RECEIVE_REVIEWS:
-      return nextState;
+      return {};
     case CREATE_REVIEW:
-      return nextState;
+      return {};
     case DELETE_REVIEW:
-      return nextState;
+      return {};
     case UPDATE_REVIEW:
-      return nextState;
+      return {};
 
     default:
       return state;
