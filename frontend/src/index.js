@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (decodedUser.exp < currentTime) {
       store.dispatch(logout());
-      window.location.href = window.location.hostname;
+      window.location.href = "";
     }
   } else {
     store = configureStore({});
