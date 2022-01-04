@@ -18,7 +18,7 @@ class MainPage extends React.Component {
           <div>
             <h3>Find a brand new video game to experience</h3>
             <div>
-              <p>There are countless video games out there, and figuring out what to play next can be very difficult.</p>
+              There are countless video games out there, and figuring out what to play next can be very difficult.
               Take out the guess work by using our algorithm to find the next game for you!
             </div>
           </div>
