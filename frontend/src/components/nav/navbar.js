@@ -66,7 +66,6 @@ class NavBar extends React.Component {
                 <div className='dropdown-menu'>
                   <Link to='/profile'>Profile</Link>
                   <Link to='/gamedartstart'>GameDart It!</Link>
-                  <Link to='/playlist'>Playlist</Link>
                   <Link to='/developers'>Developers</Link>
                   <a onClick={this.logoutUser}>Logout</a>
                 </div>
