@@ -91,9 +91,9 @@ class BackLog extends React.Component {
 
     return (
       <div className="selected-games-container">
-        <ScrollToTop className="playlist-scroll-up" showUnder={500} >
+        {/* <ScrollToTop className="playlist-scroll-up" showUnder={500} >
           <span class="material-icons-outlined">keyboard_double_arrow_up</span>
-        </ScrollToTop>
+        </ScrollToTop> */}
 
         {!this.props.user.backLogGames.length && !this.props.user.playedGames.length ? 
           <div className="played-games-container">

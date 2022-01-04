@@ -40,7 +40,7 @@
   box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
   /* width: 100%; */
   top: 75px;
-  width: 500px;
+  width: min(90vmax, 70vmin);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@
 .profile-box h1 {
   position: relative;
   bottom: 5px;
-  font-size: 35px;
+  font-size: min(17vmax, 3vmax);
   font-family: 'Rajdhani', sans-serif;
 }
 

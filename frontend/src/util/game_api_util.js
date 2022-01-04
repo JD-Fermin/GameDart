@@ -12,3 +12,8 @@ export const getGame = async (gameId) => {
    return res;
   }
 }
+
+export const getGameReviews = async (gameId) => {
+  const res = await axios.get(`/api/gameseeds/${gameId}/reviews`);
+  return res;
+}

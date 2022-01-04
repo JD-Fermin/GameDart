@@ -5,6 +5,14 @@ import { withRouter } from 'react-router-dom';
 import { updateBackLogGames } from '../../actions/user_actions';
 import { openModal } from '../../actions/modal_actions';
 import { fetchUserInfo } from '../../actions/user_actions'; 
+import {
+  fetchReviews,
+  deleteReview,
+  createReview,
+  updateReview,
+  removeReviewErrors
+} from '../../actions/review_actions'
+
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,7 +20,9 @@ const mapStateToProps = (state, ownProps) => {
   return {
     game: state.game[ownProps.match.params.gameId],
     currentUserId: state.session.user.id,
-    user: state.user[state.session.user.id]
+    user: state.user[state.session.user.id],
+    reviews: state.review,
+    errors: state.errors.reviews
   };
 };
 
@@ -20,8 +30,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchGames: () => dispatch(fetchGame(ownProps.match.params.gameId)),
     updateBackLogGames: (data) => dispatch(updateBackLogGames(data)),
-    openModal: () => dispatch(openModal('gameCarousel')),
-    fetchUser: userId => dispatch(fetchUserInfo(userId))
+    openCarousel: () => dispatch(openModal('gameCarousel')),
+    openReview: () => dispatch(openModal('reviewModal')),
+    fetchUser: userId => dispatch(fetchUserInfo(userId)),
+    fetchReviews: () => dispatch(fetchReviews(ownProps.match.params.gameId)),
+    deleteReview: reviewId => dispatch(deleteReview(reviewId)),
+    createReview: review => dispatch(createReview(review)),
+    updateReview: review => dispatch(updateReview(review)),
+    removeReviewErrors: () => dispatch(removeReviewErrors())
   };
 };
 

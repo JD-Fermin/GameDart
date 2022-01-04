@@ -1,5 +1,5 @@
 .game-dart-container{
-  height: 100vh;
+  height: 100%;
   top: 0;
 }
 
@@ -177,10 +177,23 @@
 
 .games-per-genre {
   font-size: 30px;
-  top: 23px;
+  top: 50px;
   position: relative;
-  margin: auto;
-  width: 98%;
+  /* margin: auto; */
+  width: 100%;
+}
+
+.games-per-genre p {
+  font-size: 0.55em;
+  position: relative;
+  bottom: inherit;
+  right: 25px;
+  color: rgba(128, 128, 128, 0.473);
+  transition: all 0.4s ease 0s;
+}
+
+.games-per-genre p:hover {
+  color: white;
 }
 
 @keyframes fadeIn {
@@ -227,12 +240,19 @@
   opacity: 1;
 }
 
+.genre-game:hover > #view-game-page {
+  /* transform: scale(1.08); */
+  opacity: 1;
+}
+
 .chosen.genre-game {
   opacity: 1;
 }
 
 .genre-game > .select-game-image {
   transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
+  padding-right: 6px;
+  padding-left: 6px;
 }
 
 .chosen.genre-game > .select-game-image img {
@@ -251,9 +271,10 @@
 .select-game-image img {
   box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
   transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
+  overflow:visible;
 }
 
-.select-game-image:hover img {
+.select-game-image:hover {
   transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
   transform: translate(0px, -30px);
   cursor: pointer;
@@ -288,15 +309,16 @@ input[type="checkbox"] {
 }
 
 .select-games-form {
-  margin-top: 7vh;
-  display:flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-    animation: fadeIn linear 1.2s;
+  margin-top: 0.2vh;
+  height: 69vh;
+  /* margin: auto; */
+  position: fixed;
+  animation: fadeIn linear 1.2s;
   -webkit-animation: fadeIn linear 1.2s;
   -moz-animation: fadeIn linear 1.2s;
   -o-animation: fadeIn linear 1.2s;
   -ms-animation: fadeIn linear 1.2s;
+  left: 50px;
 }
 
 .submit-select-button {
@@ -320,11 +342,15 @@ input[type="checkbox"] {
 
 #game-dart-button {
   background-color: rgb(230, 50, 50);
-  margin-bottom: -10px;
+  /* margin-bottom: -10px; */
   transition: all 0.4s ease 0s;
-  transform: translate(-50%, 20%);
-  position: fixed;
+  /* transform: translate(-50%, 20%); */
+  position: relative;
+  /* margin-left: 24px; */
+  top: 5;
+  text-align: center;
   box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+  top: 63vh;
 }
 
 #game-dart-button:hover {
@@ -339,18 +365,22 @@ input[type="checkbox"] {
   position: relative;
   bottom: 21px;
   display: flex;
+  justify-content: space-between;
 }
 
 #back-to-genres-button {
   cursor: pointer;
-  font-size: 25px;
-  color:rgba(218, 218, 218, 0.432);
+  font-size: 1.7em;
+  color: rgba(112, 112, 112, 0.247);
+  position: relative;
+  top: -40px;
+  left: -5px;
   transition: all 0.4s ease 0s;
 }
 
 #back-to-genres-button:hover {
   cursor: pointer;
-  transform: scale(1.4);
+  /* transform: scale(1.7); */
   color:rgb(255, 255, 255);
 }
 
@@ -359,4 +389,63 @@ input[type="checkbox"] {
   bottom: 7px;
   font-size: 25px;
   color:rgb(128, 128, 128)
+}
+
+.genre-row {
+  display: flex;
+  width: max-content;
+  transition: all 1.4s;
+  position: fixed;
+  /* overflow:scroll;
+  margin-left: auto;
+  margin-right: auto; */
+}
+
+.left-arrow {
+  margin-top: 25vh;
+  margin-left: 0.7vw;
+  font-size: 1.8em;
+  color: rgba(128, 127, 127, 0.151);
+  position: fixed;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.right-arrow {
+  margin-top: 25vh;
+  margin-left: 96vw;
+  font-size: 1.8em;
+  color: rgba(128, 127, 127, 0.151);
+  position: fixed;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.left-arrow:hover {
+  color: white;
+}
+
+.right-arrow:hover {
+  color: white;
+}
+
+#view-game-page {
+  position: relative;
+  bottom: 80px;
+  left: 63px;
+  /* text-align: center; */
+  /* width: 100%; */
+  font-size: 15px;
+  color: rgba(104, 103, 103, 0.007);
+  transition: 0.4s ease 0s;
+  padding: 20px;
+}
+
+#view-game-page:hover {
+  opacity: 1;
+  color: #09ff00;
 }

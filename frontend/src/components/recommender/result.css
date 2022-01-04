@@ -38,13 +38,31 @@ body {
   100% {opacity:1;}
 }
 
+#game-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3em;
+  position: relative;
+}
+
+#general-info {
+  padding-bottom: 10px;
+  position: relative;
+  top: -9px;
+  left: 3px;
+}
+
+#game-description {
+  position: relative;
+  left: 4px;
+  font-size: 1.2em;
+}
 .add-to-playlist {
   position: absolute;
   /* top: -10px; */
   background-color: rgb(0, 167, 0);
   border-color: transparent;
   color: white;
-  box-shadow: 0 1px 40px 3px rgb(14, 14, 14, 0.7);
+  box-shadow: 1 1px 40px 3px rgb(14, 14, 14, 0.7);
   transition: 0.2s;
   width: 16vw;
 }
@@ -64,12 +82,32 @@ body {
   background-color: rgb(250, 162, 0);
   border-color: transparent;
   color: white;
-  box-shadow: 0 1px 40px 3px rgba(14, 14, 14, 0.7);
+  box-shadow: 1 1px 40px 3px rgb(14, 14, 14, 0.7);
   transition: 0.2s;
 }
 
 .visit-on-giant-bomb:hover{
   background-color: rgb(214, 129, 0);
+  cursor: pointer;
+}
+
+.new-game {
+  position: absolute;
+  text-align: center;
+  padding: 13px;
+  width: 16vw;
+  min-width: 150px;
+  margin-top: 126px;
+  background-color: rgb(13, 0, 194);
+  border-color: transparent;
+  color: white;
+  box-shadow: 1 1px 40px 3px rgb(14, 14, 14, 0.7);
+  transition: 0.2s;
+  z-index: 0;
+}
+
+.new-game:hover{
+  background-color: rgb(0, 23, 151);
   cursor: pointer;
 }
 
@@ -132,3 +170,61 @@ body {
   width: auto !important;
   height: 500px;
 }
+
+.review-item-rating {
+  color: #ffc700;
+}
+
+.ex-review-item-rating {
+  color: #ccc
+}
+
+.review-section {
+  animation: fadeIn 1.2s;
+  -webkit-animation: fadeIn 1.2s;
+  -moz-animation: fadeIn 1.2s;
+  -o-animation: fadeIn 1.2s;
+  -ms-animation: fadeIn 1.2s;
+}
+
+.review-container {
+  margin: 20px 5vw;
+  border-radius: 10px;
+  text-align: center;
+  
+}
+
+.review-container ul {
+  list-style: none;
+}
+
+.review-container h1 {
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3em;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.582);
+}
+
+.review-container h2 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.3em;
+}
+
+.game-title-and-rating {
+  display:flex;
+  flex-direction: row;
+}
+
+.avg-rating {
+  color: #ffc700;
+  font-size: 0.9em;
+  position: relative;
+  bottom: 2px;
+} 
+
+/* #avg-rating {
+  position: relative;
+  top: 16px;
+  left: 16px;
+  font-size: 30px;
+} */
