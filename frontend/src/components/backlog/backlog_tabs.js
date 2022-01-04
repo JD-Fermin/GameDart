@@ -37,12 +37,7 @@ class Tabs extends React.Component {
             const { label } = child.props;
 
             return (
-              <Tab
-                activeTab={activeTab}
-                key={label}
-                label={label}
-                onClick={onClickTabItem}
-              />
+              <Tab activeTab={activeTab} key={label} label={label} onClick={onClickTabItem}/>
             );
           })}
         </ol>

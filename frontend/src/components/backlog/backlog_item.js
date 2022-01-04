@@ -11,8 +11,7 @@ class BackLogItem extends React.Component {
     this.handlePlayed = this.handlePlayed.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
     this.handleBack = this.handleBack.bind(this);
-    this.openSettings = this.openSettings.bind(this);
-    this.closeSettings = this.closeSettings.bind(this);
+    this.toggleSettings = this.toggleSettings.bind(this);
     this.viewGame = this.viewGame.bind(this);
   }
 
@@ -56,23 +55,12 @@ class BackLogItem extends React.Component {
     //     payload.similar_games.push(`3030-${this.props.game.similar_games[i].id}`)
     //   }
     // }  
-    console.log(game); 
     this.props.setBackLog(payload);
     this.props.deletePlayed(payload);
   }
 
-  openSettings(type) {
-    switch(type){
-      case 'showSettings':
-        this.setState({showSettings: true})
-        break;
-      default:
-        return
-    }
-  }
-
-  closeSettings() {
-    this.setState({showSettings: false})
+  toggleSettings() {
+    this.setState({showSettings: !this.state.showSettings});
   }
 
   viewGame(gameId) {
@@ -81,7 +69,7 @@ class BackLogItem extends React.Component {
 
   render() {
     return (
-    <div className={`${this.state.showSettings ? "backlogGame-item backlogGame-item-open" : "backlogGame-item"}`}>
+    <div className={`${this.state.showSettings ? "backlogGame-item backlogGame-item-open" : "backlogGame-item"}`} onClick={() => this.toggleSettings()}>
       <img src={this.props.game.image} />
         <div className="backlogGame-options">
         <div className="backlogGame-title">{ this.props.game.name }</div>
@@ -91,13 +79,7 @@ class BackLogItem extends React.Component {
               {/* <Link to='/games/' className="view-game-button">View Game Page</Link> */}
               <button className="view-game-button" onClick={() => this.viewGame(this.props.game.id)}>View Game Page</button>
         </div>
-        {
-          this.state.showSettings ? (
-              <div className="setting-button setting-button-open" onClick={() => this.closeSettings()}>&#8964;</div>
-          ) : (
-              <div className="setting-button" onClick={() => this.openSettings('showSettings')}>&#8964;</div>
-          )
-        }
+        <div className={`${this.state.showSettings ? "setting-button setting-button-open" : "setting-button"}`} onClick={() => this.toggleSettings()}>&#8964;</div>
       </div>    
     </div>
     )
