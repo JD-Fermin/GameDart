@@ -16,7 +16,8 @@ const StarRating = (props) => {
 
   useEffect(() => {
     let localRating = props.rating ? parseInt(props.rating) : null;
-    setRating(localRating)
+    console.log(localRating)
+    if (props.status !== "editing") setRating(localRating)
   })
 
   return (

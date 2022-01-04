@@ -27,6 +27,10 @@ class ResultShow extends React.Component {
     if (Object.values(this.props.reviews).length !== Object.values(prevProps.reviews).length) {
       this.props.fetchReviews()
     }
+
+    if (prevProps.match.params.gameId != this.props.match.params.gameId) {
+      this.props.fetchGames()
+    }
   }
 
   toggleCreateReview() {
@@ -67,7 +71,7 @@ class ResultShow extends React.Component {
       this.props.updateBackLogGames(payload)
     }
 
-    this.props.history.push('/playlist')
+    // this.props.history.push('/playlist')
   }
 
   visitSite(e) {
