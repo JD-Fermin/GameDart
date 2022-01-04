@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class PlayedItem extends React.Component {
   constructor(props){
@@ -64,6 +64,7 @@ class PlayedItem extends React.Component {
   }
 
   viewGame(gameId) {
+    this.props.toggleSideNav()
     this.props.history.push(`/games/${gameId}`)
   }
 
@@ -94,4 +95,4 @@ class PlayedItem extends React.Component {
   }
 }
 
-export default PlayedItem;
+export default withRouter(PlayedItem);

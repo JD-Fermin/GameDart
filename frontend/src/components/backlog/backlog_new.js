@@ -93,7 +93,7 @@ class BackLog extends React.Component {
               {this.props.user.backLogGames.map((game, i) => {
 
                 return (
-                   <BacklogItem key={i} fetch={this.props.fetch} currentId={this.props.currentId} game={game} delete={this.props.delete} setPlayed={this.props.setPlayed} setBackLog={this.props.setBackLog} deletePlayed={this.props.deletePlayed}/>
+                   <BacklogItem key={i} toggleSideNav={this.props.toggleSideNav} fetch={this.props.fetch} currentId={this.props.currentId} game={game} delete={this.props.delete} setPlayed={this.props.setPlayed} setBackLog={this.props.setBackLog} deletePlayed={this.props.deletePlayed}/>
                 )
               })}
             </div>
@@ -114,7 +114,7 @@ class BackLog extends React.Component {
                   //   </div>
                   //   <img src={game.image} />
                   // </div>
-                  <PlayedItem key={i} fetch={this.props.fetch} currentId={this.props.currentId} game={game} delete={this.props.delete} setPlayed={this.props.setPlayed} setBackLog={this.props.setBackLog} deletePlayed={this.props.deletePlayed}/>
+                  <PlayedItem key={i} toggleSideNav={this.props.toggleSideNav} fetch={this.props.fetch} currentId={this.props.currentId} game={game} delete={this.props.delete} setPlayed={this.props.setPlayed} setBackLog={this.props.setBackLog} deletePlayed={this.props.deletePlayed}/>
                 )
               })}
             </div>

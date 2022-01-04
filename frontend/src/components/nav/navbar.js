@@ -55,7 +55,7 @@ class NavBar extends React.Component {
               <div id="bar3"></div>
             </div>
             <div id="side-nav">
-              <BacklogContainer/>
+              <BacklogContainer toggleSideNav={this.toggleSideNav} />
             </div>
             <div id="nav-logo" >
               <img src="https://i.imgur.com/kucktM9.png"/>
