@@ -51,27 +51,21 @@
 .backlogGame-item {
   position: relative;
   border-radius: 15px;
-  padding: 117px;
+  padding: 20px;
   margin: 10px;
   text-align: center;
-  transition: 0.2s;
-  /* border: 1.5px solid; */
-  /* background-color: black; */
-  flex-direction: row;
-  justify-content: space-around;
   overflow: hidden;
-  display: block;
   outline: 1.5px solid rgb(255, 255, 255);
   outline-offset: -6px;
+  transition: 0.2s;
 }
 
 .backlogGame-item img {
-  width: 638px;
-  height: auto;
+  width: 330px;
   position: absolute;
   z-index: 0;
-  margin-top: -388px;
-  margin-left: -116px;
+  margin-left: -20px;
+  margin-top: -188px;
   opacity: 0.8;
 }
 
@@ -82,12 +76,12 @@
 }
 
 .backlogGame-title {
-  width: 403px;
+  /* width: 403px; */
   text-align: center;
   font-family: 'Rajdhani', sans-serif;
-  font-size: 28px;
+  font-size: 20px;
   text-shadow: 0 0 15px rgb(0, 0, 0);
-  position: relative;
+  /* position: relative; */
   bottom: 9px;
   margin-bottom: -8px;
 }
