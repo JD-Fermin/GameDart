@@ -1,6 +1,7 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import './signup.css'
+import { withRouter, Link } from 'react-router-dom';
+import './signup.css';
+
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -89,9 +90,13 @@ class SignupForm extends React.Component {
                   placeholder="Confirm Password"
                   />
               <br/>
-              <input type="submit" value="Submit" id="submit-button"/>
+              <input type="submit" value="Sign Up" id="submit-button"/>
             </div>
           </form>
+          <div className="redirect-info">
+            <span>Already have an account? </span>
+            <Link to="/login">Log in</Link>
+          </div>
         </div>
       </div>
     );

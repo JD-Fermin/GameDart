@@ -58,36 +58,37 @@
 .profile-box h1 {
   position: relative;
   bottom: 5px;
-  font-size: min(17vmax, 3vmax);
+  font-size: min(17vmax, 2.4vmax);
   font-family: 'Rajdhani', sans-serif;
 }
 
 .profile-box h2 {
   position: relative;
   bottom: 10px;
-  font-size: 18px;
+  font-size: min(3vmax, 1.3vmax);
   font-weight: lighter;
   text-align: center;
 }
 
 #edit-profile-button {
-  position: relative;
-  top: 5px;
-   /* margin-top: 30px !important; */
-  padding: 8px 10px;;
-  width: 102px;
-  text-align: center;
-  border-radius: 8px;
-  background-color: rgb(230, 50, 50);
-  font-weight: 600;
-  transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
+    position: relative;
+    top: 5px;
+    /* margin-top: 30px !important; */
+    padding: 0.5vw 2vw;
+    /* width: 102px; */
+    text-align: center;
+    font-size: min(3vmax, 1.1vmax);
+    border-radius: 8px;
+    background-color: rgb(230, 50, 50);
+    font-weight: 600;
+    transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
 }
 
 #edit-profile-button:hover {
   cursor: pointer;
   background-color: rgb(255, 59, 59);
-  transition: all 0.4s ease 0s;
-  width: 200px;
+  /* transition: all 0.4s ease 0s; */
+  /* width: 200px; */
 }
 
 #profile-username{

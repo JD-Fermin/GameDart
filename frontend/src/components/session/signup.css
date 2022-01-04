@@ -49,3 +49,21 @@
   top: 14px;
   color: rgb(248, 72, 72);
 }
+
+.redirect-info {
+  margin-top: 0.5vw;
+  font-size: 1vw;
+  text-align: center;
+}
+
+.redirect-info span {
+  color: rgb(158, 158, 158);
+}
+
+.redirect-info a {
+  color: rgb(241, 241, 241);
+}
+
+.redirect-info a:hover {
+  text-decoration: underline;
+}
