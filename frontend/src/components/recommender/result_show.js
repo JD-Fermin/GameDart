@@ -67,7 +67,7 @@ class ResultShow extends React.Component {
       this.props.updateBackLogGames(payload)
     }
 
-    this.props.history.push('/playlist')
+    // this.props.history.push('/playlist')
   }
 
   visitSite(e) {

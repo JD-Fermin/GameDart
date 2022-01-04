@@ -1,5 +1,4 @@
 .selected-games-container {
-  padding-top: 50px;
   animation: fadeIn 1.2s;
   -webkit-animation: fadeIn 1.2s;
   -moz-animation: fadeIn 1.2s;
@@ -32,11 +31,32 @@
   100% {opacity:1;}
 }
 
+.selected-games-container {
+  width: 350px;
+  position: absolute;
+  transition: 0.3s;
+}
+
 .selected-games-container h1{
   text-align: center;
   font-family: 'Rajdhani', sans-serif;
   font-size: 40px;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.767);
+}
+
+.setting-button {
+  width: 200px;
+  position: absolute;
+  top: 55px;
+  left: 45px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.setting-button-open {
+  height: 22px;
+  top: 100%;
+  transform: rotate(180deg);
 }
 
 .backlog-container, .played-games-container {
@@ -50,46 +70,42 @@
 
 .backlogGame-item {
   position: relative;
+  height: 110px;
   border-radius: 15px;
-  padding: 117px;
+  padding: 20px;
   margin: 10px;
   text-align: center;
-  transition: 0.2s;
-  /* border: 1.5px solid; */
-  /* background-color: black; */
-  flex-direction: row;
-  justify-content: space-around;
   overflow: hidden;
-  display: block;
   outline: 1.5px solid rgb(255, 255, 255);
   outline-offset: -6px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.backlogGame-item-open {
+  height: 250px !important;
+  transition: 0.5s;
 }
 
 .backlogGame-item img {
-  width: 638px;
-  height: auto;
+  top: 0;
+  left: 0;
   position: absolute;
   z-index: 0;
-  margin-top: -388px;
-  margin-left: -116px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
-#no-games {
-  filter: invert(1);
-  opacity: 0.85;
-  border-radius: 10px;
-}
 
 .backlogGame-title {
-  width: 403px;
+  /* width: 403px; */
   text-align: center;
   font-family: 'Rajdhani', sans-serif;
-  font-size: 28px;
+  font-size: 20px;
   text-shadow: 0 0 15px rgb(0, 0, 0);
-  position: relative;
+  /* position: relative; */
   bottom: 9px;
   margin-bottom: -8px;
+  cursor: pointer;
 }
 
 .backlog-container h1 {
@@ -106,48 +122,29 @@
 }
 
 .backlogGame-buttons {
+  padding-top: 56px;
   padding-bottom: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .backlogGame-buttons button{
   border: none;
   color: white;
   border-radius: 5px;
-  padding: 10px;
-  margin: 0px 3px;
+  padding: 5px;
+  margin: 3px 3px;
   box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(48, 48, 48, 0.185) 0px 16px 10px -10px;
   transition: all 0.4s ease 0s;
+  z-index: 2;
 }
 
-.add-to-played {
+.add-to-played, .remove-game, .remove-from-played {
   background-color: rgb(218, 9, 9);
 }
 
-.remove-game {
-  background-color: rgb(218, 9, 9);
-}
-
-.add-to-played:hover {
-  border: none;
-  background-color: rgb(233, 59, 59);
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.remove-game:hover {
-  border: none;
-  background-color: rgb(233, 59, 59);
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.remove-from-played {
-  background-color: rgb(218, 9, 9);
-}
-
-.remove-from-played:hover {
+.add-to-played:hover, .remove-game:hover, .remove-from-played:hover{
   border: none;
   background-color: rgb(233, 59, 59);
   color: white;
@@ -178,4 +175,38 @@
 
 .selected-games-container span:hover {
   color:rgba(255, 255, 255, 0.932);
+}
+
+.tab-list {  
+  border-bottom: 1px solid #ccc;
+  display:flex;
+  flex-direction: row;
+  position: sticky;
+  padding-left: 0px;
+  z-index: 3;
+  top: 0px;
+  padding-top: 40px;
+  height: 80px;
+  margin-top: 0;
+  background-color: black;
+}
+
+.tab-list-item {
+  width: 175px;
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+}
+
+.tab-list-active {
+  background-color: rgb(61, 61, 61);
+  border: solid rgb(61, 61, 61);
+  border-width: 1px 1px 0 1px;
+}
+
+#no-games {
+  filter: invert(1);
+  opacity: 0.85;
+  border-radius: 10px;
 }

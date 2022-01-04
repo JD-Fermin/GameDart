@@ -1,4 +1,4 @@
-import Backlog from "./backlog_new";
+import BacklogIndex from "./backlog_index";
 import { 
   updatePlayedGames, 
   deleteBackLogGames,
@@ -30,4 +30,4 @@ const mDTP = (dispatch) => {
 export default connect(
   mSTP,
   mDTP
-)(Backlog);
+)(BacklogIndex);
