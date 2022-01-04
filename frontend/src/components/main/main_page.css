@@ -1,68 +1,87 @@
 .splash-title {
-  width: 100%;
-  height: 45vw;
+    width: 100%;
+    height: 47vw;
+    position: relative;
+    top: min(21px, 5vw);
 }
 
 .splash-container {
-  box-shadow: inset 0 -4vw 70px 50px #000000;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.205),rgba(0, 0, 0, 0.226)) , url('https://www.howtogeek.com/wp-content/uploads/2021/03/person-holding-a-sony-playstation-5-dualsense-controller.jpeg?height=200p');
-
-  /* background-image: url('https://www.howtogeek.com/wp-content/uploads/2021/03/person-holding-a-sony-playstation-5-dualsense-controller.jpeg?height=200p'); */
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  height: 100%;
-  padding: 10vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* opacity: 0.7; */
+    box-shadow: inset -2vw -2vw 6vw 4vw #000000be;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.205),rgba(0, 0, 0, 0.226)) , url('https://www.howtogeek.com/wp-content/uploads/2021/03/person-holding-a-sony-playstation-5-dualsense-controller.jpeg?height=200p');
+    /* background-image: url('https://www.howtogeek.com/wp-content/uploads/2021/03/person-holding-a-sony-playstation-5-dualsense-controller.jpeg?height=200p'); */
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    /* position: static; */
+    background-attachment: scroll;
+    height: 100%;
+    /* padding: 10vw; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* top: 36px; */
+    /* padding-bottom: 12px; */
+    /* margin-top: 10px; */
+    /* margin-bottom: -26px; */
 }
 
 .splash-container h3 {
-  position: relative;
-  margin-left: 14px;
-  font-size: max(50px, 2vw);
-  font-family: 'Rajdhani', sans-serif;
-  bottom: 50px;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.582);
+    /* top: 0px; */
+    position: relative;
+    /* margin-left: 14px; */
+    font-family: 'Rajdhani', sans-serif;
+    /* bottom: 50px; */
+    font-size: max(4.5vw, 4.5vw);
+    /* margin-top: 1px; */
+    text-align: center;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.582);
 }
 
-#main-logo{
-  /* height: 300px; */
-  height: max(450px, 2vw);
+#main-logo {
+    /* height: 300px; */
+    position: relative;
+    width: 90%;
+    /* margin-bottom: -57px; */
+    top: 6vw;
 }
 
 .splash-desc {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.541),rgba(0, 0, 0, 0.952)) , url('https://i.redd.it/f0c0nwbfxksz.jpg');
-  background-size: 100%;
-  box-shadow: inset 10px 0 90px 48px #000000;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  padding: 10vw;
-  height: 100%;
-  overflow: visible;
-  position: relative;
-  top: 15vh;
-  /* margin: 0 10vw; */
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-size: 1.4em;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.582);
-  border-top: solid 2px rgba(54, 54, 58, 0.87);
-  /* margin-bottom: 100px; */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.664),rgba(0, 0, 0, 0.729)) , url('https://i.redd.it/f0c0nwbfxksz.jpg');
+    background-size: cover;
+    box-shadow: inset 0.5vw 1vw 7vw 3vw #000000;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 10vw;
+    /* height: 100%; */
+    padding-left: 2vw;
+    padding-right: 2vw;
+    background-position: bottom;
+    /* margin-top: 81px; */
+    overflow: visible;
+    position: relative;
+    top: 2vh;
+    /* margin: 0 10vw; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* font-size: 1.4em; */
+    text-shadow: 4px 2px 8px rgb(0 0 0);
+    border-top: solid 2px rgb(110, 110, 110);
+    /* margin-bottom: 100px; */
 }
 
+
 .splash-desc h3 {
-  /* padding: 1px; */
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 2em;
-  color: rgb(252, 67, 67);
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.582);
+    /* padding: 1px; */
+    font-family: 'Rajdhani', sans-serif;
+    font-size: max(4vw, 36px);
+    color: rgb(252, 67, 67);
 }
 
 .splash-desc > div {
-  /* padding-top: 5vh; */
-  padding-bottom: 24vh;
+    font-size: max(2.2vw, 25px);
+    padding: 5vh;
+    /* padding-bottom: 15vw; */
+    /* margin-top: 2px; */
+    margin-bottom: 12vw;
 }

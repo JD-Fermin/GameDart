@@ -3,25 +3,29 @@
 }
 
 .login-box {
-  position: relative;
-  top: calc(100% - 80vh);
-  padding: 10px 20px;
-  border-radius: 6px;
-  margin: 0 auto;
-  width: 663px;
-  background-color: rgb(61, 61, 61);
-  box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
+    position: relative;
+    top: calc(100% - 84vh);
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin: 0 auto;
+    width: min(90vmax, 70vmin);
+    height: auto;
+    background-color: rgb(61, 61, 61);
+    box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
 }
 
 .login-form input, #demo-login-button {
-  background-color: rgb(44, 44, 44);
-  width: 100%;
-  margin: 5px 0;
-  padding: 5px 10px;
-  border-radius: 8px;
-  border-color: transparent;
-  color: white;
+    background-color: rgb(44, 44, 44);
+    width: 100%;
+    margin: 5px 0;
+    height: min(7vh, 8vh);
+    padding: 5px 10px;
+    border-radius: 8px;
+    border-color: transparent;
+    color: white;
+    font-size: min(2.4vh, 3.7vmin);
 }
+
 #submit-button {
   margin-top: 10px !important;
 }
