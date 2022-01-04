@@ -21,7 +21,6 @@ const App = () => (
     <Modal/>
       <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/" component={MainPage} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} /> 
         <ProtectedRoute exact path="/profile" component={ProfileContainer} />
         <ProtectedRoute path="/gamedartstart" component={GameDartStart} />
@@ -29,6 +28,7 @@ const App = () => (
         <ProtectedRoute path="/games/:gameId" component={ResultShowContainer} /> 
         <ProtectedRoute path="/profile/:id" component={ProfileContainer} />
         <ProtectedRoute path="/developers" component={GitHubLinks} />
+        <AuthRoute path="/" component={MainPage} />
       </Switch>
   </div>
 );
