@@ -60,6 +60,10 @@
   z-index: 3;
 }
 
+#sandwich-icon.change {
+  margin-bottom: 5px;
+}
+
 #bar1, #bar2, #bar3 {
   width: 25px;
   height: 3px;

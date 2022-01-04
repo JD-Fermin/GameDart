@@ -82,13 +82,12 @@ class BackLog extends React.Component {
 
         {!this.props.user.backLogGames.length && !this.props.user.playedGames.length ? 
           <div className="played-games-container">
-            <h1>GameDart some games!</h1>
             <img id="no-games" src="https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png" />
           </div> : null}
         
         <Tabs>
-          {this.props.user.backLogGames.length === 0 ? null :
-            <div label="Backlog" className="backlog-container">
+
+            <div label="Playlist" className="backlog-container">
           
               {this.props.user.backLogGames.map((game, i) => {
 
@@ -97,8 +96,8 @@ class BackLog extends React.Component {
                 )
               })}
             </div>
-          }
-          {this.props.user.playedGames.length === 0 ? null :
+
+         
             <div label="Played Games" className="played-games-container">   
 
               {this.props.user.playedGames.map((game, i) => {
@@ -118,7 +117,7 @@ class BackLog extends React.Component {
                 )
               })}
             </div>
-          }
+          
         </Tabs>
       </div>
     ) 

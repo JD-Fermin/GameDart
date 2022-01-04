@@ -66,12 +66,11 @@ class ResultShow extends React.Component {
         image: this.props.game.image
       };
 
-       
-
       this.props.updateBackLogGames(payload)
+    } else {
+      this.props.history.push('/profile')
     }
 
-    // this.props.history.push('/playlist')
   }
 
   visitSite(e) {
@@ -197,7 +196,7 @@ class ResultShow extends React.Component {
         <div id='game-info-container'>
           <div id="game-cover">
             <img src={this.props.game.image} />
-            <button onClick={this.handleButton} className="add-to-playlist">{this.checkInclusion(this.props.user.backLogGames, this.props.user.playedGames, this.props.game.id) ? "Return to Playlist" : "Add to Playlist"}</button>
+            <button onClick={this.handleButton} className="add-to-playlist">{this.checkInclusion(this.props.user.backLogGames, this.props.user.playedGames, this.props.game.id) ? "Return to Profile" : "Add to Playlist"}</button>
             <div onClick={this.visitSite} className="visit-on-giant-bomb">Giant Bomb</div>
             <div onClick={this.newGame} className="new-game">Back to GameDart</div>
           </div>
