@@ -88,6 +88,7 @@ class CreateReviewForm extends React.Component {
             handleRating={e => {
               this.handleRating(e)
             }}
+            rating={this.state.rating}
           />
 
           <textarea onChange={this.handleBody} placeholder="Write your review here" value={this.state.body}></textarea>
