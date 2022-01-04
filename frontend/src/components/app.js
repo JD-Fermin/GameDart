@@ -28,7 +28,7 @@ const App = () => (
         <ProtectedRoute path="/games/:gameId" component={ResultShowContainer} /> 
         <ProtectedRoute path="/profile/:id" component={ProfileContainer} />
         <ProtectedRoute path="/developers" component={GitHubLinks} />
-        <AuthRoute path="/" component={MainPage} />
+        <AuthRoute exact path="/" component={MainPage} />
       </Switch>
   </div>
 );
