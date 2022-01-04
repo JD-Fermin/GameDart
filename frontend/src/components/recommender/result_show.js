@@ -24,7 +24,6 @@ class ResultShow extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    
     if (Object.values(this.props.reviews).length !== Object.values(prevProps.reviews).length) {
       this.props.fetchReviews()
     }
