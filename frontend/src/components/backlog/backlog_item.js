@@ -81,22 +81,24 @@ class BackLogItem extends React.Component {
 
   render() {
     return (
-    <div className="backlogGame-item">
-      <div className="backlogGame-options">
+    <div className={`${this.state.showSettings ? "backlogGame-item backlogGame-item-open" : "backlogGame-item"}`}>
+      <img src={this.props.game.image} />
+        <div className="backlogGame-options">
         <div className="backlogGame-title">{ this.props.game.name }</div>
-        {
-          this.state.showSettings ? (
-            <div className="backlogGame-buttons">
+        <div className="backlogGame-buttons">
               <button className="add-to-played" onClick={() => this.handlePlayed(this.props.game)}>Add to Games Played</button>
               <button className="remove-game" onClick={() => this.handleRemove(this.props.game.id)}>Remove Game</button>
               {/* <Link to='/games/' className="view-game-button">View Game Page</Link> */}
               <button className="view-game-button" onClick={() => this.viewGame(this.props.game.id)}>View Game Page</button>
+        </div>
+        {
+          this.state.showSettings ? (
               <div className="setting-button setting-button-open" onClick={() => this.closeSettings()}>&#8964;</div>
-            </div>
-          ) : (<div className="setting-button" onClick={() => this.openSettings('showSettings')}>&#8964;</div>)
+          ) : (
+              <div className="setting-button" onClick={() => this.openSettings('showSettings')}>&#8964;</div>
+          )
         }
       </div>    
-      <img src={this.props.game.image} />
     </div>
     )
   }

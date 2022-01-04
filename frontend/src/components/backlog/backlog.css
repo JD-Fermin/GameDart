@@ -46,10 +46,17 @@
 }
 
 .setting-button {
+  width: 200px;
+  position: absolute;
+  top: 55px;
+  left: 45px;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .setting-button-open {
+  height: 22px;
+  top: 100%;
   transform: rotate(180deg);
 }
 
@@ -64,6 +71,7 @@
 
 .backlogGame-item {
   position: relative;
+  height: 110px;
   border-radius: 15px;
   padding: 20px;
   margin: 10px;
@@ -71,15 +79,19 @@
   overflow: hidden;
   outline: 1.5px solid rgb(255, 255, 255);
   outline-offset: -6px;
-  transition: 0.2s;
+  transition: 0.5s;
+}
+
+.backlogGame-item-open {
+  height: 250px !important;
+  transition: 0.5s;
 }
 
 .backlogGame-item img {
-  width: 330px;
+  top: 0;
+  left: 0;
   position: absolute;
   z-index: 0;
-  margin-left: -20px;
-  margin-top: -188px;
   opacity: 0.8;
 }
 
@@ -98,6 +110,7 @@
   /* position: relative; */
   bottom: 9px;
   margin-bottom: -8px;
+  cursor: pointer;
 }
 
 .backlog-container h1 {
@@ -114,48 +127,28 @@
 }
 
 .backlogGame-buttons {
+  padding-top: 56px;
   padding-bottom: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .backlogGame-buttons button{
   border: none;
   color: white;
   border-radius: 5px;
-  padding: 10px;
-  margin: 0px 3px;
+  padding: 5px;
+  margin: 3px 3px;
   box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(48, 48, 48, 0.185) 0px 16px 10px -10px;
   transition: all 0.4s ease 0s;
 }
 
-.add-to-played {
+.add-to-played, .remove-game, .remove-from-played {
   background-color: rgb(218, 9, 9);
 }
 
-.remove-game {
-  background-color: rgb(218, 9, 9);
-}
-
-.add-to-played:hover {
-  border: none;
-  background-color: rgb(233, 59, 59);
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.remove-game:hover {
-  border: none;
-  background-color: rgb(233, 59, 59);
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.remove-from-played {
-  background-color: rgb(218, 9, 9);
-}
-
-.remove-from-played:hover {
+.add-to-played:hover, .remove-game:hover, .remove-from-played:hover{
   border: none;
   background-color: rgb(233, 59, 59);
   color: white;

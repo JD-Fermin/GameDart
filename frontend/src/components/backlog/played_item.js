@@ -82,6 +82,7 @@ class PlayedItem extends React.Component {
   render() {
     return (
     <div className="backlogGame-item">
+      <img src={this.props.game.image} />
       <div className="backlogGame-options">
         <div className="backlogGame-title">{ this.props.game.name }</div>
         {
@@ -94,7 +95,6 @@ class PlayedItem extends React.Component {
           ) : ( <div className="setting-button" onClick={() => this.openSettings('showSettings')}>&#8964;</div>)
         }
       </div>    
-      <img src={this.props.game.image} />
     </div>
     // <div className="backlogGame-item">
     //   <div className="backlogGame-options">
