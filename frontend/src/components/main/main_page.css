@@ -46,9 +46,9 @@
 }
 
 .splash-desc {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.541),rgba(0, 0, 0, 0.952)) , url('https://i.redd.it/f0c0nwbfxksz.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.664),rgba(0, 0, 0, 0.729)) , url('https://i.redd.it/f0c0nwbfxksz.jpg');
     background-size: cover;
-    box-shadow: inset 0px 66px 188px 79px #000000;
+    box-shadow: inset 0.5vw 1vw 7vw 3vw #000000;
     background-repeat: no-repeat;
     background-attachment: fixed;
     padding-top: 10vw;
@@ -65,8 +65,8 @@
     flex-direction: column;
     text-align: center;
     /* font-size: 1.4em; */
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.582);
-    border-top: solid 2px rgba(54, 54, 58, 0.87);
+    text-shadow: 4px 2px 8px rgb(0 0 0);
+    border-top: solid 2px rgb(110, 110, 110);
     /* margin-bottom: 100px; */
 }
 
@@ -76,7 +76,6 @@
     font-family: 'Rajdhani', sans-serif;
     font-size: max(4vw, 36px);
     color: rgb(252, 67, 67);
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.582);
 }
 
 .splash-desc > div {
