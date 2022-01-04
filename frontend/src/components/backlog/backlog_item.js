@@ -91,10 +91,10 @@ class BackLogItem extends React.Component {
               <button className="remove-game" onClick={() => this.handleRemove(this.props.game.id)}>Remove Game</button>
               {/* <Link to='/games/' className="view-game-button">View Game Page</Link> */}
               <button className="view-game-button" onClick={() => this.viewGame(this.props.game.id)}>View Game Page</button>
+              <div className="setting-button setting-button-open" onClick={() => this.closeSettings()}>&#8964;</div>
             </div>
-          ) : ( null )
+          ) : (<div className="setting-button" onClick={() => this.openSettings('showSettings')}>&#8964;</div>)
         }
-        <div onClick={() => this.openSettings('showSettings')}>&#8964;</div>
       </div>    
       <img src={this.props.game.image} />
     </div>

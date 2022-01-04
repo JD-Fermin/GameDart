@@ -32,11 +32,25 @@
   100% {opacity:1;}
 }
 
+.selected-games-container {
+  width: 350px;
+  position: absolute;
+  transition: 0.3s;
+}
+
 .selected-games-container h1{
   text-align: center;
   font-family: 'Rajdhani', sans-serif;
   font-size: 40px;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.767);
+}
+
+.setting-button {
+  cursor: pointer;
+}
+
+.setting-button-open {
+  transform: rotate(180deg);
 }
 
 .backlog-container, .played-games-container {

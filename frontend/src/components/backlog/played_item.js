@@ -87,12 +87,12 @@ class PlayedItem extends React.Component {
         {
           this.state.showSettings ? (
             <div className="backlogGame-buttons">
-              <button className="remove-from-played" onClick={() => this.handlePlayed(this.props.game)}>Remove from Games Played</button>
+              <button className="remove-from-played" onClick={() => this.handleBack(this.props.game)}>Remove from Games Played</button>
               <button className="view-game-button" onClick={() => this.viewGame(this.props.game.id)}>View Game Page</button>
+              <div className="setting-button setting-button-open" onClick={() => this.closeSettings()}>&#8964;</div>
             </div>
-          ) : ( null )
+          ) : ( <div className="setting-button" onClick={() => this.openSettings('showSettings')}>&#8964;</div>)
         }
-        <div onClick={() => this.openSettings('showSettings')}>&#8964;</div>
       </div>    
       <img src={this.props.game.image} />
     </div>
