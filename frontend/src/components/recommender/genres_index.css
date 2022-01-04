@@ -72,7 +72,7 @@
   background-origin: content-box;
   max-width: 100%;
   background-size: initial;
-  background-position: center;
+  background-position: fixed center;
   /* max-height: 100%; */
 }
 
