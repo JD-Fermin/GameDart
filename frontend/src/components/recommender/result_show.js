@@ -23,6 +23,12 @@ class ResultShow extends React.Component {
     this.props.fetchReviews();
   }
 
+  componentDidUpdate(prevProps){
+    if (Object.values(this.props.reviews).length !== Object.values(prevProps.reviews).length) {
+      this.props.fetchReviews()
+    }
+  }
+
   toggleCreateReview() {
     this.setState({ createReview: !this.state.createReview })
   }
@@ -177,6 +183,8 @@ class ResultShow extends React.Component {
         currentUserId = {this.props.currentUserId}
         createReview = {this.props.createReview}
         toggleCreateReview = {this.toggleCreateReview}
+        removeReviewErrors = {this.props.removeReviewErrors}
+        errors = {this.props.errors}
       /> : null;
 
     return (

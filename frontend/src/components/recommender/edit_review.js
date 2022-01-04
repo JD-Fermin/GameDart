@@ -11,10 +11,17 @@ class EditReviewForm extends React.Component {
     this.handleRating = this.handleRating.bind(this)
   }
 
+  componentWillUnmount() {
+    this.props.removeReviewErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault()
     this.props.updateReview(this.state)
-    this.props.toggleEdit()
+    .then ( res => { if (!this.props.errors || Object.values(this.props.errors).length <= 0) {
+        this.props.toggleEdit()
+      }
+    })
   }
 
   handleBody(e) {
@@ -49,12 +56,31 @@ class EditReviewForm extends React.Component {
     return stars;
   }
 
+  renderErrors() {
+    let errors = Object.values(this.props.errors)
+    return (
+      <div className="errors-container">
+        <ul className="errors">
+          {
+            errors.map((error, idx) => {
+              return (
+                <li key={idx} className="error" >
+                  {error}
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    )
+  }
+
+
 
 
 
   render() {
-    console.log('CERTIFIEEEED', this.props)
-
+    let errorsArr = Object.values(this.props.errors)
     return (
       <div className="review">
       <div className="edit-review-container">
@@ -82,6 +108,16 @@ class EditReviewForm extends React.Component {
             placeholder="Write your review here"
             value={this.state.body}
           ></textarea>
+              
+
+            <div>
+              {
+                this.props.errors && errorsArr.length > 0 ? (
+                  this.renderErrors()
+                ) : ("")
+              }
+            </div>
+
 
           {/* <button type="submit">Edit</button> */}
         </form>

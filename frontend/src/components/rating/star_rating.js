@@ -1,4 +1,5 @@
-import React, { useState, useCallback } from "react";
+import { set } from "express/lib/application";
+import React, { useState, useCallback, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 
 const StarRating = (props) => {
@@ -12,6 +13,11 @@ const StarRating = (props) => {
     props.handleRating(event)
     
   }
+
+  useEffect(() => {
+    let localRating = props.rating ? parseInt(props.rating) : null;
+    setRating(localRating)
+  })
 
   return (
   <div className="stars"> 

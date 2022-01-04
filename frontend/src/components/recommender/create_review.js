@@ -5,7 +5,7 @@ import StarRating from '../rating/star_rating';
 class CreateReviewForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state =  {
+    this.state = {
       author: this.props.currentUserId,
       gameId: this.props.gameId,
       body: "",
@@ -15,6 +15,14 @@ class CreateReviewForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBody = this.handleBody.bind(this);
     this.handleRating = this.handleRating.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.removeReviewErrors();
+  }
+
+  componentDidUpdate() {
+    console.log(this.props, "updating")
   }
 
   handleBody(e) {
@@ -28,18 +36,20 @@ class CreateReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     this.props.createReview(this.state)
-    this.setState(
-      {
-        body: "",
-        rating: ""
-      }
-    )
+      .then(res => {
+        console.log(res.type, "test")
+        if (res.type !== "RECEIVE_REVIEW_ERRORS") this.props.toggleCreateReview()
+        })
+        .catch(errs => console.log(errs))
+      this.setState(
+        {
+          body: "",
+          rating: ""
+        }
+      )
+    };
     
-    this.props.toggleCreateReview();
-  };
-
   handleRating(e) {
-   // we can make left turns in nj 
     this.setState(
       {
         rating: e.target.value
@@ -47,20 +57,50 @@ class CreateReviewForm extends React.Component {
     )
   };
 
- 
+  renderErrors() {
+  let errors = Object.values(this.props.errors)
+    return (
+      <div className="errors-container">
+        <ul className="errors">
+          {
+            errors.map((error, idx) => {
+              return (
+                <li key={idx} className="error" >
+                  {error}
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    )
+  }
+
+
 
   render() {
+    let errorsArr = Object.values(this.props.errors)
     return (
       <div className="create-review-form">
         <h1>Create Review</h1>
         <form onSubmit={this.handleSubmit}>
           <StarRating
-            handleRating ={e => {
+            handleRating={e => {
               this.handleRating(e)
             }}
+            rating={this.state.rating}
           />
-          
+
           <textarea onChange={this.handleBody} placeholder="Write your review here" value={this.state.body}></textarea>
+
+          <div>
+            {
+              this.props.errors && errorsArr.length > 0 ? (
+                this.renderErrors()
+              ) : ("")
+            }
+          </div>
+
           {/* <div className="rate">
             <input onChange={this.handleRating} type="radio" id="star5" className="rate" value="5" />
             <label htmlFor="star5" title="text">5 stars</label>
@@ -77,6 +117,7 @@ class CreateReviewForm extends React.Component {
             <button type="submit">Create</button> 
             <button onClick={this.props.toggleCreateReview}>Cancel</button>
           </div>
+
         </form>
       </div >
     )
