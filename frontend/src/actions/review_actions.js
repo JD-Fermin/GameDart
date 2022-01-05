@@ -7,7 +7,7 @@ export const DELETE_REVIEW = "DELETE_REVIEW";
 export const UPDATE_REVIEW = "UPDATE_REVIEW";
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS"
 export const REMOVE_REVIEW_ERRORS = "REMOVE_REVIEW_ERRORS"
-
+export const CLEAR_REVIEWS = 'CLEAR_REVIEWS'
 
 export const _receiveReviews = reviews => ({
   type: RECEIVE_REVIEWS,
@@ -38,6 +38,9 @@ export const removeReviewErrors = () => ({
   type: REMOVE_REVIEW_ERRORS
 })
 
+export const clearReviews = () => ({
+  type: CLEAR_REVIEWS
+})
 
 export const fetchReviews = (gameId) => dispatch => (
   gameAPIUtil.getGameReviews(gameId)
@@ -63,3 +66,4 @@ export const updateReview = reviewData => dispatch => (
     .then(review => dispatch(_updateReview(review.data)),
       errors => dispatch(_receiveReviewErrors(errors.response.data)))
 ) 
+
