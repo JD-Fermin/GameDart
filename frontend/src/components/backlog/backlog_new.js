@@ -90,39 +90,29 @@ class BackLog extends React.Component {
         {!this.props.user.backLogGames.length && !this.props.user.playedGames.length ? 
           <div className="played-games-container">
             <img id="no-games" src="https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png" />
-          </div> : null}
+          </div> : 
+          <Tabs>
+          <div label="Playlist" className="backlog-container">
+            {this.props.user.backLogGames.map((game, i) => {
+
+              return (
+                 <BacklogItem key={i}  fetch={this.props.fetch} currentId={this.props.currentId} game={game} delete={this.props.delete} setPlayed={this.props.setPlayed} setBackLog={this.props.setBackLog} deletePlayed={this.props.deletePlayed}/>
+              )
+            })}
+          </div>
+
+          <div label="Played Games" className="played-games-container">   
+
+            {this.props.user.playedGames.map((game, i) => {
+
+              return (
+                <PlayedItem key={i} fetch={this.props.fetch} currentId={this.props.currentId} game={game} delete={this.props.delete} setPlayed={this.props.setPlayed} setBackLog={this.props.setBackLog} deletePlayed={this.props.deletePlayed}/>
+              )
+            })}
+          </div>
         
-        <Tabs>
-            <div label="Playlist" className="backlog-container">
-              {this.props.user.backLogGames.map((game, i) => {
-
-                return (
-                   <BacklogItem key={i}  fetch={this.props.fetch} currentId={this.props.currentId} game={game} delete={this.props.delete} setPlayed={this.props.setPlayed} setBackLog={this.props.setBackLog} deletePlayed={this.props.deletePlayed}/>
-                )
-              })}
-            </div>
-
-            <div label="Played Games" className="played-games-container">   
-
-              {this.props.user.playedGames.map((game, i) => {
-
-                return (
-                  // <div key={i} className="backlogGame-item">
-                  //   <div className="backlogGame-options">
-                  //     <div className="backlogGame-title">{ game.name }</div>
-                  //     <div className="backlogGame-buttons">
-                  //       <button className="remove-from-played" onClick={() => this.handleBack(game)}>Remove from Games Played</button>
-                  //       <button className="view-game-button" onClick={() => this.viewGame(game.id)}>View Game Page</button>
-                  //     </div>
-                  //   </div>
-                  //   <img src={game.image} />
-                  // </div>
-                  <PlayedItem key={i} fetch={this.props.fetch} currentId={this.props.currentId} game={game} delete={this.props.delete} setPlayed={this.props.setPlayed} setBackLog={this.props.setBackLog} deletePlayed={this.props.deletePlayed}/>
-                )
-              })}
-            </div>
-          
-        </Tabs>
+      </Tabs>
+      }
       </div>
     ) 
   }
