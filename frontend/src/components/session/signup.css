@@ -14,6 +14,10 @@
     box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
 }
 
+.login-box img {
+  margin-bottom: min(-3vmax, -6vmin);
+}
+
 .login-form input, #demo-login-button {
     background-color: rgb(44, 44, 44);
     width: 100%;
@@ -52,7 +56,7 @@
 
 .redirect-info {
   margin-top: 0.5vw;
-  font-size: 1vw;
+  font-size: min(2vh, 3.7vmin);
   text-align: center;
 }
 

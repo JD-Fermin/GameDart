@@ -68,6 +68,10 @@
   padding-bottom: -26px;
 }
 
+.played-games-container img {
+  object-position: center;
+}
+
 .backlogGame-item {
   position: relative;
   height: 110px;
@@ -76,10 +80,14 @@
   margin: 10px;
   text-align: center;
   overflow: hidden;
-  outline: 1.5px solid rgb(255, 255, 255);
+  outline: 2px solid rgb(136, 136, 136);
   outline-offset: -6px;
   cursor: pointer;
   transition: 0.5s;
+}
+
+.backlogGame-item:hover {
+  outline: 2px solid rgb(255, 255, 255);
 }
 
 .backlogGame-item-open {
@@ -102,9 +110,8 @@
   font-family: 'Rajdhani', sans-serif;
   font-size: 20px;
   text-shadow: 0 0 15px rgb(0, 0, 0);
-  /* position: relative; */
-  bottom: 9px;
-  margin-bottom: -8px;
+  position: relative;
+  top: 13.5px;
   cursor: pointer;
 }
 
@@ -189,6 +196,7 @@
   height: 80px;
   margin-top: 0;
   background-color: black;
+  text-align: center;
 }
 
 .tab-list-item {
@@ -197,6 +205,10 @@
   list-style: none;
   margin-bottom: -1px;
   padding: 0.5rem 0.75rem;
+}
+
+.tab-list-item:hover {
+  cursor: pointer;
 }
 
 .tab-list-active {
@@ -209,4 +221,16 @@
   filter: invert(1);
   opacity: 0.85;
   border-radius: 10px;
+}
+
+.tab-content p {
+  position: relative;
+  text-align: center;
+  padding: 8px;
+  margin-bottom: -14px;
+  color: rgba(151, 150, 150, 0.966);
+}
+
+.tab-content {
+  margin-bottom: 38px;
 }

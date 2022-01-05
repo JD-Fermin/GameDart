@@ -10,7 +10,7 @@ class Tabs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: this.props.children[0].props.label,
+      activeTab: this.props.children[0].props.label
     };
   }
 
@@ -31,18 +31,25 @@ class Tabs extends React.Component {
       }
     } = this;
 
+    console.log("WHAT" ,this.props.children[0].props.label);
+    console.log('props', this.props)
+
     return (
       <div className="tabs">
         <ol className="tab-list">
           {children.map((child) => {
             const { label } = child.props;
-
+            
             return (
               <Tab activeTab={activeTab} key={label} label={label} onClick={onClickTabItem}/>
-            );
-          })}
+              );
+            })}
         </ol>
         <div className="tab-content">
+          {
+            this.props.children[0].props.children.length > 5 || this.props.children[1].props.children.length > 5 ? <p>Scroll to view more games</p> : null
+          }
+          
           {children.map((child) => {
             if (child.props.label !== activeTab) return undefined;
             return child.props.children;

@@ -20,7 +20,7 @@
 
 #nav-logo img {
   width: 200px;
-  margin-left: 80px;
+  /* margin-left: 80px; */
 }
 
 .NavBar a {
@@ -58,6 +58,10 @@
   display: inline-block;
   cursor: pointer;
   z-index: 3;
+}
+
+#sandwich-icon.change {
+  margin-bottom: 5px;
 }
 
 #bar1, #bar2, #bar3 {
