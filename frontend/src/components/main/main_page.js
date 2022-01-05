@@ -25,13 +25,13 @@ class MainPage extends React.Component {
           <div>
             <h3>Create and organize your playlist</h3>
             <div>
-              With our convenient platform, you can keep track of all the games you've played and plan to play.
+              With our convenient platform, you can keep track of the games you've played and plan to play all in one place.
             </div>
           </div>
           <div>
-            <h3>Connect with other gamers</h3>
+            <h3>Rate and review games</h3>
             <div>
-              Get a look at other gamer's playlists. See their games and get some suggestions based on their interests.
+              Read what other players think of a game. See if this game is for you, and rate it yourself to help other's game-playing decisions. 
             </div>
           </div>
         </div>
