@@ -26,7 +26,7 @@
 }
 
 .genres-container { 
-  font-size: 30px;
+  font-size: clamp(2vw, 50%, 30px);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
@@ -334,6 +334,7 @@ input[type="checkbox"] {
 .submit-select-button {
   color: white;
   position: fixed;
+  bottom: 50px;
   left: 50%;
   margin: 0;
   transform: translate(-50%, 50%);
@@ -459,25 +460,64 @@ input[type="checkbox"] {
 
 
 
-@media (max-width: 650px) {
+@media (max-width: 777px) {
+  .game-dart-container h1 {
+    font-size: clamp(38px, 50%, 9vw);
+  }
+
+  #select-genre {
+    position: relative;
+  }
+
+  #select-games {
+    position: fixed;
+  }
+
   .genres-container {
     display:flex;
     flex-direction: column;
+    position: relative;
+    top: 50px;
+    font-size: 30px;
+    overflow: scroll;
+    width: 95%;
   } 
+
+  .genre-item {
+    box-shadow: rgba(0, 0, 0, 0) 0px 26px 30px -10px, rgba(0, 0, 0, 0.884) 0px 16px 10px -10px;
+  }
+
+  .genre-item h2 {
+    font-size: clamp(25px, 50%, 60px);
+  }
+
+  .genre-game-index {
+    position: relative;
+    top: 5px;
+  }
 
   .genre-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    overflow: visible scroll;
+    position: relative;
+    left: 1260px;
+    padding-right: 40px;
+    padding-left: 45px;
   }
 
   .select-games-form {
     display: flex;
     justify-content: center;
+    position: relative;
+    top: 7vh;
   }
 
   .genre-game {
-    width: 200px;
+    width: clamp(280px, 30vw, 30vw);
+  }
+
+  .left-arrow, .right-arrow {
+    opacity: 0;
   }
 }

@@ -63,7 +63,7 @@ class GenreIndex extends React.Component {
     return (
       <div className="game-dart-container">
         {this.state.changeSection === false ? 
-        <h1>Select a Genre</h1> : <h1>Select Some Games</h1> }
+        <h1 id="select-genre">Select a Genre</h1> : <h1 id="select-games">Select Some Games</h1> }
         
         {this.state.changeSection === false ? 
         <div className="genres-container">
