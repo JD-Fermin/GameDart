@@ -35,7 +35,6 @@ class ResultShow extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log("does it hit")
     this.props.clearReviews();
   }
 

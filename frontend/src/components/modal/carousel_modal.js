@@ -23,8 +23,7 @@ const mapDispatchToProps = (dispatch) => {
 class CarouselModal extends React.Component{
   constructor(props){
     super(props);
-    console.log('constructor')
-    console.log(this.props.gameplay)
+   
   }
 
   render(){

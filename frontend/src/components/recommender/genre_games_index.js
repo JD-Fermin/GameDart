@@ -57,36 +57,35 @@ class GenreGameIndex extends React.Component {
     let result = `3030-${similarGameIds[randomGameIndex]}`;
 
     this.props.history.push(`/games/${result}`)
-    // console.log(mostSimilar);
+   
   }
       
   pushGameToSelected(game) {
     if (!this.selected.includes(game)) {
       this.selected.push(game)
     }
-    // console.log("game to push", game)
-    // console.log(this.selected);
+    
   }
 
   deleteGameFromArray(game) {
-    // console.log("GAME TO DELETE", game)
+    
     let index = this.selected.indexOf(game);
-    // console.log("index to delete", index);
+    
     let result = this.selected.slice(0, index).concat(this.selected.slice(index + 1));
     this.selected = result;
-    // console.log(this.selected);
+    
   }
 
 
 
   render() {
-    // console.log('STATEEEEE', this.state);
+    
     if (!this.props.fetchedGames) {
       return null
     } 
     
     let games = [];  //Object.values(this.props.fetchedGames);  // need to refresh slice of state
-    // console.log('fetched', this.props.fetchedGames)
+    
     
     for (let i = 0; i < this.props.games.length; i++) {
       if (this.props.fetchedGames[this.props.games[i]]) {
@@ -94,8 +93,7 @@ class GenreGameIndex extends React.Component {
       }
     }
     
-    // console.log('this.props.games', this.props.games);
-    // console.log('GAAAAMMMEMEMEESSSS', games);
+    
     return(
       <div className="genre-game-index">
           <span className="material-icons left-arrow" onClick={() => this.handleScroll('left')}>

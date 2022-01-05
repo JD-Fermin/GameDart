@@ -53,8 +53,7 @@ class Profile extends React.Component {
         return null;
       }
       let editButton;
-      // console.log(this.props.user.id)
-      // console.log(this.props.currentId)
+      
       if (this.props.user.id === this.props.currentId){
         editButton = <div id="edit-profile-button">
           <div onClick={this.props.openModal}>Edit Info</div>

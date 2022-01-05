@@ -15,8 +15,7 @@ class BackLog extends React.Component {
   componentDidMount() {
     this.props.fetch(this.props.currentId);
     window.addEventListener("hashchange", () => {
-      // console.log(document.getElementById("side-nav").clientWidth)
-      if (document.getElementById("side-nav").clientWidth === 350) {
+      if (document.getElementById("side-nav") && document.getElementById("side-nav").clientWidth === 350) {
         this.props.toggleSideNav()
       }
     });
@@ -43,8 +42,6 @@ class BackLog extends React.Component {
       id: this.props.currentId,
       gameId: gameId
     }
-
-    console.log(gameId)
     this.props.delete(payload)
   }
 
