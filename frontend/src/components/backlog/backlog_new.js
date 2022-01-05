@@ -9,12 +9,19 @@ class BackLog extends React.Component {
     super(props)
     this.viewGame = this.viewGame.bind(this);
     // this.handleSwitch = this.handleSwitch.bind(this);
+    
   }
 
   componentDidMount() {
     this.props.fetch(this.props.currentId);
+    window.addEventListener("hashchange", () => {
+      console.log(document.getElementById("side-nav").clientWidth)
+      if (document.getElementById("side-nav").clientWidth === 350) {
+        this.props.toggleSideNav()
+      }
+    });
   }
-
+ 
   viewGame(gameId) {
     this.props.history.push(`/games/${gameId}`)
   }
@@ -86,18 +93,15 @@ class BackLog extends React.Component {
           </div> : null}
         
         <Tabs>
-
             <div label="Playlist" className="backlog-container">
-          
               {this.props.user.backLogGames.map((game, i) => {
 
                 return (
-                   <BacklogItem key={i} toggleSideNav={this.props.toggleSideNav} fetch={this.props.fetch} currentId={this.props.currentId} game={game} delete={this.props.delete} setPlayed={this.props.setPlayed} setBackLog={this.props.setBackLog} deletePlayed={this.props.deletePlayed}/>
+                   <BacklogItem key={i}  fetch={this.props.fetch} currentId={this.props.currentId} game={game} delete={this.props.delete} setPlayed={this.props.setPlayed} setBackLog={this.props.setBackLog} deletePlayed={this.props.deletePlayed}/>
                 )
               })}
             </div>
 
-         
             <div label="Played Games" className="played-games-container">   
 
               {this.props.user.playedGames.map((game, i) => {
@@ -113,7 +117,7 @@ class BackLog extends React.Component {
                   //   </div>
                   //   <img src={game.image} />
                   // </div>
-                  <PlayedItem key={i} toggleSideNav={this.props.toggleSideNav} fetch={this.props.fetch} currentId={this.props.currentId} game={game} delete={this.props.delete} setPlayed={this.props.setPlayed} setBackLog={this.props.setBackLog} deletePlayed={this.props.deletePlayed}/>
+                  <PlayedItem key={i} fetch={this.props.fetch} currentId={this.props.currentId} game={game} delete={this.props.delete} setPlayed={this.props.setPlayed} setBackLog={this.props.setBackLog} deletePlayed={this.props.deletePlayed}/>
                 )
               })}
             </div>

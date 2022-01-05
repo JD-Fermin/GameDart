@@ -9,7 +9,7 @@ import { logout } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
-
+  
   if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (decodedUser.exp < currentTime) {
       store.dispatch(logout());
-      window.location.href = '/login';
+      window.location.href = "";
     }
   } else {
     store = configureStore({});
