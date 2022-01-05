@@ -41,9 +41,9 @@ class GenreGameItem extends React.Component {
     // let newUrl = `${url}${viewGame}`; 
     let newUrl = this.props.game.id;
 
-    console.log('meeeilllff', url)
+    // console.log('meeeilllff', url)
 
-    console.log('tagalog', newUrl)
+    // console.log('tagalog', newUrl)
     return (
       <div className={this.state.checked ? "chosen genre-game" : "genre-game" }>
         <div onContextMenu={(e) => {

@@ -15,7 +15,7 @@ class BackLog extends React.Component {
   componentDidMount() {
     this.props.fetch(this.props.currentId);
     window.addEventListener("hashchange", () => {
-      console.log(document.getElementById("side-nav").clientWidth)
+      // console.log(document.getElementById("side-nav").clientWidth)
       if (document.getElementById("side-nav").clientWidth === 350) {
         this.props.toggleSideNav()
       }
