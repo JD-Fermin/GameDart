@@ -77,8 +77,6 @@ class GenreGameIndex extends React.Component {
     // console.log(this.selected);
   }
 
-
-
   render() {
     // console.log('STATEEEEE', this.state);
     if (!this.props.fetchedGames) {
@@ -104,6 +102,7 @@ class GenreGameIndex extends React.Component {
           <span className="material-icons right-arrow" onClick={() => this.handleScroll('right')}>
             arrow_forward_ios
           </span>
+
         <div className="select-games-form">
 
           <ul className="genre-row" ref={this.genreGames}> 
@@ -117,6 +116,7 @@ class GenreGameIndex extends React.Component {
             }
           </ul>
         </div>
+
         <div className="submit-select-button" onClick={this.handleClick}><input type="submit" value="GameDart it!" id="game-dart-button"/></div>
       </div>
     )
