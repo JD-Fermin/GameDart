@@ -33,7 +33,6 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, resp) => {
   axios.get(`https://www.giantbomb.com/api/game/${req.params.id}/?api_key=F2d36b2884be5ee29bed8ac6e1d919b67b30b5d3&format=json`)
     .then((res) => {
-        console.log('RESSSS', res.data.results.name);
         const game = {
           id: res.data.results.guid,
           deck: res.data.results.deck,

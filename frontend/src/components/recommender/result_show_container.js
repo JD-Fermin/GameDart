@@ -17,7 +17,7 @@ import {
 
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log(ownProps.match.params.gameId)
+  
   return {
     game: state.game[ownProps.match.params.gameId],
     currentUserId: state.session.user.id,
