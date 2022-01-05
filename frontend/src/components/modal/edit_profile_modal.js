@@ -69,8 +69,8 @@ class EditProfileModal extends React.Component{
   
     render() {
       return ( 
-          <div className="login-box">
-            <p>Update Profile</p>
+          <div className="edit-modal">
+            <p id="edit-header">Update Profile</p>
             <form onSubmit={this.handleSubmit}>
               <div className="login-form">
                 {this.renderErrors()}

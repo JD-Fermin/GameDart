@@ -81,7 +81,7 @@
   background-size: cover;
   background-origin: content-box;
   max-width: 100%;
-  background-position: top;
+  background-position: center;
   max-height: 100%;
 }
 
@@ -99,7 +99,7 @@
   background-size: cover;
   background-origin: content-box;
   max-width: 100%;
-  background-position: bottom;
+  background-position: center;
   max-height: 100%;
 }
 
@@ -448,4 +448,26 @@ input[type="checkbox"] {
 #view-game-page:hover {
   opacity: 1;
   color: #09ff00;
+}
+
+
+
+
+@media (max-width: 650px) {
+  .genres-container {
+    display:flex;
+    flex-direction: column;
+  } 
+
+  .genre-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: visible scroll;
+  }
+
+  .select-games-form {
+    display: flex;
+    justify-content: center;
+  }
 }

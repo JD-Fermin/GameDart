@@ -23,10 +23,11 @@
   font-weight: 300;
   border-radius: 15px;
   padding: 30px;
-  width: 70%;
+  width: 84%;
   text-align: center;
   position: relative;
-  left: 15.2%;
+  /* left: 12.2%; */
+  margin: 0 auto;
   animation: fadeIn 1.2s;
   -webkit-animation: fadeIn 1.2s;
   -moz-animation: fadeIn 1.2s;

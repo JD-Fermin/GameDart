@@ -4,13 +4,17 @@
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  top: 0;
   animation: fadeIn 1.2s;
   -webkit-animation: fadeIn 1.2s;
   -moz-animation: fadeIn 1.2s;
   -o-animation: fadeIn 1.2s;
   -ms-animation: fadeIn 1.2s;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 @keyframes fadeIn {
@@ -43,21 +47,50 @@
   position: relative;
   top: 10vh;
   font-family: 'Rajdhani', sans-serif;
-  font-size: 52px;
+  font-size: 54px;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.767);
 }
 
 .the-gang {
   position: relative;
+  gap: 5px;
   top: 12vh;
   display: flex;
   justify-content: space-evenly;
 }
 
+@media (max-width: 726px) {
+  .plugs {
+    overflow: visible scroll;
+    max-height: calc(100vh - 1px);
+  }
+
+  .the-gang {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    gap: 50px;
+  }
+
+  .developer-photo {
+    margin: 0px;
+  }
+
+  #photo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .website-links img {
+    margin: 2px;
+  }
+}
+
 .developer-photo {
   /* opacity: 0.75; */
-  width: 20vw;
-  margin: 5px;
+  width: clamp(315px, 20vw, 20vw);
   border-radius: 14px;
   box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.425) 0px 16px 10px -10px;
 }
@@ -81,7 +114,7 @@
 
 .developers h2 {
   font-family: 'Rajdhani', sans-serif;
-  font-size: 34px;
+  font-size: clamp(43px, 1vw, 3vw);
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.767);
 }
 
@@ -134,7 +167,8 @@ a:active {
 .extra-links {
   position: relative;
   text-align: center;
-  top: 111px;
+  top: 18vh;
+  font-size: 17px;
 }
 
 .extra-links span {
@@ -155,8 +189,8 @@ a:active {
 }
 
 .website-links img {
-  width: 3.05vw;
-  height: 2.75vw;
+  width: clamp(60px, 70px, 3.05vw);
+  height: clamp(51px, 61px, 2.75vw);
   filter: drop-shadow(5px 3px 4px #000000c9);
   transition: all 0.3s ease 0s; 
 }
@@ -164,14 +198,6 @@ a:active {
 
 .website-links img:hover {
   transform: scale(1.3);
-}
-
-#linkedin-img:hover {
-
-}
-
-#website-img:hover {
-
 }
 
 .about:hover::before {
