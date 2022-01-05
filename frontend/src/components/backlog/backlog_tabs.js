@@ -9,11 +9,12 @@ class Tabs extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log('types', this.props);
     this.state = {
       activeTab: this.props.children[0].props.label
     };
   }
+
+  
 
   onClickTabItem = (tab) => {
     this.setState({ activeTab: tab });

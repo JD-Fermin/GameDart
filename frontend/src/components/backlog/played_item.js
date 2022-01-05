@@ -64,7 +64,7 @@ class PlayedItem extends React.Component {
   }
 
   viewGame(gameId) {
-    this.props.toggleSideNav()
+    
     this.props.history.push(`/games/${gameId}`)
   }
 
