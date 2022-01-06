@@ -107,3 +107,7 @@
   cursor: pointer;
   padding: 0 20px;
 }
+
+#nav-logo-link {
+  padding: 0;
+}
