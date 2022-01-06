@@ -553,22 +553,32 @@ input[type="checkbox"] {
   }
 
   .submit-select-button {
-  color: white;
-  position: fixed;
-  bottom: 50px;
-  left: 50%;
-  margin: 0;
-  transform: translate(-50%, 50%);
-  font-weight: 600;
-  border-style: none;
-}
+    color: white;
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, 50%);
+    font-weight: 600;
+    border-style: none;
+  }
 
-.submit-select-button input {
-  padding: 8px 30px;
-  border-radius: 8px;
-  border-color: transparent;
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-}
-}
+  .submit-select-button input {
+    padding: 8px 30px;
+    border-radius: 8px;
+    border-color: transparent;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .left-arrow, .right-arrow {
+    opacity: 0;
+    position:relative;
+    top: 10000px;
+  }
+
+  #back-to-genres p {
+    opacity: 0;
+  }
+} 
