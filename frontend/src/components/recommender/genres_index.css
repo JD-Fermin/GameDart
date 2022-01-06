@@ -9,6 +9,7 @@
   width: 100%;
   height: 100%;
   overflow: scroll;
+  background-attachment: fixed;
 }
 
 .game-dart-container h1 {
@@ -81,7 +82,7 @@
   background-origin: content-box;
   max-width: 100%;
   /* background-size: initial; */
-  background-position: center;
+  background-position: bottom;
   /* max-height: 100%; */
 }
 
