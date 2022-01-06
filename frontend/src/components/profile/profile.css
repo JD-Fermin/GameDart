@@ -59,16 +59,39 @@
 .profile-box h1 {
   position: relative;
   bottom: 5px;
-  font-size: clamp(34px, 2.8vw, 3.4vw);
   font-family: 'Rajdhani', sans-serif;
 }
 
 .profile-box h2 {
   position: relative;
   bottom: 10px;
-  font-size: clamp(18px, 1vw, 1.4vw);
   font-weight: lighter;
   text-align: center;
+}
+
+@media (max-width: 550px) {
+  .profile-box h1 {
+    font-size: 6vw;
+  }
+
+  .profile-box h2 {
+    font-size: 4.2vw;
+  }
+}
+
+@media (max-height: 420px) {
+  .profile-box {
+    width: 60vw;
+    font-size: 10vw;
+  }
+
+  .profile-box h1 {
+    font-size: 4vw;
+  }
+
+  .profile-box h2 {
+    font-size: 2.5vw;
+  }
 }
 
 #edit-profile-button {
@@ -94,4 +117,23 @@
 
 #profile-username{
   font-size: 32px;
+}
+
+.profile-plugs {
+  position: fixed;
+  color: rgb(173, 173, 173);
+  text-align: center;
+  font-size: 12px;
+  bottom: 25px;
+  width: 100%;
+  text-shadow: 0 0 15px rgb(0, 0, 0);
+}
+
+.profile-plugs span {
+  color:rgb(250, 94, 107);
+}
+
+.profile-plugs span:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }

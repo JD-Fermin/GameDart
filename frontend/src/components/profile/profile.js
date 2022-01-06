@@ -6,6 +6,7 @@ import { withRouter } from 'react-router';
 class Profile extends React.Component {
     constructor(props) {
       super(props);
+      this.visitSite = this.visitSite.bind(this);
     }
     
     componentDidMount() {
@@ -27,6 +28,14 @@ class Profile extends React.Component {
             bio: this.props.user.bio
           })
         })
+      }
+    }
+
+    visitSite(link) {
+      return () => { 
+        window.open(
+          link, '_blank'
+        )
       }
     }
 
@@ -67,6 +76,11 @@ class Profile extends React.Component {
             <h2>{this.props.user.bio}</h2>
             {editButton}
           </div>
+
+          {/* <div className="profile-plugs">
+            <p id="giant-bomb-link">Powered by <a onClick={this.visitSite("https://giantbomb.com")}><span>Giant Bomb</span></a> API</p>
+            <p id="repo-link">Visit the GameDart repo <a onClick={this.visitSite("https://github.com/JD-Fermin/GameDart")}><span>here</span></a></p>
+          </div> */}
         </div>
       );
     }
