@@ -32,8 +32,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
-  top: 111px;
+  top: 100px;
   position: fixed;
+  padding: 14px;
   margin: auto;
   width: 100%;
   animation: fadeIn 1.2s;
