@@ -534,8 +534,8 @@ input[type="checkbox"] {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    position: aboslute;
-    top: 80px;
+    position: absolute;
+    top: 62px;
     left: 0%;
     padding-right: 5vw;
     padding-left: 5vw;
