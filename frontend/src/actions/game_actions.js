@@ -20,7 +20,7 @@ export const gameSeeds = () => dispatch => {
 };
 
 export const fetchGame = (gameId) => dispatch => {
-  APIUtil.getGame(gameId).then((res) => { console.log(res.data);
+  APIUtil.getGame(gameId).then((res) => { 
     dispatch(receiveGame(res.data))
   })
 };
