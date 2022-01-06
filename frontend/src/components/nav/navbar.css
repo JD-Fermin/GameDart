@@ -27,6 +27,11 @@
   width: 200px;
 }
 
+#splash-nav-logo a:hover {
+  padding: 0px;
+  background-color:rgba(127, 255, 212, 0);
+}
+
 .NavBar a {
   padding: 2px 20px;
   /* margin: 0 max(0.4vw, 25px); */

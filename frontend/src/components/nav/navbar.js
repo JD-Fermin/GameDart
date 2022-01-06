@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom';
 import './navbar.css'
 import BacklogContainer from '../backlog/backlog_container';
 
@@ -43,6 +43,7 @@ class NavBar extends React.Component {
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
+    this.props.history.push('/');
   }
 
   getLinks() {
@@ -78,7 +79,7 @@ class NavBar extends React.Component {
         return (
           <div className="NavBar">
             <div id="splash-nav-logo" >
-              <img src="https://i.imgur.com/kucktM9.png"/>
+              <Link to='/'><img src="https://i.imgur.com/kucktM9.png"/></Link>
             </div>
             <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>GameDart
             {
@@ -86,6 +87,7 @@ class NavBar extends React.Component {
                 <div className='dropdown-menu'>
                   <Link to={'/signup'}>Signup</Link>
                   <Link to={'/login'}>Login</Link>
+                  <Link to='/developers'>Developers</Link>
                 </div>
               ) : ( null )
             }
@@ -105,4 +107,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
