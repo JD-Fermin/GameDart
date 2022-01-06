@@ -9,14 +9,14 @@ const StarRating = (props) => {
   const [rating, setRating] = useState(reviewedRating);
   const [hover, setHover] = useState(null);
   const handleSetRating = event => {
-    // console.log(event)
+    
     props.handleRating(event)
     
   }
 
   useEffect(() => {
     let localRating = props.rating ? parseInt(props.rating) : null;
-    console.log(localRating)
+    
     if (props.status !== "editing") setRating(localRating)
   })
 

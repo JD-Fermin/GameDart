@@ -58,7 +58,7 @@ class NavBar extends React.Component {
               <BacklogContainer toggleSideNav={this.toggleSideNav} />
             </div>
             <div id="nav-logo" >
-              <img src="https://i.imgur.com/kucktM9.png"/>
+              <Link to='/gamedartstart'><img src="https://i.imgur.com/kucktM9.png"/></Link>
             </div>
             <div id='user-menu' onMouseEnter={() => this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>Menu
             {
@@ -80,7 +80,7 @@ class NavBar extends React.Component {
             <div id="nav-logo" >
               <img src="https://i.imgur.com/kucktM9.png"/>
             </div>
-            <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>Open GameDart
+            <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>GameDart
             {
               this.state.showSettings ? (
                 <div className='dropdown-menu'>

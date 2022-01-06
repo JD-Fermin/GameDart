@@ -61,7 +61,7 @@ class BackLog extends React.Component {
       gameId: gameId
     }
 
-    console.log(gameId)
+    
     this.props.delete(payload)
   }
 

@@ -1,4 +1,4 @@
-import { RECEIVE_REVIEWS, CREATE_REVIEW, DELETE_REVIEW, UPDATE_REVIEW } from "../actions/review_actions";
+import { RECEIVE_REVIEWS, CREATE_REVIEW, DELETE_REVIEW, UPDATE_REVIEW, CLEAR_REVIEWS } from "../actions/review_actions";
 
 // NOT FINISHED -- TODO -- NEED TO REWORK THIS CODE
 const ReviewReducer = (state = {}, action) => {
@@ -17,6 +17,8 @@ const ReviewReducer = (state = {}, action) => {
     case UPDATE_REVIEW:
       nextState[action.review._id] = action.review
       return nextState
+    case CLEAR_REVIEWS:
+      return {}
     default:
       return state;
   }

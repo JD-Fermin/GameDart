@@ -20,7 +20,7 @@
 
 #nav-logo img {
   width: 200px;
-  /* margin-left: 80px; */
+  margin-left: 5vw;
 }
 
 .NavBar a {
@@ -105,5 +105,5 @@
 #user-menu {
   font-size: clamp(15px, 1.8vw, 1.8vw);
   cursor: pointer;
-  padding: 20px;
+  padding: 0 20px;
 }

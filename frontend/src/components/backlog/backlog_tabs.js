@@ -31,9 +31,6 @@ class Tabs extends React.Component {
       }
     } = this;
 
-    console.log("WHAT" ,this.props.children[0].props.label);
-    console.log('props', this.props)
-
     return (
       <div className="tabs">
         <ol className="tab-list">
