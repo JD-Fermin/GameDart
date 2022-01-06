@@ -117,7 +117,7 @@ class GenreGameIndex extends React.Component {
         </div>
 
         <div className="submit-select-button">
-          <input type="submit" onClick={this.handleClick} value="GameDart it!" id="game-dart-button"/>
+          <h3 onClick={this.handleClick} id="game-dart-button">GameDart it!</h3>
         </div>
       </div>
     )

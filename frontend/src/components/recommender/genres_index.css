@@ -102,7 +102,7 @@
   background-size: cover;
   background-origin: content-box;
   max-width: 100%;
-  background-position: bottom;
+  background-position: center;
   max-height: 100%;
 }
 
@@ -120,7 +120,7 @@
   background-size: cover;
   background-origin: content-box;
   max-width: 100%;
-  background-position: bottom;
+  background-position: center;
   max-height: 100%;
 }
 
@@ -336,37 +336,45 @@ input[type="checkbox"] {
   /* left: 50px; */
 }
 
-.submit-select-button {
+/* .submit-select-button {
+  left: 50%;
   color: white;
   position: fixed;
   bottom: 50px;
-  left: 50%;
-  margin: 0;
   transform: translate(-50%, 50%);
   font-weight: 600;
   border-style: none;
-}
+} */
 
-.submit-select-button input {
+/* .submit-select-button span {
   padding: 8px 30px;
   border-radius: 8px;
   border-color: transparent;
   color: white;
   font-size: 28px;
   font-weight: 600;
+} */
+
+.submit-select-button {
+  display: flex;
+  justify-content: center;
 }
 
 #game-dart-button {
+  font-size: clamp(30px, 1.8vw, 2.5vw);
   background-color: rgb(230, 50, 50);
   /* margin-bottom: -10px; */
   transition: all 0.4s ease 0s;
   /* transform: translate(-50%, 20%); */
-  position: relative;
   /* margin-left: 24px; */
   /* top: 5; */
+  margin: 0 auto;
+  position: fixed;
   text-align: center;
+  padding: 14px 28px;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
-  /* top: 63vh; */
+  bottom: 3vh;
 }
 
 #game-dart-button:hover {
@@ -509,10 +517,14 @@ input[type="checkbox"] {
   .genre-item {
     box-shadow: rgba(0, 0, 0, 0) 0px 26px 30px -10px, rgba(0, 0, 0, 0.884) 0px 16px 10px -10px;
     margin-bottom: -5px;
+    height: 30vw;
+  
+    border-radius: 0px;
   }
 
   .genre-item h2 {
     font-size: clamp(25px, 50%, 60px);
+    line-height: 30vw;
   }
 
   .genre-game-index {
@@ -528,6 +540,11 @@ input[type="checkbox"] {
 @media (max-width: 400px) {
   .genre-item {
     border-radius: 0px;
+    height: 25.5vh;
+  }
+
+  .genre-item h2 {
+    line-height: 25.5vh;
   }
 }
 
@@ -586,35 +603,40 @@ input[type="checkbox"] {
   }
 }
 
-@media (max-height: 380px) {
-  .genre-game {
-    width: clamp(1px, 25vw, 25vw);
-    overflow-y: hidden;
-    box-shadow: rgba(0, 0, 0, 0) 0px 26px 30px -10px, rgba(0, 0, 0, 0) 0px 16px 10px -10px;
-  }
-
-  .genre-row {
-    overflow-x: scroll;
-  }
-
+@media (max-height: 480px) {
   .submit-select-button {
     color: white;
     position: fixed;
-    bottom: 50px;
+    bottom: 2vh;
     left: 50%;
-    margin: 0;
-    transform: translate(-50%, 50%);
+    /* transform: translate(-50%, 50%); */
     font-weight: 600;
     border-style: none;
   }
 
-  .submit-select-button input {
-    padding: 8px 30px;
+  .submit-select-button h3 {
     border-radius: 8px;
     border-color: transparent;
     color: white;
     font-size: 18px;
     font-weight: 600;
+  }
+
+  #game-dart-button {
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+  }
+}
+
+@media (max-height: 400px) {
+  .genre-game {
+    width: clamp(1px, 25vw, 25vw);
+    box-shadow: rgba(0, 0, 0, 0) 0px 26px 30px -10px, rgba(0, 0, 0, 0) 0px 16px 10px -10px;
+  }
+
+  .genre-row {
+    overflow-x: scroll;
   }
 
   .left-arrow, .right-arrow {
