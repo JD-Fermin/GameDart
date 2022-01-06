@@ -19,8 +19,8 @@
 
 .game-dart-instructions {
   background: rgb(61, 61, 61);
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  /* font-family: 'Lato', sans-serif; */
+  font-weight:lighter;
   border-radius: 15px;
   padding: 30px;
   width: 84%;

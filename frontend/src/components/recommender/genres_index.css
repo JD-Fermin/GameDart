@@ -286,6 +286,7 @@
   overflow: visible;
 }
 
+
 .select-game-image:hover {
   transform: translate(0px, -30px);
   transform: scale(1.08);
@@ -490,17 +491,20 @@ input[type="checkbox"] {
   }
 
   .genres-container {
-    display:flex;
+    display: flex;
     flex-direction: column;
     position: relative;
-    top: 50px;
+    top: 34px;
     font-size: 30px;
-    overflow: scroll;
-    width: 95%;
-  } 
+    /* height: 100vh; */
+    /* width: 95%; */
+    overflow-x: hidden;
+    padding: 4px;
+  }
 
   .genre-item {
     box-shadow: rgba(0, 0, 0, 0) 0px 26px 30px -10px, rgba(0, 0, 0, 0.884) 0px 16px 10px -10px;
+    margin-bottom: -5px;
   }
 
   .genre-item h2 {
@@ -510,6 +514,10 @@ input[type="checkbox"] {
   .genre-game-index {
     position: relative;
     top: 5px;
+  }
+
+  .genre-item:hover {
+    transform: scale(1);
   }
 }
 
@@ -534,6 +542,8 @@ input[type="checkbox"] {
 
   .genre-game {
     width: clamp(42vh, 30vw, 30vw);
+    overflow-y: hidden;
+    box-shadow: rgba(0, 0, 0, 0) 0px 26px 30px -10px, rgba(0, 0, 0, 0) 0px 16px 10px -10px;
   }
 
   .left-arrow, .right-arrow {
@@ -545,11 +555,30 @@ input[type="checkbox"] {
   #back-to-genres {
     opacity: 0;
   }
+
+  .select-game-image:hover {
+    transform: translate(0px, 0px);
+    transform: scale(1);
+  }
+
+  .chosen.genre-game > .select-game-image img {
+    transform: translate(0px, 0px);
+  }
+
+  .select-game-image img {
+    box-shadow: rgba(0, 0, 0, 0) 0px 26px 30px -10px, rgba(0, 0, 0, 0) 0px 16px 10px -10px;
+  }
 }
 
 @media (max-height: 380px) {
   .genre-game {
     width: clamp(1px, 25vw, 25vw);
+    overflow-y: hidden;
+    box-shadow: rgba(0, 0, 0, 0) 0px 26px 30px -10px, rgba(0, 0, 0, 0) 0px 16px 10px -10px;
+  }
+
+  .genre-row {
+    overflow-x: scroll;
   }
 
   .submit-select-button {
@@ -580,5 +609,18 @@ input[type="checkbox"] {
 
   #back-to-genres p {
     opacity: 0;
+  }
+
+  .chosen.genre-game > .select-game-image img {
+    transform: translate(0px, 0px);
+  }
+
+  .select-game-image:hover {
+    transform: translate(0px, 0px);
+    transform: scale(1);
+  }
+
+  .select-game-image img {
+    box-shadow: rgba(0, 0, 0, 0) 0px 26px 30px -10px, rgba(0, 0, 0, 0) 0px 16px 10px -10px;
   }
 } 
