@@ -1,12 +1,10 @@
 .edit-modal {
-  max-height: calc(100vh - 80px);
+  max-height: calc(100vh - 30px);
   overflow-y: auto;
   position: relative;
   padding: 10px 20px;
   border-radius: 6px;
   margin: 0 auto;
-  max-width: 600px;
-  /* width: min(90vmax, 90vmin); */
   width: 49vw;
   height: auto;
   background-color: rgb(61, 61, 61);
