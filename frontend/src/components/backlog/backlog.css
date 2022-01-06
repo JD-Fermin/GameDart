@@ -91,7 +91,7 @@
 }
 
 .backlogGame-item-open {
-  height: 250px !important;
+  height: 280px !important;
   transition: 0.5s;
 }
 
@@ -103,15 +103,13 @@
   opacity: 0.8;
 }
 
-
 .backlogGame-title {
-  /* width: 403px; */
   text-align: center;
   font-family: 'Rajdhani', sans-serif;
   font-size: 20px;
   text-shadow: 0 0 15px rgb(0, 0, 0);
-  position: relative;
-  top: 13.5px;
+  bottom: 9px;
+  margin-bottom: -8px;
   cursor: pointer;
 }
 
