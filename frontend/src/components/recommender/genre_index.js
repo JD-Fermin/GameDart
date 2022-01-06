@@ -80,7 +80,7 @@ class GenreIndex extends React.Component {
           <div className="games-per-genre">
 
             <div id="back-to-genres">
-              <span id="back-to-genres-button" className="material-icons-outlined" >reply_all</span>
+              <span id="back-to-genres-button" className="material-icons-outlined" onClick={this.returnToGenres}>reply_all</span>
               <p>* right-click game to view info</p>
             </div>
 
