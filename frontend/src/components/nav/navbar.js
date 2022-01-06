@@ -8,6 +8,7 @@ class NavBar extends React.Component {
     super(props);
     this.state = {
       showSettings: false,
+      showSidenav: false,
     }
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
@@ -19,9 +20,11 @@ class NavBar extends React.Component {
   
   toggleSideNav() {
     document.getElementById("sandwich-icon").classList.toggle("change");
-    if (document.getElementById("side-nav").clientWidth === 0) {
+    if (!this.state.showSidenav) {
+      this.setState({showSidenav: true});
       document.getElementById("side-nav").style.width = "350px";
     } else {
+      this.setState({showSidenav: false});
       document.getElementById("side-nav").style.width = "0";
     }
   }
