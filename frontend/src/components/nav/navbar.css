@@ -23,6 +23,10 @@
   margin-left: 5vw;
 }
 
+#splash-nav-logo img {
+  width: 200px;
+}
+
 .NavBar a {
   padding: 2px 20px;
   /* margin: 0 max(0.4vw, 25px); */
