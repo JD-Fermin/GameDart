@@ -4,12 +4,12 @@
 }
 
 .game-dart-info-container img {
-  height: max(300px, 2vw);
+  height: 20vh;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: auto;
-  margin-bottom: -30px;
+  padding-top: 30px;
   animation: fadeIn 1.2s;
   -webkit-animation: fadeIn 1.2s;
   -moz-animation: fadeIn 1.2s;

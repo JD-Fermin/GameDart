@@ -7,6 +7,10 @@ class GitHubLinks extends React.Component {
     this.visitSite = this.visitSite.bind(this);
   }
 
+  componentDidMount(){
+    document.body.style.backgroundImage = "url('https://i.imgur.com/OnQaUh5.jpg')";
+  }
+
   visitSite(link) {
     return () => { 
       window.open(

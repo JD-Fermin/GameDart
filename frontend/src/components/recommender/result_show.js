@@ -30,7 +30,12 @@ class ResultShow extends React.Component {
 
     if (prevProps.match.params.gameId != this.props.match.params.gameId) {
       this.props.fetchGames()
+      this.props.fetchReviews()
     }
+  }
+
+  componentWillUnmount() {
+    this.props.clearReviews();
   }
 
   toggleCreateReview() {

@@ -26,7 +26,7 @@ class PlayedItem extends React.Component {
       name: game.name,
       image: game.image
     };
-    console.log(this.props.setPlayed); 
+    
 
     this.props.setPlayed(payload);
     this.props.delete(payload);
@@ -38,7 +38,7 @@ class PlayedItem extends React.Component {
       gameId: gameId
     }
 
-    console.log(gameId)
+    
     this.props.delete(payload)
   }
 
