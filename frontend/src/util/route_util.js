@@ -25,6 +25,15 @@ const Protected = ({ component: Component, loggedIn, ...rest }) => (
   />
 );
 
+const Reg = ({ component: Component, loggedIn, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      <Component {...props} />
+    }
+  />
+);
+
 const mapStateToProps = state => (
   {loggedIn: state.session.isAuthenticated}
 );
@@ -32,3 +41,5 @@ const mapStateToProps = state => (
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
+
+export const RegRoute = withRouter(connect(mapStateToProps)(Reg));
