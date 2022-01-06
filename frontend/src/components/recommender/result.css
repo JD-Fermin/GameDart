@@ -72,7 +72,7 @@ body {
   cursor: pointer;
 }
 
-.visit-on-giant-bomb {
+.visit-on-giant-bomb, .new-game {
   position: absolute;
   text-align: center;
   padding: 13px;
@@ -92,17 +92,6 @@ body {
 }
 
 .new-game {
-  position: absolute;
-  text-align: center;
-  padding: 13px;
-  width: 16vw;
-  min-width: 150px;
-  margin-top: 126px;
-  background-color: rgb(13, 0, 194);
-  border-color: transparent;
-  color: white;
-  box-shadow: 1 1px 40px 3px rgb(14, 14, 14, 0.7);
-  transition: 0.2s;
   z-index: 0;
 }
 
@@ -112,15 +101,14 @@ body {
 }
 
 .gameplay-images {
-  /* width: 100vw; */
-  /* height: 200px; */
+  height: 50vh;
   box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
   transition: 0.2s;
 }
 
 #highlight{
   background-color: white;
-  height: 500px;
+  height: inherit;
   width: 100%;
   opacity: 0;
   z-index: 1;
@@ -161,14 +149,17 @@ body {
   width: 100%;
 }
 
+.carousel-root, .slider, .slider-wrapper, .carousel, .carousel-slider, .image-container, .slide {
+  height: inherit;
+}
+
 .carousel-slider {
-  height: 500px;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
 .carousel .slide img{
   width: auto !important;
-  height: 500px;
+  height: 100%;
 }
 
 .review-item-rating {

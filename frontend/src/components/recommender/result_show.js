@@ -175,7 +175,7 @@ class ResultShow extends React.Component {
           <Carousel autoPlay={true} centerMode={true} showThumbs={false} infiniteLoop={true}>
             {
               gameplay.map((gameImg, i) => {
-                return <div key={i} >
+                return <div className="image-container" key={i} >
                   <img src={gameImg} />
                 </div>
               })
