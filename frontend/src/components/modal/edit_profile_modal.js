@@ -54,7 +54,7 @@ class EditProfileModal extends React.Component {
           this.props.closeModal();
         }
       })
-
+  }
 
   renderErrors() {
     return (

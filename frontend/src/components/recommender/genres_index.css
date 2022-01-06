@@ -135,6 +135,7 @@
   background: url('https://media4.giphy.com/media/jxJjBMvqEvMSA/giphy.gif?cid=ecf05e47e1b4c4i1iu1cf0ldk639uxnmx2ll3vb03vswibre&rid=giphy.gif&ct=g');
   background-size: cover;
   background-origin: content-box;
+  background-attachment: fixed;
   max-width: 100%;
   background-position: center;
   max-height: 100%;
@@ -483,6 +484,10 @@ input[type="checkbox"] {
     font-size: clamp(38px, 50%, 9vw);
   }
 
+  .game-dart-container {
+    background-attachment: fixed;
+  }
+
   #select-genre {
     position: relative;
   }
@@ -522,7 +527,21 @@ input[type="checkbox"] {
   }
 }
 
+@media (max-width: 400px) {
+  .genre-item {
+    border-radius: 0px;
+  }
+
+  .game-dart-container {
+    background-attachment: fixed;
+  }
+}
+
 @media (max-width: 777px) {
+  .game-dart-container {
+    background-attachment: fixed;
+  }
+
   .genre-row {
     display: flex;
     flex-direction: row;
