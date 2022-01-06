@@ -36,7 +36,8 @@ class NavBar extends React.Component {
     }
   }
 
-  closeDropdown() {
+  closeDropdown(e) {
+    e.stopPropagation()
     this.setState({showSettings: false})
   }
 
@@ -60,10 +61,10 @@ class NavBar extends React.Component {
             <div id="nav-logo" >
               <Link id="nav-logo-link"to='/gamedartstart'><img src="https://i.imgur.com/kucktM9.png"/></Link>
             </div>
-            <div id='user-menu' onMouseEnter={() => this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>Menu
+            <div id='user-menu' onMouseEnter={() => this.openDropdown('showSettings')}>Menu
             {
               this.state.showSettings ? (
-                <div className='dropdown-menu'>
+                  <div className='dropdown-menu' onMouseLeave={this.closeDropdown}>
                   <Link to='/profile'>Profile</Link>
                   <Link to='/gamedartstart'>GameDart It!</Link>
                   <Link to='/developers'>Developers</Link>
@@ -80,10 +81,10 @@ class NavBar extends React.Component {
             <div id="nav-logo" >
               <img src="https://i.imgur.com/kucktM9.png"/>
             </div>
-            <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} onMouseLeave={this.closeDropdown}>GameDart
+            <div id='user-menu' onMouseEnter={()=> this.openDropdown('showSettings')} >GameDart
             {
               this.state.showSettings ? (
-                <div className='dropdown-menu'>
+                  <div className='dropdown-menu' onMouseLeave={this.closeDropdown}>
                   <Link to={'/signup'}>Signup</Link>
                   <Link to={'/login'}>Login</Link>
                 </div>
