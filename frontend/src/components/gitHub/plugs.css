@@ -85,6 +85,10 @@
   .website-links img {
     margin: 2px;
   }
+
+  .extra-links {
+    top: 15vh;
+  }
 }
 
 .developer-photo {
@@ -168,6 +172,8 @@ a:active {
   text-align: center;
   top: 18vh;
   font-size: 17px;
+  margin-top: -15px;
+  padding-bottom: 30px;
 }
 
 .extra-links span {
@@ -189,7 +195,7 @@ a:active {
 
 .website-links img {
   width: clamp(60px, 70px, 3.05vw);
-  height: clamp(51px, 61px, 2.75vw);
+  height: clamp(53px, 64px, 2.82vw);
   filter: drop-shadow(5px 3px 4px #000000c9);
   transition: all 0.3s ease 0s; 
 }

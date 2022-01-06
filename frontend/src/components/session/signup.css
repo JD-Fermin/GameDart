@@ -27,7 +27,7 @@
   border-radius: 8px;
   border-color: transparent;
   color: white;
-  font-size: clamp(15px, 0.9vw, 0.9vw);
+  font-size: clamp(16px, 0.9vw, 0.9vw);
 }
 
 #submit-button {

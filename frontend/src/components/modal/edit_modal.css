@@ -1,5 +1,5 @@
 .edit-modal {
-    max-height: calc(100vh - 80px);
+    max-height: calc(100vh - 30px);
     /* width: fit-content; */
     overflow-y: auto;
     position: relative;
@@ -7,7 +7,7 @@
     padding: 10px 20px;
     border-radius: 6px;
     margin: 0 auto;
-    width: min(90vmax, 90vmin);
+    width: 49vw;
     height: auto;
     background-color: rgb(61, 61, 61);
     box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
@@ -32,18 +32,62 @@ input[type=radio]:checked + label{
 }
 
 #avi-box{
-  display: flex;
+  /* margin-top: -30px; */
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .image-radio + label{
-  width: clamp(40px, 70px, 75px);
-  height: clamp(40px, 70px, 75px);
+  width: 6vw;
+  height: 6vw;
   margin: 0.3vw;
   background-size: contain;
   display: inline-block;
   background-repeat: no-repeat;
+}
+
+@media (max-height: 500px) {
+  .image-radio + label {
+    width: 12vw;
+    height: 12vw;
+  }
+
+  #avi-box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .edit-modal {
+    width: 90vw;
+    height: 80vh;
+  }
+}
+
+@media (max-width: 800px) {
+  .image-radio + label {
+    width: 27vw;
+    height: 27vw;
+    margin: 3px;
+  }
+
+  .edit-modal {
+    width: 90vw;
+  }
+
+  #avi-box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .login-form input {
+    font-size: 18px;
+  }
 }
 
 .login-box p {
