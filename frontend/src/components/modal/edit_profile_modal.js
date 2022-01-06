@@ -54,7 +54,7 @@ class EditProfileModal extends React.Component {
           this.props.closeModal();
         }
       })
-  }
+
 
   renderErrors() {
     return (
@@ -70,8 +70,8 @@ class EditProfileModal extends React.Component {
 
   render() {
     return (
-      <div className="login-box">
-        <p>Update Profile</p>
+      <div className="edit-modal">
+        <p id="edit-header">Update Profile</p>
         <form onSubmit={this.handleSubmit}>
           <div className="login-form">
             {this.renderErrors()}
@@ -120,7 +120,6 @@ class EditProfileModal extends React.Component {
               <input type="radio" className='image-radio' name='avi' id="avi-kratos" checked={this.state.profileImgUrl === "https://i.imgur.com/aEeE4Jb.jpg"} value="https://i.imgur.com/aEeE4Jb.jpg" onChange={this.update('profileImgUrl')} /><label for="avi-kratos"></label>
               <input type="radio" className='image-radio' name='avi' id="avi-sora" checked={this.state.profileImgUrl === "https://i.imgur.com/q9r7Thq.png"} value="https://i.imgur.com/q9r7Thq.png" onChange={this.update('profileImgUrl')} /><label for="avi-sora"></label>
               <input type="radio" className='image-radio' name='avi' id="avi-miku" checked={this.state.profileImgUrl === "https://i.imgur.com/TgO2Eqb.jpg"} value="https://i.imgur.com/TgO2Eqb.jpg" onChange={this.update('profileImgUrl')} /><label for="avi-miku"></label>
-
               <input type="radio" className='image-radio' name='avi' id="avi-spidey" checked={this.state.profileImgUrl === "https://i.imgur.com/kNuWjTs.jpg"} value="https://i.imgur.com/kNuWjTs.jpg" onChange={this.update('profileImgUrl')} /><label for="avi-spidey"></label>
               <input type="radio" className='image-radio' name='avi' id="avi-default" checked={this.state.profileImgUrl === "https://ubisoft-avatars.akamaized.net/46564bd6-ef0b-4b05-97ec-68d8473167c6/default_256_256.png"} value="https://ubisoft-avatars.akamaized.net/46564bd6-ef0b-4b05-97ec-68d8473167c6/default_256_256.png" onChange={this.update('profileImgUrl')} /><label for="avi-default"></label>
               <input type="radio" className='image-radio' name='avi' id="avi-chunli" checked={this.state.profileImgUrl === "https://i.imgur.com/YBluko7.jpg"} value="https://i.imgur.com/YBluko7.jpg" onChange={this.update('profileImgUrl')} /><label for="avi-chunli"></label>

@@ -19,15 +19,15 @@
 }
 
 .login-form input, #demo-login-button {
-    background-color: rgb(44, 44, 44);
-    width: 100%;
-    margin: 5px 0;
-    height: min(7vh, 8vh);
-    padding: 5px 10px;
-    border-radius: 8px;
-    border-color: transparent;
-    color: white;
-    font-size: min(2.4vh, 3.7vmin);
+  background-color: rgb(44, 44, 44);
+  width: 100%;
+  margin: 5px 0;
+  /* height: min(7vh, 8vh); */
+  padding: 5px 10px;
+  border-radius: 8px;
+  border-color: transparent;
+  color: white;
+  font-size: clamp(15px, 0.9vw, 0.9vw);
 }
 
 #submit-button {
@@ -56,7 +56,7 @@
 
 .redirect-info {
   margin-top: 0.5vw;
-  font-size: min(2vh, 3.7vmin);
+  font-size: clamp(16px, 0.9vw, 0.9vw);
   text-align: center;
 }
 

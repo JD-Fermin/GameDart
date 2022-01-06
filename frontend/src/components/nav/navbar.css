@@ -103,7 +103,7 @@
 }
 
 #user-menu {
-  font-size: 24px;
+  font-size: clamp(15px, 1.8vw, 1.8vw);
   cursor: pointer;
   padding: 0 20px;
 }

@@ -23,12 +23,11 @@ class GenreGameIndex extends React.Component {
 
   handleScroll = direction => {
     if (direction === 'left') {
-      this.genreGames.current.style.transform = 'translateX(0px)';
+      this.genreGames.current.style.transform = 'translateX(0%)';
     } else if (direction === 'right') {
-      this.genreGames.current.style.transform = 'translateX(-94vw)';
+      this.genreGames.current.style.transform = 'translateX(-50%)';
     }
   } 
-
 
   handleClick() {
     if (this.selected.length === 0) {
@@ -76,8 +75,6 @@ class GenreGameIndex extends React.Component {
     
   }
 
-
-
   render() {
     
     if (!this.props.fetchedGames) {
@@ -96,12 +93,15 @@ class GenreGameIndex extends React.Component {
     
     return(
       <div className="genre-game-index">
+        <div className="game-scroll-buttons">
           <span className="material-icons left-arrow" onClick={() => this.handleScroll('left')}>
             arrow_back_ios
           </span>
           <span className="material-icons right-arrow" onClick={() => this.handleScroll('right')}>
             arrow_forward_ios
           </span>
+        </div>
+
         <div className="select-games-form">
 
           <ul className="genre-row" ref={this.genreGames}> 
@@ -115,7 +115,10 @@ class GenreGameIndex extends React.Component {
             }
           </ul>
         </div>
-        <div className="submit-select-button" onClick={this.handleClick}><input type="submit" value="GameDart it!" id="game-dart-button"/></div>
+
+        <div className="submit-select-button">
+          <input type="submit" onClick={this.handleClick} value="GameDart it!" id="game-dart-button"/>
+        </div>
       </div>
     )
   }

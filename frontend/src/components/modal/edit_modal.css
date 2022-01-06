@@ -1,3 +1,26 @@
+.edit-modal {
+    max-height: calc(100vh - 80px);
+    /* width: fit-content; */
+    overflow-y: auto;
+    position: relative;
+    top: calc(100% - 84vh);
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin: 0 auto;
+    width: min(90vmax, 90vmin);
+    height: auto;
+    background-color: rgb(61, 61, 61);
+    box-shadow: 0 1px 40px 3px rgb(14, 14, 14);
+}
+
+#edit-header {
+  margin-top: 10px;
+  margin-bottom: -12px;
+  font-family: 'Rajdhani', sans-serif;
+  text-align: center;
+  font-size: clamp(12px, 21px, 23px);
+}
+
 input[type=radio]{
   display: none;
 }
@@ -11,12 +34,13 @@ input[type=radio]:checked + label{
 #avi-box{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .image-radio + label{
-  width: 75px;
-  height: 75px;
-  margin: 7px;
+  width: clamp(40px, 70px, 75px);
+  height: clamp(40px, 70px, 75px);
+  margin: 0.3vw;
   background-size: contain;
   display: inline-block;
   background-repeat: no-repeat;
@@ -26,8 +50,8 @@ input[type=radio]:checked + label{
   text-align: center;
   position: relative;
   top: 10px;
-  font-family: 'Radjhani', sans-serif;
-  font-size: 20px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(20px, 3v);
 }
 
 #avi-akali + label{
