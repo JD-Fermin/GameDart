@@ -409,10 +409,11 @@ input[type="checkbox"] {
 
 .genre-row {
   position: absolute;
-  top: clamp(24vh, 12vw, 129px);
+  top: 20%;
   display: flex;
   width: max-content;
   transition: all 1.4s;
+  padding: 10px;
 }
 
 .game-scroll-buttons {
@@ -561,8 +562,14 @@ input[type="checkbox"] {
     top: 1000000px;
   }
 
-  #back-to-genres {
+  #back-to-genres p {
     opacity: 0;
+  }
+
+  #back-to-genres-button {
+    font-size: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
   }
 
   .select-game-image:hover {
