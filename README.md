@@ -41,7 +41,8 @@ GameDart is a service that recommends the user new games to play based on genre.
 ### Game Result
 ![alt text](https://github.com/JD-Fermin/GameDart/blob/main/screenshots/result.png)
 
-
+### Game Reviews
+![alt text](https://github.com/JD-Fermin/GameDart/blob/main/screenshots/review_page.png)
 
 
 
