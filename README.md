@@ -1,6 +1,7 @@
-# GameDart
-
-## [Live](https://gamedart.herokuapp.com/#/)
+![alt text](https://i.imgur.com/kucktM9.png)
+<h1 align="center">
+  https://gamedart.herokuapp.com/
+</h1>
 
 ## Background and Overview
 
