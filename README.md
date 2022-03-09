@@ -24,6 +24,29 @@ GameDart is a service that recommends the user new games to play based on genre.
 ### User Profile Page
 ![alt text](https://i.imgur.com/YYS1am4.png)
 
+## Screenshots
+
+### Login
+![alt text](https://github.com/JD-Fermin/GameDart/blob/main/screenshots/login_page.png)
+
+### Profile
+![alt text](https://github.com/JD-Fermin/GameDart/blob/main/screenshots/profile_page.png)
+
+### Genre Select
+![alt text](https://github.com/JD-Fermin/GameDart/blob/main/screenshots/genre_select_page.png)
+
+### Game Select
+![alt text](https://github.com/JD-Fermin/GameDart/blob/main/screenshots/game_dart_select_page.png)
+
+### Game Result
+![alt text](https://github.com/JD-Fermin/GameDart/blob/main/screenshots/result.png)
+
+
+
+
+
+
+
 
 
 ## Technologies and Technical Challenges
