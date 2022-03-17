@@ -33,7 +33,7 @@ class GitHubLinks extends React.Component {
             <div className="website-links">
               <img id="github-img" onClick={this.visitSite("https://github.com/hendricksimonr")} src="https://i.imgur.com/Bj3ZPbm.png" alt="" />
               <img id="linkedin-img" onClick={this.visitSite("https://www.linkedin.com/in/hendrick-ramos-0743749a/")} src="https://i.imgur.com/uO5d91L.png" alt="" />
-              <img id="website-img" onClick={this.visitSite("https://github.com/hendricksimonr")} src="https://i.imgur.com/V1TQaje.png" alt="" />
+              <img id="website-img" onClick={this.visitSite("https://hendrickramos.com")} src="https://i.imgur.com/V1TQaje.png" alt="" />
             </div>
           </div>
           
